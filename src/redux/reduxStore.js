@@ -3,9 +3,11 @@ import logger from "redux-logger";
 
 import userReducer from "./reducers/userReducer";
 import initialState from "./reduxStoreInitialState";
+import { reducer as formReducer } from "redux-form";
 
 const rootReducer = combineReducers({
-  user: userReducer
+  user: userReducer,
+  form: formReducer // For handle redux-form
 });
 
 const middlewares = applyMiddleware(logger);
