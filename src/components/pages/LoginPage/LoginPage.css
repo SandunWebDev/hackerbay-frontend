@@ -1,20 +1,20 @@
-.SignupPage{
+.LoginPage{
   display: flex;
   flex: 1;
   justify-content: center;
   align-items: center;
 }
 
-.SignupPage__header{
+.LoginPage__header{
   text-align: center;
 }
 
-.SignupPage__alreadyHaveMsg{
+.LoginPage__alreadyHaveMsg{
   color:white;
   margin-top:10px;
   text-align: center;
 }
 
-.SignupPage__alreadyHaveMsg a{
+.LoginPage__alreadyHaveMsg a{
   color:black;
 }

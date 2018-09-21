@@ -6,9 +6,9 @@ Frontend part of the Server Monitoring Project. Backend part can be found on [Ha
  - `cd` into the source directory.
  - Run `npm install` to install dependencies.
  - Then run `npm start`.
- - Normally you can interact with program through http://localhost:3000
+ - Normally you can interact with program through http://localhost:4000
 		
-NOTE : Make sure hackerbay backend server is already running.
+NOTE : Make sure hackerbay backend server & postgre database server is already running.
 
 ## Used Technologies & Main Packages
 |FrontEnd|BackEnd|Tools|Other| 

@@ -1,0 +1,16 @@
+.LoginForm{
+  display:flex;
+  justify-content: center;
+}
+
+.LoginForm form{
+  max-width: 400px;
+  padding:30px;
+  border-radius: 4px;
+  background: rgb(245, 237, 237);
+}
+
+.LoginForm__Callout{
+  margin-bottom: 15px;
+}
+

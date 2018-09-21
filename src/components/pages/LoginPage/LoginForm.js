@@ -10,11 +10,10 @@ import { required, email, length, confirmation } from "redux-form-validators";
 
 import { FormGroup, InputGroup, Button, Callout } from "@blueprintjs/core";
 
-import "./SignupForm.css";
+import "./LoginForm.css";
 import formLoaderAnimation from "../../../assets/loaders/formLoader.gif";
 
 const fieldValidateOptions = {
-  name: [required({ message: "Required." })],
   email: [
     required({ message: "Required." }),
     email({ message: "Must be a valid email." })
@@ -22,10 +21,6 @@ const fieldValidateOptions = {
   password: [
     required({ message: "Required." }),
     length({ min: 5, message: "Must be at least 5 character." })
-  ],
-  passwordConfirm: [
-    required({ message: "Required." }),
-    confirmation({ field: "password", message: "Passwords doesn't match." })
   ]
 };
 
@@ -47,7 +42,7 @@ const renderInput = ({ input, name, label, type, placeholder, meta }) => {
   return (
     <div>
       <FormGroup
-        className="SignupForm__Input"
+        className="LoginForm__Input"
         helperText={meta.touched && meta.error ? meta.error : ""}
         intent="danger"
         label={label}
@@ -66,13 +61,11 @@ const renderInput = ({ input, name, label, type, placeholder, meta }) => {
 };
 
 const formInitialValues = {
-  name: "",
   email: "",
-  password: "",
-  passwordConfirm: ""
+  password: ""
 };
 
-class SignupForm extends Component {
+class LoginForm extends Component {
   render() {
     const {
       error,
@@ -88,12 +81,12 @@ class SignupForm extends Component {
     }
 
     return (
-      <div className="SignupForm">
-        <form onSubmit={handleSubmit(userActions.createAccount)}>
+      <div className="LoginForm">
+        <form onSubmit={handleSubmit(userActions.loginAccount)}>
           {/* Displaying loaders & errors if applicable. */}
           {(error || submitting) && (
             <Callout
-              className="SignupForm__Callout"
+              className="LoginForm__Callout"
               title={error ? "Signup Failed" : "Submitting...."}
               intent={error ? "danger" : "warning"}
               icon={
@@ -115,14 +108,6 @@ class SignupForm extends Component {
 
           <Field
             component={renderInput}
-            name="name"
-            label="Full Name : "
-            type="text"
-            placeholder="Your Full Name"
-          />
-
-          <Field
-            component={renderInput}
             name="email"
             label="Email : "
             type="email"
@@ -137,19 +122,11 @@ class SignupForm extends Component {
             placeholder="Your Password"
           />
 
-          <Field
-            component={renderInput}
-            name="passwordConfirm"
-            label="Confirm Password : "
-            type="password"
-            placeholder="Confirm Your Password"
-          />
-
           <Button
-            className="SignupForm__Button"
+            className="LoginForm__Button"
             fill={true}
             type="submit"
-            text="SignUp"
+            text="LogIn"
             disabled={pristine || submitting}
             intent="success"
             icon="upload"
@@ -174,13 +151,13 @@ const mapActionsToProps = dispatch => {
   };
 };
 
-const reduxIntializedSignupForm = reduxForm({
-  form: "signupForm",
+const reduxIntializedLoginForm = reduxForm({
+  form: "LoginForm",
   validate: fieldValidatorFunction,
   initialValues: formInitialValues
-})(SignupForm);
+})(LoginForm);
 
 export default connect(
   mapStateToProps,
   mapActionsToProps
-)(reduxIntializedSignupForm);
+)(reduxIntializedLoginForm);

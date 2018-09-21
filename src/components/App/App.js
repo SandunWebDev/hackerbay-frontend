@@ -3,6 +3,7 @@ import { Route, Link } from "react-router-dom";
 
 import HomePage from "../pages/HomePage/HomePage";
 import SignupPage from "../pages/SignupPage/SignupPage";
+import LoginPage from "../pages/LoginPage/LoginPage";
 
 import { Navbar, Button } from "@blueprintjs/core";
 import "./App.css";
@@ -45,6 +46,7 @@ export default class App extends Component {
         <div className="App__container">
           <Route exact path="/" component={HomePage} />
           <Route exact path="/signup" component={SignupPage} />
+          <Route exact path="/login" component={LoginPage} />
         </div>
       </div>
     );

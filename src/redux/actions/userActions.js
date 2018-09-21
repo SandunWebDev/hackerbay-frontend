@@ -4,7 +4,8 @@ import {
 } from "../../configs/axiosInstances";
 
 export const actionTypes = {
-  USER__CREATE_ACCOUNT: "USER___CREATE_ACCOUNT"
+  USER__CREATE_ACCOUNT: "USER___CREATE_ACCOUNT",
+  USER__LOGIN_ACCOUNT: "USER___LOGIN_ACCOUNT"
 };
 
 export function createAccount(signupformInputValues) {
@@ -20,6 +21,22 @@ export function createAccount(signupformInputValues) {
     return dispatch({
       type: actionTypes.USER__CREATE_ACCOUNT,
       payload: newUser
+    }).catch(axiosBaseReduxFromErrorHandler);
+  };
+}
+
+export function loginAccount(loginFormInputValues) {
+  const { email, password } = loginFormInputValues;
+
+  return async dispatch => {
+    const user = axiosBase.post("user/login", {
+      email,
+      password
+    });
+
+    return dispatch({
+      type: actionTypes.USER__LOGIN_ACCOUNT,
+      payload: user
     }).catch(axiosBaseReduxFromErrorHandler);
   };
 }
