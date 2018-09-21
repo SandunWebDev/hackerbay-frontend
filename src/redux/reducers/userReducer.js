@@ -29,6 +29,12 @@ export default (state = defaultState, action) => {
         token: resData.session
       };
     }
+    case actionTypes.USER__LOGOUT_ACCOUNT: {
+      return {
+        ...state,
+        ...defaultState
+      };
+    }
     default:
       return state;
   }

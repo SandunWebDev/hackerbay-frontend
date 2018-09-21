@@ -5,7 +5,8 @@ import {
 
 export const actionTypes = {
   USER__CREATE_ACCOUNT: "USER___CREATE_ACCOUNT",
-  USER__LOGIN_ACCOUNT: "USER___LOGIN_ACCOUNT"
+  USER__LOGIN_ACCOUNT: "USER___LOGIN_ACCOUNT",
+  USER__LOGOUT_ACCOUNT: "USER___LOGOUT_ACCOUNT"
 };
 
 export function createAccount(signupformInputValues) {
@@ -38,5 +39,11 @@ export function loginAccount(loginFormInputValues) {
       type: actionTypes.USER__LOGIN_ACCOUNT,
       payload: user
     }).catch(axiosBaseReduxFromErrorHandler);
+  };
+}
+
+export function logoutAccount() {
+  return {
+    type: actionTypes.USER__LOGOUT_ACCOUNT
   };
 }
