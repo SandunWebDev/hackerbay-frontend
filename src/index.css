@@ -1,3 +1,5 @@
-.input_error{
-  color:red;
-}
+@import "~normalize.css/normalize.css";
+
+/* CSS files for BluePrintJS UI framework.*/
+@import "~@blueprintjs/core/lib/css/blueprint.css";
+@import "~@blueprintjs/icons/lib/css/blueprint-icons.css";

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, withRouter } from "react-router-dom";
 
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -8,6 +8,9 @@ import * as userActions from "../../../redux/actions/userActions";
 
 import { required, email, length, confirmation } from "redux-form-validators";
 
+import { FormGroup, InputGroup, Button, Callout } from "@blueprintjs/core";
+
+import "./SignupForm.css";
 import formLoaderAnimation from "../../../assets/loaders/formLoader.gif";
 
 const fieldValidateOptions = {
@@ -43,10 +46,21 @@ const fieldValidatorFunction = values => {
 const renderInput = ({ input, name, label, type, placeholder, meta }) => {
   return (
     <div>
-      <label htmlFor={name}>{label}</label>
-      <input {...input} type={type} placeholder={placeholder} />
-      {meta.touched &&
-        meta.error && <div className="input_error"> {meta.error}</div>}
+      <FormGroup
+        className="SignupForm__Input"
+        helperText={meta.touched && meta.error ? meta.error : ""}
+        intent="danger"
+        label={label}
+        labelFor={name}
+        large={true}
+      >
+        <InputGroup
+          {...input}
+          id={name}
+          type={type}
+          placeholder={placeholder}
+        />
+      </FormGroup>
     </div>
   );
 };
@@ -74,51 +88,76 @@ class SignupForm extends Component {
     }
 
     return (
-      <form onSubmit={handleSubmit(userActions.createAccount)}>
-        {submitting ? (
-          <img alt="Form Submitting" src={formLoaderAnimation} />
-        ) : (
-          ""
-        )}
+      <div className="SignupForm">
+        <form onSubmit={handleSubmit(userActions.createAccount)}>
+          {/* Displaying loaders & errors if applicable. */}
+          {(error || submitting) && (
+            <Callout
+              className="SignupForm__Callout"
+              title={error ? "Signup Failed" : "Submitting...."}
+              intent={error ? "danger" : "warning"}
+              icon={
+                error ? (
+                  "error"
+                ) : (
+                  <img
+                    className="bp3-icon"
+                    src={formLoaderAnimation}
+                    alt="Submitting"
+                    width="25"
+                  />
+                )
+              }
+            >
+              {error || ""}
+            </Callout>
+          )}
 
-        <Field
-          component={renderInput}
-          name="name"
-          label="Full Name : "
-          type="text"
-          placeholder="Your Full Name"
-        />
+          <Field
+            component={renderInput}
+            name="name"
+            label="Full Name : "
+            type="text"
+            placeholder="Your Full Name"
+          />
 
-        <Field
-          component={renderInput}
-          name="email"
-          label="Email : "
-          type="email"
-          placeholder="Your Valid Email"
-        />
+          <Field
+            component={renderInput}
+            name="email"
+            label="Email : "
+            type="email"
+            placeholder="Your Valid Email"
+          />
 
-        <Field
-          component={renderInput}
-          name="password"
-          label="Password : "
-          type="password"
-          placeholder="Your Password"
-        />
+          <Field
+            component={renderInput}
+            name="password"
+            label="Password : "
+            type="password"
+            placeholder="Your Password"
+          />
 
-        <Field
-          component={renderInput}
-          name="passwordConfirm"
-          label="Confirm Password : "
-          type="password"
-          placeholder="Confirm Your Password"
-        />
+          <Field
+            component={renderInput}
+            name="passwordConfirm"
+            label="Confirm Password : "
+            type="password"
+            placeholder="Confirm Your Password"
+          />
 
-        <button type="submit" disabled={pristine || submitting}>
-          Sign Up
-        </button>
-
-        {error && <div>Error : {error}</div>}
-      </form>
+          <Button
+            className="SignupForm__Button"
+            fill={true}
+            type="submit"
+            text="SignUp"
+            disabled={pristine || submitting}
+            intent="success"
+            icon="upload"
+            large={true}
+            loading={submitting}
+          />
+        </form>
+      </div>
     );
   }
 }

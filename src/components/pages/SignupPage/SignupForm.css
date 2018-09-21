@@ -1,0 +1,15 @@
+.SignupForm{
+  display:flex;
+  justify-content: center;
+}
+
+.SignupForm form{
+  max-width: 400px;
+  flex:1;
+}
+
+.SignupForm__Callout{
+  /* display: flex; */
+  margin-bottom: 15px;
+}
+
