@@ -1,8 +1,10 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
+
 import logger from "redux-logger";
+import reduxThunk from "redux-thunk";
+import reduxPromise from "redux-promise-middleware";
 
 import userReducer from "./reducers/userReducer";
-import initialState from "./reduxStoreInitialState";
 import { reducer as formReducer } from "redux-form";
 
 const rootReducer = combineReducers({
@@ -10,15 +12,24 @@ const rootReducer = combineReducers({
   form: formReducer // For handle redux-form
 });
 
-const middlewares = applyMiddleware(logger);
+const middlewares = [reduxThunk, reduxPromise()];
 
-// Just For Accessing Redux Dev Tools.
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const enhancers = [];
 
-const store = createStore(
-  rootReducer,
-  initialState,
-  composeEnhancers(middlewares)
+if (process.env.NODE_ENV === "development") {
+  middlewares.push(logger);
+
+  const reduxDevToolsExtension = window.__REDUX_DEVTOOLS_EXTENSION__;
+  if (typeof reduxDevToolsExtension === "function") {
+    enhancers.push(reduxDevToolsExtension());
+  }
+}
+
+const composedEnhancers = compose(
+  applyMiddleware(...middlewares),
+  ...enhancers
 );
+
+const store = createStore(rootReducer, {}, composedEnhancers);
 
 export default store;

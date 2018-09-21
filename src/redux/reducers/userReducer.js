@@ -1,9 +1,21 @@
 import { actionTypes } from "../actions/userActions";
 
-export default (state = {}, action = {}) => {
+const defaultState = {
+  name: "",
+  email: "",
+  token: ""
+};
+
+export default (state = defaultState, action) => {
+  const resData = action.payload ? action.payload.data : "";
+
   switch (action.type) {
-    case actionTypes.USER__UPDATE_EMAIL:
-      return { ...state, email: action.email };
+    case actionTypes.USER__CREATE_ACCOUNT + "_FULFILLED": {
+      return {
+        ...state,
+        token: resData.session
+      };
+    }
     default:
       return state;
   }
