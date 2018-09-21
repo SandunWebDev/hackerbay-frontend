@@ -1,0 +1,29 @@
+.App{
+  min-height:100vh;
+  background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+}
+
+/* Removing default color & underline in links */
+.App__Navbar a{
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+.App__Navbar__heading .bp3-icon{
+  color:rgb(24, 192, 141) !important;
+}
+
+.App__Navbar__heading .bp3-button{
+  color:rgb(24, 192, 141) !important;
+  font-size: 20px;
+  font-weight: bold !important;
+}
+
+.App__container{
+  padding: 20px;
+  padding-top:70px; /*To remove navbar space*/
+  margin: 0 auto;
+  max-width: 1000px;
+  min-height: 100vh;
+  display: flex;
+}

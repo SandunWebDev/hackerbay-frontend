@@ -5,11 +5,12 @@
 
 .SignupForm form{
   max-width: 400px;
-  flex:1;
+  padding:30px;
+  border-radius: 4px;
+  background: rgb(245, 237, 237);
 }
 
 .SignupForm__Callout{
-  /* display: flex; */
   margin-bottom: 15px;
 }
 

@@ -1,0 +1,20 @@
+.SignupPage{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.SignupPage__header{
+  text-align: center;
+}
+
+.SignupPage__loginmsg{
+  color:white;
+  margin-top:10px;
+  text-align: center;
+}
+
+.SignupPage__loginmsg a{
+  color:black;
+}
