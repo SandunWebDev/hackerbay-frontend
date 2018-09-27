@@ -6,7 +6,7 @@ import { bindActionCreators } from "redux";
 import { Field, reduxForm } from "redux-form";
 import * as userActions from "../../../redux/actions/userActions";
 
-import { required, email, length, confirmation } from "redux-form-validators";
+import { required, email, length } from "redux-form-validators";
 
 import { FormGroup, InputGroup, Button, Callout } from "@blueprintjs/core";
 
