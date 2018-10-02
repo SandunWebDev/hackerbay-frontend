@@ -6,8 +6,6 @@ import { FormGroup, InputGroup } from "@blueprintjs/core";
 
 export class CustomInputWithErrorOutput extends Component {
   render() {
-    console.log(this.props.input);
-
     const {
       input = {},
       name = "",
