@@ -1,20 +1,16 @@
 import React, { Component } from "react";
-import { Route, Link, withRouter } from "react-router-dom";
-import { connect } from "react-redux";
-
-import HomePage from "../pages/HomePage/HomePage";
-import SignupPage from "../pages/SignupPage/SignupPage";
-import LoginPage from "../pages/LoginPage/LoginPage";
-
-import { logoutAccount } from "../../redux/actions/userActions";
-
 import { Navbar, Button } from "@blueprintjs/core";
-import "./App.css";
 
-class App extends Component {
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { logoutAccount } from "../../../redux/actions/userActions";
+
+import "./Header.css";
+
+class Header extends Component {
   render() {
     const { logoutAccount } = this.props;
-    const { loggedIn, name, email } = this.props.user;
+    const { loggedIn, name } = this.props.user;
 
     // Condionally rendering right side menu according user is logged in or not.
     let rightSideMenu = "";
@@ -52,10 +48,10 @@ class App extends Component {
     }
 
     return (
-      <div className="App">
-        <Navbar className="App__Navbar bp3-dark" fixedToTop={true}>
+      <div className="Header">
+        <Navbar className="Header__Navbar bp3-dark" fixedToTop={true}>
           <Navbar.Group align={"left"}>
-            <Navbar.Heading className="App__Navbar__heading">
+            <Navbar.Heading className="Header__Navbar__heading">
               <Link to="/">
                 <Button icon="search-around" minimal={true}>
                   HACKERBAY
@@ -63,22 +59,17 @@ class App extends Component {
               </Link>
             </Navbar.Heading>
             <Navbar.Divider />
-            <Navbar.Group className="App__Navbar__leftmenu">
+            <Navbar.Group className="Header__Navbar__leftmenu">
               <Button icon="projects" text="Products" minimal={true} />
               <Button icon="dollar" text="Pricing" minimal={true} />
               <Button icon="dashboard" text="Dashboard" minimal={true} />
               <Button icon="compass" text="About Us" minimal={true} />
             </Navbar.Group>
           </Navbar.Group>
-          <Navbar.Group className="App__Navbar__rightmenu" align={"right"}>
+          <Navbar.Group className="Header__Navbar__rightmenu" align={"right"}>
             {rightSideMenu}
           </Navbar.Group>
         </Navbar>
-        <div className="App__container">
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/signup" component={SignupPage} />
-          <Route exact path="/login" component={LoginPage} />
-        </div>
       </div>
     );
   }
@@ -88,10 +79,7 @@ const mapStateToProps = state => {
   return { user: state.user };
 };
 
-// When react-router used with redux connect() sometime routes don't get updated. To solve this wrap "connect()()" with "withRouter()".
-export default withRouter(
-  connect(
-    mapStateToProps,
-    { logoutAccount }
-  )(App)
-);
+export default connect(
+  mapStateToProps,
+  { logoutAccount }
+)(Header);

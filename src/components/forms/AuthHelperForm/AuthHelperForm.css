@@ -1,16 +1,16 @@
-.SignupForm{
+.AuthHelperForm{
   display:flex;
   justify-content: center;
 }
 
-.SignupForm form{
+.AuthHelperForm form{
   max-width: 400px;
   padding:30px;
   border-radius: 4px;
   background: rgb(245, 237, 237);
 }
 
-.SignupForm__Callout{
+.AuthHelperForm__Callout{
   margin-bottom: 15px;
 }
 
