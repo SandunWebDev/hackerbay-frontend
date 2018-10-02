@@ -7,7 +7,7 @@ import { logoutAccount } from "../../../redux/actions/userActions";
 
 import "./Header.css";
 
-class Header extends Component {
+export class Header extends Component {
   render() {
     const { logoutAccount } = this.props;
     const { loggedIn, name } = this.props.user;

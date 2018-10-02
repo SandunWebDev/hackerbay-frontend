@@ -6,7 +6,7 @@ import injectReactRouter from "../../../stories/customDecorators/injectReactRout
 
 import App from "./App";
 
-storiesOf("App", module)
+storiesOf("Root/App", module)
   .addDecorator(injectReduxProvider())
   .addDecorator(injectReactRouter())
   .add("Intitial View", () => <App />);
