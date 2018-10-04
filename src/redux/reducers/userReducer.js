@@ -1,6 +1,6 @@
 import { actionTypes } from "../actions/userActions";
 
-const defaultState = {
+export const defaultState = {
   loggedIn: false,
   name: "",
   email: "",
@@ -8,7 +8,7 @@ const defaultState = {
 };
 
 export default (state = defaultState, action) => {
-  const resData = action.payload ? action.payload.data : "";
+  const resData = action.payload ? action.payload.data : {};
 
   switch (action.type) {
     case actionTypes.USER__CREATE_ACCOUNT + "_FULFILLED": {
