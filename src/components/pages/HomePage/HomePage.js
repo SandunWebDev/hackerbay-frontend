@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Icon } from "@blueprintjs/core";
 
 import "./HomePage.css";
 

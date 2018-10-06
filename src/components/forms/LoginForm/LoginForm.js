@@ -44,7 +44,7 @@ export class LoginForm extends Component {
     const reduxFormAndOtherProps = this.props;
 
     return (
-      <AuthHelperForm {...myProps} {...reduxFormAndOtherProps}>
+      <AuthHelperForm {...reduxFormAndOtherProps} {...myProps}>
         <Field
           component={CustomInputWithErrorOutput}
           name="email"
