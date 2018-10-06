@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { Redirect } from "react-router-dom";
 import { Callout, Button } from "@blueprintjs/core";
 
@@ -35,7 +36,7 @@ export default class AuthHelperForm extends Component {
     }
 
     return (
-      <div className={"AuthHelperForm " + className}>
+      <div className={"AuthHelperForm AuthHelperForm__" + className}>
         <form onSubmit={handleSubmit(onSubmitAction)}>
           {/* Displaying loaders & errors if applicable. */}
           {(error || submitting) && (
@@ -79,3 +80,29 @@ export default class AuthHelperForm extends Component {
     );
   }
 }
+
+AuthHelperForm.propTypes = {
+  // From redux-form
+  error: PropTypes.string,
+  handleSubmit: PropTypes.func.isRequired,
+  pristine: PropTypes.bool.isRequired,
+  submitting: PropTypes.bool.isRequired,
+  submitSucceeded: PropTypes.bool.isRequired,
+
+  // Custom Input Fields - Must be at least one <Field/> element.
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element)
+  ]).isRequired,
+
+  // // To customizing Form
+  formSubmitMsg: PropTypes.string.isRequired,
+  formSubmitFailedMsg: PropTypes.string.isRequired,
+  buttonTitle: PropTypes.string.isRequired,
+  sucessRedirect: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
+
+  // // Redux actions & states
+  onSubmitAction: PropTypes.func.isRequired,
+  loggedIn: PropTypes.bool.isRequired
+};

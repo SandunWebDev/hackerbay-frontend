@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -91,3 +92,13 @@ export default connect(
   mapStateToProps,
   mapActionsToProps
 )(reduxFormIntialzedLoginForm);
+
+LoginForm.propTypes = {
+  user: PropTypes.shape({
+    loggedIn: PropTypes.bool.isRequired
+  }),
+  userActions: PropTypes.shape({
+    loginAccount: PropTypes.func.isRequired
+  })
+  // reduxForm also inject numbers of props.
+};

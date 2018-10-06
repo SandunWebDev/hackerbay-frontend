@@ -23,5 +23,4 @@ class App extends Component {
   }
 }
 
-// When react-router used with redux connect() sometime routes don't get updated. To solve this wrap "connect()()" with "withRouter()".
 export default App;

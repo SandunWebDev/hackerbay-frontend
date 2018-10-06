@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { Navbar, Button } from "@blueprintjs/core";
 
 import { Link } from "react-router-dom";
@@ -83,3 +84,11 @@ export default connect(
   mapStateToProps,
   { logoutAccount }
 )(Header);
+
+Header.propTypes = {
+  logoutAccount: PropTypes.func.isRequired,
+  user: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    loggedIn: PropTypes.bool.isRequired
+  })
+};

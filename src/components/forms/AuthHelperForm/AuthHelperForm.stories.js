@@ -10,7 +10,7 @@ import CustomInputWithErrorOutput from "../customInputs/CustomInputWithErrorOutp
 
 const defaultProps = {
   // From redux-form
-  error: false,
+  error: undefined,
   handleSubmit: action("Handle Submit"),
   pristine: true,
   submitting: false,
@@ -51,7 +51,11 @@ storiesOf("Forms/AuthHelperForm", module)
     return <AuthHelperForm {...myProps} />;
   })
   .add("Submit Failed OR Error", () => {
-    const myProps = { ...defaultProps, submitting: false, error: true };
+    const myProps = {
+      ...defaultProps,
+      submitting: false,
+      error: "Some error occured."
+    };
 
     return <AuthHelperForm {...myProps} />;
   });
