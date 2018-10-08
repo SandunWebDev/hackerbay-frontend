@@ -2,31 +2,22 @@
 
 import React from "react";
 import { Provider } from "react-redux";
-import { createStore, combineReducers, applyMiddleware, compose } from "redux";
-
-import {
-  initialState,
-  reducers,
-  middlewares,
-  enhancers
-} from "../../redux/reduxStore";
+import createMockStore from "../../tests/helpers/createMockStore";
 
 export let store = {};
 
 export default function injectReduxProvider(
-  customState = {},
-  customReducers = () => {}
+  initialState,
+  useProductionReduxStoreIntialStatesValues = true,
+  useProductionReduxStoreItems = false,
+  customValues
 ) {
-  const newInitialState = { ...initialState, ...customState };
-
-  const rootReducer = combineReducers({ ...reducers, ...customReducers });
-
-  const composedEnhancers = compose(
-    applyMiddleware(...middlewares),
-    ...enhancers
+  store = createMockStore(
+    initialState,
+    useProductionReduxStoreIntialStatesValues,
+    useProductionReduxStoreItems,
+    customValues
   );
-
-  store = createStore(rootReducer, newInitialState, composedEnhancers);
 
   return story => {
     return <Provider store={store}>{story()}</Provider>;

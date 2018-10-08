@@ -31,6 +31,7 @@ export class LoginForm extends Component {
   render() {
     // Submit Action
     const { loginAccount } = this.props.userActions;
+    const { loggedIn } = this.props.user;
 
     const myProps = {
       formSubmitMsg: "Sumbitting...",
@@ -38,7 +39,7 @@ export class LoginForm extends Component {
       buttonTitle: "LogIn",
       sucessRedirect: "/",
       onSubmitAction: loginAccount,
-      loggedIn: this.props.user.loggedIn,
+      loggedIn: loggedIn,
       className: "LoginForm"
     };
 
@@ -100,5 +101,5 @@ LoginForm.propTypes = {
   userActions: PropTypes.shape({
     loginAccount: PropTypes.func.isRequired
   })
-  // reduxForm also inject numbers of props.
+  // In addition reduxForm also inject numbers of props.
 };

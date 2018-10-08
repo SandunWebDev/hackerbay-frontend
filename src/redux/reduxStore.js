@@ -1,6 +1,6 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 
-import logger from "redux-logger";
+import reduxLogger from "redux-logger";
 import reduxThunk from "redux-thunk";
 import reduxPromise from "redux-promise-middleware";
 
@@ -19,7 +19,7 @@ export const middlewares = [reduxThunk, reduxPromise()];
 export const enhancers = [];
 
 if (process.env.NODE_ENV === "development") {
-  middlewares.push(logger);
+  middlewares.push(reduxLogger);
 
   const reduxDevToolsExtension = window.__REDUX_DEVTOOLS_EXTENSION__;
   if (typeof reduxDevToolsExtension === "function") {

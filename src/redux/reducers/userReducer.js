@@ -1,13 +1,13 @@
 import { actionTypes } from "../actions/userActions";
 
-export const defaultState = {
+export const userReducerDefaultState = {
   loggedIn: false,
   name: "",
   email: "",
   token: ""
 };
 
-export default (state = defaultState, action) => {
+export default (state = userReducerDefaultState, action) => {
   const resData = action.payload ? action.payload.data : {};
 
   switch (action.type) {
@@ -32,7 +32,7 @@ export default (state = defaultState, action) => {
     case actionTypes.USER__LOGOUT_ACCOUNT: {
       return {
         ...state,
-        ...defaultState
+        ...userReducerDefaultState
       };
     }
     default:

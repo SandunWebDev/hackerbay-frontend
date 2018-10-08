@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 import { FormGroup, InputGroup } from "@blueprintjs/core";
 
-export class CustomInputWithErrorOutput extends Component {
+class CustomInputWithErrorOutput extends Component {
   render() {
     const {
       // From redux-form
@@ -64,7 +64,15 @@ CustomInputWithErrorOutput.propTypes = {
 };
 
 CustomInputWithErrorOutput.defaultProps = {
+  input: {},
+  meta: {
+    touched: false,
+    error: undefined
+  },
   name: "",
+  label: "",
+  type: "text",
   placeholder: "",
-  className: ""
+  className: "",
+  intent: "danger"
 };
