@@ -11,7 +11,7 @@ import reduxFormLevelValidator from "../helpers/reduxFormLevelValidator";
 import CustomInputWithErrorOutput from "../customInputs/CustomInputWithErrorOutput/CustomInputWithErrorOutput";
 import { required, email, length } from "redux-form-validators";
 
-const validateOptionsForFormLevelValidation = {
+export const validateOptionsForFormLevelValidation = {
   email: [
     required({ message: "Required." }),
     email({ message: "Must be a valid email." })
@@ -31,7 +31,7 @@ export class LoginForm extends Component {
   render() {
     // Submit Action
     const { loginAccount } = this.props.userActions;
-    const { loggedIn } = this.props.user;
+    const { loggedIn } = this.props;
 
     const myProps = {
       formSubmitMsg: "Sumbitting...",
@@ -71,7 +71,7 @@ export class LoginForm extends Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.user
+    loggedIn: state.user.loggedIn
   };
 };
 
@@ -84,7 +84,8 @@ const mapActionsToProps = dispatch => {
 export const reduxFormConfig = {
   form: "LoginForm",
   validate: reduxFormLevelValidator(validateOptionsForFormLevelValidation),
-  initialValues: formInitialValues
+  initialValues: formInitialValues,
+  touchOnChange: true // Whenever onChange() is executed mark those fields as touched. Very useful for testing.
 };
 
 const reduxFormIntialzedLoginForm = reduxForm(reduxFormConfig)(LoginForm);
@@ -95,9 +96,7 @@ export default connect(
 )(reduxFormIntialzedLoginForm);
 
 LoginForm.propTypes = {
-  user: PropTypes.shape({
-    loggedIn: PropTypes.bool.isRequired
-  }),
+  loggedIn: PropTypes.bool.isRequired,
   userActions: PropTypes.shape({
     loginAccount: PropTypes.func.isRequired
   })

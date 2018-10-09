@@ -11,7 +11,6 @@ class CustomInputWithErrorOutput extends Component {
       // From redux-form
       input,
       meta,
-      name,
       label,
       type,
       placeholder,
@@ -24,19 +23,19 @@ class CustomInputWithErrorOutput extends Component {
         <FormGroup
           className={
             "CustomInputWithErrorOutput CustomInputWithErrorOutput__" +
-            name +
+            input.name +
             " " +
             className
           }
           helperText={meta.touched && meta.error ? meta.error : ""}
           intent={intent}
           label={label}
-          labelFor={name}
+          labelFor={input.name}
           large={true}
         >
           <InputGroup
             {...input}
-            id={name}
+            id={input.name}
             type={type}
             placeholder={placeholder}
           />
@@ -55,7 +54,6 @@ CustomInputWithErrorOutput.propTypes = {
     touched: PropTypes.bool.isRequired,
     error: PropTypes.string
   }),
-  name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
@@ -69,7 +67,7 @@ CustomInputWithErrorOutput.defaultProps = {
     touched: false,
     error: undefined
   },
-  name: "",
+  name: "myInput",
   label: "",
   type: "text",
   placeholder: "",

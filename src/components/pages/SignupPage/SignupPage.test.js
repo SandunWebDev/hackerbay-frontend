@@ -4,7 +4,7 @@ import { shallow, mount } from "enzyme";
 import SignupPage from "./SignupPage";
 import { withReduxAndRouter } from "../../../tests/helpers/enzymeHelpers";
 
-describe("SignupPage", () => {
+describe("SignupPage Component", () => {
   it("Should get renderd with out error.", () => {
     shallow(<SignupPage />);
   });

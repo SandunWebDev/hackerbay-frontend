@@ -74,6 +74,7 @@ export default class AuthHelperForm extends Component {
             icon="upload"
             large={true}
             loading={submitting}
+            data-testid="submitButton"
           />
         </form>
       </div>

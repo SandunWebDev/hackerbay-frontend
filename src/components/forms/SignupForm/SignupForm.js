@@ -38,6 +38,7 @@ export class SignupForm extends Component {
   render() {
     // Submit Action
     const { createAccount } = this.props.userActions;
+    const { loggedIn } = this.props;
 
     const myProps = {
       formSubmitMsg: "Sumbitting...",
@@ -45,7 +46,7 @@ export class SignupForm extends Component {
       buttonTitle: "SignUp",
       sucessRedirect: "/",
       onSubmitAction: createAccount,
-      loggedIn: this.props.user.loggedIn,
+      loggedIn: loggedIn,
       className: "SignupForm"
     };
 
@@ -95,7 +96,7 @@ export class SignupForm extends Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.user
+    loggedIn: state.user.loggedIn
   };
 };
 
@@ -119,11 +120,9 @@ export default connect(
 )(reduxFormIntialzedSignupForm);
 
 SignupForm.propTypes = {
-  user: PropTypes.shape({
-    loggedIn: PropTypes.bool.isRequired
-  }),
+  loggedIn: PropTypes.bool.isRequired,
   userActions: PropTypes.shape({
-    loginAccount: PropTypes.func.isRequired
+    createAccount: PropTypes.func.isRequired
   })
   // reduxForm also inject numbers of props.
 };

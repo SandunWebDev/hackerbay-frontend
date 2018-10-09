@@ -10,8 +10,7 @@ import "./Header.css";
 
 export class Header extends Component {
   render() {
-    const { logoutAccount } = this.props;
-    const { loggedIn, name } = this.props.user;
+    const { loggedIn, name, logoutAccount } = this.props;
 
     // Condionally rendering right side menu according user is logged in or not.
     let rightSideMenu = "";
@@ -19,12 +18,17 @@ export class Header extends Component {
       rightSideMenu = (
         <div>
           <Link to="/myaccount">
-            <Button icon="user" minimal={true}>
+            <Button icon="user" minimal={true} data-testid="myAccountButton">
               {name.toUpperCase()}
             </Button>
           </Link>
           <Link to="/">
-            <Button icon="log-out" minimal={true} onClick={logoutAccount}>
+            <Button
+              icon="log-out"
+              minimal={true}
+              onClick={logoutAccount}
+              data-testid="logoutButton"
+            >
               LogOut
             </Button>
           </Link>
@@ -53,7 +57,7 @@ export class Header extends Component {
         <Navbar className="Header__Navbar bp3-dark" fixedToTop={true}>
           <Navbar.Group align={"left"}>
             <Navbar.Heading className="Header__Navbar__heading">
-              <Link to="/">
+              <Link to="/" data-testid="hackerbayMainLogoLink">
                 <Button icon="search-around" minimal={true}>
                   HACKERBAY
                 </Button>
@@ -67,7 +71,11 @@ export class Header extends Component {
               <Button icon="compass" text="About Us" minimal={true} />
             </Navbar.Group>
           </Navbar.Group>
-          <Navbar.Group className="Header__Navbar__rightmenu" align={"right"}>
+          <Navbar.Group
+            className="Header__Navbar__rightmenu"
+            align={"right"}
+            data-testid="rightSideMenu"
+          >
             {rightSideMenu}
           </Navbar.Group>
         </Navbar>
@@ -77,7 +85,10 @@ export class Header extends Component {
 }
 
 const mapStateToProps = state => {
-  return { user: state.user };
+  return {
+    name: state.user.name,
+    loggedIn: state.user.loggedIn
+  };
 };
 
 export default connect(
@@ -87,8 +98,11 @@ export default connect(
 
 Header.propTypes = {
   logoutAccount: PropTypes.func.isRequired,
-  user: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    loggedIn: PropTypes.bool.isRequired
-  })
+  name: PropTypes.string.isRequired,
+  loggedIn: PropTypes.bool.isRequired
+};
+
+Header.defaultProps = {
+  name: "",
+  loggedIn: false
 };
