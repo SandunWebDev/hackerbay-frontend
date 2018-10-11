@@ -9,3 +9,5 @@ install:
   - npm install
 script:
   - npm run test:CI
+after_success: 
+  - npm run report-coverage

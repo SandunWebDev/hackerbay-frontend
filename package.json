@@ -26,7 +26,7 @@
     "test:storyshots": "react-scripts test --env=jsdom Storyshots.test.js",
     "test:imageshotsLocal": "react-scripts test --env=jsdom ImageshotsForLocal.test.js",
     "test:imageshotsCI": "npm run build-storybook && react-scripts test --env=jsdom ImageshotsForCI.test.js",
-    "test:CI": "npm run test:watch -- --coverage",
+    "test:CI": "npm run test:watch -- --coverage && codecov",
     "eject": "react-scripts eject",
     "lint": "eslint ./",
     "storybook": "start-storybook -p 9009 -s public",
