@@ -21,8 +21,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "test:watch": "react-scripts test --env=jsdom --testPathIgnorePatterns Imageshots Storyshots",
+    "test": "npm run storybook & react-scripts test --env=jsdom --testPathIgnorePatterns Imageshots" ,
+    "test:unit&inte": "react-scripts test --env=jsdom --testPathIgnorePatterns Imageshots Storyshots",
     "test:storyshots": "react-scripts test --env=jsdom Storyshots.test.js",
     "test:imageshots:local": "react-scripts test --env=jsdom ImageshotsForLocal.test.js",
     "test:imageshots:ci": "npm run build-storybook && react-scripts test --env=jsdom ImageshotsForCI.test.js",
