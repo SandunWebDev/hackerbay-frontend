@@ -25,5 +25,6 @@ initStoryshots({
   test: imageSnapshot({
     storybookUrl: `file://${pathToStorybookStatic}`,
     imageMatchOptions
-  })
+  }),
+  storyNameRegex: /^((?!\[SKIP-IMAGESHOTS\]).)*$/ // Any story name that has "[SKIP-IMAGESHOTS]" get excluded from running in this test suite.
 });

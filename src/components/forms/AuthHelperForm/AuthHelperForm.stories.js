@@ -45,7 +45,7 @@ storiesOf("Forms/AuthHelperForm", module)
   .add("Initial View", () => {
     return <AuthHelperForm {...defaultProps} />;
   })
-  .add("When Sumbitting", () => {
+  .add("When Sumbitting [SKIP-IMAGESHOTS]", () => {
     const myProps = { ...defaultProps, submitting: true };
 
     return <AuthHelperForm {...myProps} />;

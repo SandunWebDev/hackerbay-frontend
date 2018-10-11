@@ -24,9 +24,9 @@
     "test": "react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom --testPathIgnorePatterns Imageshots Storyshots",
     "test:storyshots": "react-scripts test --env=jsdom Storyshots.test.js",
-    "test:imageshotsLocal": "react-scripts test --env=jsdom ImageshotsForLocal.test.js",
-    "test:imageshotsCI": "npm run build-storybook && react-scripts test --env=jsdom ImageshotsForCI.test.js",
-    "test:CI": "npm run build-storybook && react-scripts test --env=jsdom --coverage",
+    "test:imageshots:local": "react-scripts test --env=jsdom ImageshotsForLocal.test.js",
+    "test:imageshots:ci": "npm run build-storybook && react-scripts test --env=jsdom ImageshotsForCI.test.js",
+    "test:ci": "npm run build-storybook && react-scripts test --env=jsdom --testPathIgnorePatterns ImageshotsForLocal --coverage && codecov",
     "eject": "react-scripts eject",
     "lint": "eslint ./",
     "storybook": "start-storybook -p 9009 -s public",
@@ -46,6 +46,7 @@
     "@storybook/react": "^3.4.11",
     "babel-core": "^6.26.3",
     "babel-runtime": "^6.26.0",
+    "concurrently": "^4.0.1",
     "deep-freeze": "0.0.1",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
@@ -66,7 +67,8 @@
       "src/**/*.{js,jsx}",
       "!src/**/*.stories.{js,jsx}"
     ]
-  },"coverageThreshold": {
+  },
+  "coverageThreshold": {
     "global": {
       "branches": 80,
       "functions": 80,
