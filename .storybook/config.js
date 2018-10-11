@@ -9,7 +9,8 @@ import JSXAddon from 'storybook-addon-jsx';
 import "../src/index.css";
 
 //  *********** Configuring global addons *********** .
-addDecorator((story, context) => withInfo("Common Info")(story)(context)); // Display useful info about component.
+// Display useful info about component. Currently in conflict with storyshots. So currently disabled.
+// addDecorator((story, context) => withInfo("Common Info")(story)(context)); 
 
 // Display console logs right in storybook. We could have use "addDecorator((storyFn, context) => withConsole({})(storyFn)(context));" but it mess us jest snapshots.
 setConsoleOptions({});
