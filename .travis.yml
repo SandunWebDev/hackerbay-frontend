@@ -8,4 +8,4 @@ install:
   - npm install -g codecov
   - npm install
 script:
-  - npm test:CI
+  - npm run test:CI
