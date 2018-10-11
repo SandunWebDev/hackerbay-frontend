@@ -21,7 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom --testPathIgnorePatterns Imageshots" ,
+    "test": "react-scripts test --env=jsdom --testPathIgnorePatterns Imageshots",
     "test:unitandintegration": "react-scripts test --env=jsdom --testPathIgnorePatterns Imageshots Storyshots",
     "test:storyshots": "concurrently \"npm run storybook\" \"sleep 1 && react-scripts test --env=jsdom Storyshots.test.js\"",
     "test:imageshots:local": "concurrently \"npm run storybook\" \"sleep 1 && react-scripts test --env=jsdom ImageshotsForLocal.test.js\"",
@@ -30,7 +30,9 @@
     "eject": "react-scripts eject",
     "lint": "eslint ./",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "cypress:open" : "sudo cypress open"
+
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.11",
@@ -47,6 +49,7 @@
     "babel-core": "^6.26.3",
     "babel-runtime": "^6.26.0",
     "concurrently": "^4.0.1",
+    "cypress": "^3.1.0",
     "deep-freeze": "0.0.1",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
