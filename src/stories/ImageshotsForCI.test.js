@@ -23,7 +23,7 @@ const imageMatchOptions = ({ context: { kind, story }, url }) => {
 initStoryshots({
   suite: "Imageshots",
   test: imageSnapshot({
-    storybookUrl: `file://${pathToStorybookStatic}`,
+    storybookUrl: `file://${pathToStorybookStatic}`, // Path to static build.
     imageMatchOptions
   }),
   storyNameRegex: /^((?!\[SKIP-IMAGESHOTS\]).)*$/ // Any story name that has "[SKIP-IMAGESHOTS]" get excluded from running in this test suite.
