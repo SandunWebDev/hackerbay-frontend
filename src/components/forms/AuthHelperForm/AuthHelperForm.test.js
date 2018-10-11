@@ -10,7 +10,7 @@ import AuthHelperForm from "./AuthHelperForm";
 const defaultProps = {
   // From redux-form
   error: "",
-  handleSubmit: jest.fn(),
+  handleSubmit: jest.fn().mockReturnValue(() => {}),
   pristine: true,
   submitting: false,
   submitSucceeded: false,
@@ -114,23 +114,6 @@ describe("AuthHelperForm Component", () => {
         title: defaultProps.formSubmitMsg,
         intent: "warning"
       })
-    );
-  });
-
-  it("Should call onSubmitAction fn when form is submitted(In other words onSubmit() is called).", () => {
-    const wrappedAuthHelperForm = mount(
-      <AuthHelperForm {...defaultProps} children={[]} />
-    );
-
-    const submitButton = wrappedAuthHelperForm.find(
-      "button[data-testid='submitButton']"
-    );
-
-    submitButton.simulate("submit");
-
-    expect(defaultProps.handleSubmit).toHaveBeenCalledTimes(1);
-    expect(defaultProps.handleSubmit).toHaveBeenCalledWith(
-      defaultProps.onSubmitAction
     );
   });
 });

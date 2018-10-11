@@ -23,10 +23,10 @@ const allProductionDefaultStates = { user: userReducerDefaultState };
 */
 
 export default function createMockStore(
-  initialState,
+  initialState = {},
   useProductionReduxStoreIntialStatesValues = false,
   useProductionReduxStoreItems = false,
-  customValues
+  customValues = {}
 ) {
   if (useProductionReduxStoreItems === false) {
     const mockStore = configureMockStore(productionReduxStore.middlewares);

@@ -21,7 +21,7 @@ storiesOf("Custom Inputs/CustomInputWithErrorOutput", module)
   })
   .add("With Label", () => {
     const myProps = {
-      input: { value: "John" },
+      input: { value: "John", onChange: () => {} },
       label: "My Name : "
     };
 
@@ -29,7 +29,7 @@ storiesOf("Custom Inputs/CustomInputWithErrorOutput", module)
   })
   .add("With Error Text", () => {
     const myProps = {
-      input: { value: "123456" },
+      input: { value: "123456", onChange: () => {} },
       meta: {
         touched: true,
         error: "Must be a string."

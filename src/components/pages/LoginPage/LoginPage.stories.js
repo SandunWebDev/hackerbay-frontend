@@ -3,12 +3,10 @@ import { storiesOf, addDecorator } from "@storybook/react";
 
 import LoginPage from "./LoginPage";
 
-import injectReduxProvider from "../../../stories/customDecorators/injectReduxProvider";
-import injectReactRouter from "../../../stories/customDecorators/injectReactRouter";
+import { injectReduxAndRouter } from "../../../stories/customDecorators/injectContexts";
 
 storiesOf("Pages/LoginPage", module)
-  .addDecorator(injectReduxProvider())
-  .addDecorator(injectReactRouter())
+  .addDecorator(injectReduxAndRouter())
   .addWithJSX("Intitial View", () => {
     // Just making background to blue since font color is white.
     const styles = {
