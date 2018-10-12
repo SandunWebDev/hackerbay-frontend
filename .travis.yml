@@ -3,9 +3,10 @@ node_js:
   - "stable"
 cache:
   directories:
-    - "node_modules"
+    - ~/.npm
+    - ~/.cache
 install:
   - npm install -g codecov
-  - npm install
+  - npm ci
 script:
   - npm run test:ci
