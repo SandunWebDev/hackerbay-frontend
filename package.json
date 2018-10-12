@@ -27,7 +27,7 @@
     "test:imageshots:local": "concurrently \"npm run storybook\" \"sleep 1 && react-scripts test --env=jsdom ImageshotsForLocal.test.js\"",
     "test:imageshots:ci": "npm run build-storybook && react-scripts test --env=jsdom ImageshotsForCI.test.js",
     "test:cypress:local": "npm start & wait-on http://localhost:3000 && cypress open",
-    "test:cypress:ci": "npm start & wait-on http://localhost:3000 && cypress run",
+    "test:cypress:ci": "npm start & wait-on http://localhost:3000 && cypress run --record",
     "test:ci": "npm run test -- --coverage && codecov && npm run test:cypress:ci",
     "eject": "react-scripts eject",
     "lint": "eslint ./",
