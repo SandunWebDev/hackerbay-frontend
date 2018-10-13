@@ -24,3 +24,7 @@ const configs = {
 };
 
 export default configs[NODE_ENV];
+
+export const configsOf = enviroment => {
+  return configs[enviroment];
+};

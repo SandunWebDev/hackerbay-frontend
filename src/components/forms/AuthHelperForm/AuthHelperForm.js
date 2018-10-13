@@ -56,6 +56,7 @@ export default class AuthHelperForm extends Component {
                   />
                 )
               }
+              data-testid="authFormCallout"
             >
               {error || ""}
             </Callout>
