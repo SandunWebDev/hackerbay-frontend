@@ -392,6 +392,7 @@ exports[`Storyshots Forms/AuthHelperForm Submit Failed OR Error 1`] = `
   >
     <div
       className="bp3-callout bp3-intent-danger bp3-callout-icon AuthHelperForm__Callout"
+      data-testid="authFormCallout"
     >
       <span
         className="bp3-icon bp3-icon-error"
@@ -512,6 +513,7 @@ exports[`Storyshots Forms/AuthHelperForm When Sumbitting [SKIP-IMAGESHOTS] 1`] =
   >
     <div
       className="bp3-callout bp3-intent-warning bp3-callout-icon AuthHelperForm__Callout"
+      data-testid="authFormCallout"
     >
       <img
         alt="Submitting"
