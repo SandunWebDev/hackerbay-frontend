@@ -5,6 +5,7 @@
   "dependencies": {
     "@blueprintjs/core": "^3.6.1",
     "axios": "^0.18.0",
+    "axios-mock-adapter": "^1.15.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-redux": "^5.0.7",
@@ -20,13 +21,65 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom --testPathIgnorePatterns Imageshots",
+    "test:unitandintegration": "react-scripts test --env=jsdom --testPathIgnorePatterns Imageshots Storyshots",
+    "test:storyshots": "concurrently \"npm run storybook\" \"sleep 1 && react-scripts test --env=jsdom Storyshots.test.js\"",
+    "test:imageshots:local": "concurrently \"npm run storybook\" \"sleep 1 && react-scripts test --env=jsdom ImageshotsForLocal.test.js\"",
+    "test:imageshots:ci": "npm run build-storybook && react-scripts test --env=jsdom ImageshotsForCI.test.js",
+    "test:cypress:local": "concurrently \"npm start\" \"wait-on http://localhost:3000 && cypress open\"",
+    "test:cypress:ci": "npm start & wait-on http://localhost:3000 && cypress run --record",
+    "test:ci": "npm run test -- --coverage  && codecov && npm run test:cypress:ci",
     "eject": "react-scripts eject",
-    "lint": "eslint ./"
+    "lint": "eslint ./",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.4.11",
+    "@storybook/addon-backgrounds": "^3.4.11",
+    "@storybook/addon-console": "^1.0.4",
+    "@storybook/addon-info": "^3.4.11",
+    "@storybook/addon-knobs": "^3.4.11",
+    "@storybook/addon-links": "^3.4.11",
+    "@storybook/addon-notes": "^3.4.11",
+    "@storybook/addon-storyshots": "^3.4.11",
+    "@storybook/addon-viewport": "^3.4.11",
+    "@storybook/addons": "^3.4.11",
+    "@storybook/react": "^3.4.11",
+    "babel-core": "^6.26.3",
+    "babel-runtime": "^6.26.0",
+    "concurrently": "^4.0.1",
+    "cypress": "^3.1.0",
+    "deep-freeze": "0.0.1",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
     "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-chai-friendly": "^0.4.1",
+    "eslint-plugin-cypress": "^2.0.1",
     "eslint-plugin-prettier": "^2.6.2",
-    "prettier": "^1.14.2"
+    "jest-config": "^23.6.0",
+    "jest-dom": "^2.0.2",
+    "prettier": "^1.14.2",
+    "react-test-renderer": "^16.5.2",
+    "react-testing-library": "^5.1.0",
+    "redux-form-storybook": "^1.0.2",
+    "redux-mock-store": "^1.5.3",
+    "storybook-addon-jsx": "^5.4.0",
+    "storybook-host": "^5.0.1",
+    "wait-on": "^3.1.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/**/*.stories.{js,jsx}"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 50,
+        "functions": 50,
+        "lines": 50,
+        "statements": -100
+      }
+    }
   }
 }

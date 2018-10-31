@@ -1,0 +1,12 @@
+language: node_js
+node_js: 
+  - "stable"
+cache:
+  directories:
+    - ~/.npm
+    - ~/.cache
+install:
+  - npm install -g codecov
+  - npm ci
+script:
+  - npm run test:ci

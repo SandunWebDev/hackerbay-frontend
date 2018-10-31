@@ -1,20 +1,16 @@
 import React, { Component } from "react";
-import { Route, Link, withRouter } from "react-router-dom";
-import { connect } from "react-redux";
-
-import HomePage from "../pages/HomePage/HomePage";
-import SignupPage from "../pages/SignupPage/SignupPage";
-import LoginPage from "../pages/LoginPage/LoginPage";
-
-import { logoutAccount } from "../../redux/actions/userActions";
-
+import PropTypes from "prop-types";
 import { Navbar, Button } from "@blueprintjs/core";
-import "./App.css";
 
-class App extends Component {
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { logoutAccount } from "../../../redux/actions/userActions";
+
+import "./Header.css";
+
+export class Header extends Component {
   render() {
-    const { logoutAccount } = this.props;
-    const { loggedIn, name, email } = this.props.user;
+    const { loggedIn, name, logoutAccount } = this.props;
 
     // Condionally rendering right side menu according user is logged in or not.
     let rightSideMenu = "";
@@ -22,12 +18,17 @@ class App extends Component {
       rightSideMenu = (
         <div>
           <Link to="/myaccount">
-            <Button icon="user" minimal={true}>
+            <Button icon="user" minimal={true} data-testid="myAccountButton">
               {name.toUpperCase()}
             </Button>
           </Link>
           <Link to="/">
-            <Button icon="log-out" minimal={true} onClick={logoutAccount}>
+            <Button
+              icon="log-out"
+              minimal={true}
+              onClick={logoutAccount}
+              data-testid="logoutButton"
+            >
               LogOut
             </Button>
           </Link>
@@ -52,46 +53,56 @@ class App extends Component {
     }
 
     return (
-      <div className="App">
-        <Navbar className="App__Navbar bp3-dark" fixedToTop={true}>
+      <div className="Header">
+        <Navbar className="Header__Navbar bp3-dark" fixedToTop={true}>
           <Navbar.Group align={"left"}>
-            <Navbar.Heading className="App__Navbar__heading">
-              <Link to="/">
+            <Navbar.Heading className="Header__Navbar__heading">
+              <Link to="/" data-testid="hackerbayMainLogoLink">
                 <Button icon="search-around" minimal={true}>
                   HACKERBAY
                 </Button>
               </Link>
             </Navbar.Heading>
             <Navbar.Divider />
-            <Navbar.Group className="App__Navbar__leftmenu">
+            <Navbar.Group className="Header__Navbar__leftmenu">
               <Button icon="projects" text="Products" minimal={true} />
               <Button icon="dollar" text="Pricing" minimal={true} />
               <Button icon="dashboard" text="Dashboard" minimal={true} />
               <Button icon="compass" text="About Us" minimal={true} />
             </Navbar.Group>
           </Navbar.Group>
-          <Navbar.Group className="App__Navbar__rightmenu" align={"right"}>
+          <Navbar.Group
+            className="Header__Navbar__rightmenu"
+            align={"right"}
+            data-testid="rightSideMenu"
+          >
             {rightSideMenu}
           </Navbar.Group>
         </Navbar>
-        <div className="App__container">
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/signup" component={SignupPage} />
-          <Route exact path="/login" component={LoginPage} />
-        </div>
       </div>
     );
   }
 }
 
 const mapStateToProps = state => {
-  return { user: state.user };
+  return {
+    name: state.user.name,
+    loggedIn: state.user.loggedIn
+  };
 };
 
-// When react-router used with redux connect() sometime routes don't get updated. To solve this wrap "connect()()" with "withRouter()".
-export default withRouter(
-  connect(
-    mapStateToProps,
-    { logoutAccount }
-  )(App)
-);
+export default connect(
+  mapStateToProps,
+  { logoutAccount }
+)(Header);
+
+Header.propTypes = {
+  logoutAccount: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
+  loggedIn: PropTypes.bool.isRequired
+};
+
+Header.defaultProps = {
+  name: "",
+  loggedIn: false
+};

@@ -1,14 +1,14 @@
 import { actionTypes } from "../actions/userActions";
 
-const defaultState = {
+export const userReducerDefaultState = {
   loggedIn: false,
   name: "",
   email: "",
   token: ""
 };
 
-export default (state = defaultState, action) => {
-  const resData = action.payload ? action.payload.data : "";
+export default (state = userReducerDefaultState, action) => {
+  const resData = action.payload ? action.payload.data : {};
 
   switch (action.type) {
     case actionTypes.USER__CREATE_ACCOUNT + "_FULFILLED": {
@@ -32,7 +32,7 @@ export default (state = defaultState, action) => {
     case actionTypes.USER__LOGOUT_ACCOUNT: {
       return {
         ...state,
-        ...defaultState
+        ...userReducerDefaultState
       };
     }
     default:
