@@ -1,0 +1,16 @@
+.SignupForm{
+  display:flex;
+  justify-content: center;
+}
+
+.SignupForm form{
+  max-width: 400px;
+  padding:30px;
+  border-radius: 4px;
+  background: rgb(245, 237, 237);
+}
+
+.SignupForm__Callout{
+  margin-bottom: 15px;
+}
+

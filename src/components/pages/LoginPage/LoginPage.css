@@ -1,0 +1,20 @@
+.LoginPage{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.LoginPage__header{
+  text-align: center;
+}
+
+.LoginPage__alreadyHaveMsg{
+  color:white;
+  margin-top:10px;
+  text-align: center;
+}
+
+.LoginPage__alreadyHaveMsg a{
+  color:black;
+}

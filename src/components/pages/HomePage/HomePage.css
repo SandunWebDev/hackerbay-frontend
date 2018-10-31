@@ -1,0 +1,16 @@
+.HomePage{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  flex:1;
+}
+
+.HomePage h1, .HomePage h2{
+  color:white;
+  text-align: center;
+}
+
+.HomePage h1{
+  font-size: 3rem;
+}
