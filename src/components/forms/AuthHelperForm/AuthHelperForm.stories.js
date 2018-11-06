@@ -32,7 +32,7 @@ const defaultProps = {
   formSubmitMsg: "Submitting",
   formSubmitFailedMsg: "Submit Failed",
   buttonTitle: "Submbit",
-  sucessRedirect: "/",
+  successRedirect: "/dashboard",
   className: "mySumbit",
 
   // Redux actions & states

@@ -996,6 +996,14 @@ exports[`Storyshots Pages/DashboardPage Intitial View 1`] = `
   <div>
     DASHBOARD PAGE
   </div>
+  <div
+    className="WebsiteList"
+  >
+    <div>
+      WebSite List
+    </div>
+    <ul />
+  </div>
 </div>
 `;
 
@@ -1431,6 +1439,17 @@ exports[`Storyshots Pages/SignupPage Intitial View 1`] = `
       </p>
     </div>
   </div>
+</div>
+`;
+
+exports[`Storyshots Pages/WebsiteList Intitial View 1`] = `
+<div
+  className="WebsiteList"
+>
+  <div>
+    WebSite List
+  </div>
+  <ul />
 </div>
 `;
 

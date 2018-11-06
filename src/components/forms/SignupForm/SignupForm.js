@@ -38,13 +38,13 @@ export class SignupForm extends Component {
   render() {
     // Submit Action
     const { createAccount } = this.props.userActions;
-    const { loggedIn } = this.props;
+    const { loggedIn, successRedirect } = this.props;
 
     const myProps = {
       formSubmitMsg: "Sumbitting...",
       formSubmitFailedMsg: "Signup Failed.",
       buttonTitle: "SignUp",
-      sucessRedirect: "/",
+      successRedirect: successRedirect,
       onSubmitAction: createAccount,
       loggedIn: loggedIn,
       className: "SignupForm"
@@ -120,9 +120,14 @@ export default connect(
 )(reduxFormIntialzedSignupForm);
 
 SignupForm.propTypes = {
+  successRedirect: PropTypes.string.isRequired,
   loggedIn: PropTypes.bool.isRequired,
   userActions: PropTypes.shape({
     createAccount: PropTypes.func.isRequired
   })
   // reduxForm also inject numbers of props.
+};
+
+SignupForm.defaultProps = {
+  successRedirect: "/"
 };

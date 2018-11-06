@@ -13,7 +13,7 @@ export default class LoginPage extends Component {
             Let's Login To Your Hackerbay Account
           </h1>
 
-          <LoginForm />
+          <LoginForm successRedirect="/dashboard" />
 
           <p className="LoginPage__alreadyHaveMsg">
             Don't have an account? <Link to="/signup">SignUp</Link>

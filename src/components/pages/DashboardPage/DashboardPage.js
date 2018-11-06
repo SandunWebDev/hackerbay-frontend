@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+
+import WebsiteList from "./WebsiteList/WebsiteList";
 
 import "./DashboardPage.css";
 
@@ -8,6 +9,7 @@ export default class DashboardPage extends Component {
     return (
       <div className="DashboardPage">
         <div>DASHBOARD PAGE</div>
+        <WebsiteList />
       </div>
     );
   }

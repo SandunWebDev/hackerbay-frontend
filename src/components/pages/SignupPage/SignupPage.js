@@ -13,7 +13,7 @@ export default class SignupPage extends Component {
             Let's Create Your Hackerbay Account
           </h1>
 
-          <SignupForm />
+          <SignupForm successRedirect="/dashboard" />
 
           <p className="SignupPage__alreadyHaveMsg">
             Already have an account? <Link to="/login">LogIn</Link>

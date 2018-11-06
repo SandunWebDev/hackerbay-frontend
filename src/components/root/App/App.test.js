@@ -58,7 +58,7 @@ describe("App Component", () => {
         <App />
       </MemoryRouter>
     );
-    const wrappedLoginPage = mount(withReduxProvider(pathSetted));
+    const wrappedLoginPage = mount(withReduxAndRouter(pathSetted));
 
     expect(wrappedLoginPage.find("DashboardPage").exists()).toEqual(true);
   });
