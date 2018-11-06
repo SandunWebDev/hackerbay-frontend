@@ -17,6 +17,9 @@ export class Header extends Component {
     if (loggedIn) {
       rightSideMenu = (
         <div>
+          <Link to="/dashboard">
+            <Button icon="dashboard" text="Dashboard" minimal={true} />
+          </Link>
           <Link to="/myaccount">
             <Button icon="user" minimal={true} data-testid="myAccountButton">
               {name.toUpperCase()}
@@ -67,7 +70,6 @@ export class Header extends Component {
             <Navbar.Group className="Header__Navbar__leftmenu">
               <Button icon="projects" text="Products" minimal={true} />
               <Button icon="dollar" text="Pricing" minimal={true} />
-              <Button icon="dashboard" text="Dashboard" minimal={true} />
               <Button icon="compass" text="About Us" minimal={true} />
             </Navbar.Group>
           </Navbar.Group>

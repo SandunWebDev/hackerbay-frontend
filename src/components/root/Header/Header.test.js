@@ -39,7 +39,7 @@ describe("Header Component", () => {
   });
 
   describe("When loggedIn prop is false", () => {
-    it("Should render LOGIN and SIGNUP buttons which links to respective pages.", () => {
+    it("Should render LOGIN and SIGNUP buttons which links to respective pages & not render links to DASHBOARD and MYACCOUNT.", () => {
       const wrappedHeaderUnconnected = mount(
         withReactRouter(
           <HeaderUnconnected
@@ -56,11 +56,17 @@ describe("Header Component", () => {
 
       expect(rightSideMenu.find("Link[to='/signup']").exists()).toEqual(true);
       expect(rightSideMenu.find("Link[to='/login']").exists()).toEqual(true);
+      expect(rightSideMenu.find("Link[to='/myaccount']").exists()).toEqual(
+        false
+      );
+      expect(rightSideMenu.find("Link[to='/dashboard']").exists()).toEqual(
+        false
+      );
     });
   });
 
   describe("When loggedIn prop is true", () => {
-    it("Should render MYACCOUNT and LOGOUT buttons which links to respective pages.", () => {
+    it("Should render DASHBOARD, MYACCOUNT, LOGOUT buttons which links to respective pages.", () => {
       const wrappedHeaderUnconnected = mount(
         withReactRouter(
           <HeaderUnconnected
@@ -75,6 +81,9 @@ describe("Header Component", () => {
         "[data-testid='rightSideMenu']"
       );
 
+      expect(rightSideMenu.find("Link[to='/dashboard']").exists()).toEqual(
+        true
+      );
       expect(rightSideMenu.find("Link[to='/myaccount']").exists()).toEqual(
         true
       );

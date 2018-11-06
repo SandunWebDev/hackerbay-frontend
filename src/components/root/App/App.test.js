@@ -51,4 +51,15 @@ describe("App Component", () => {
 
     expect(wrappedLoginPage.find("SignupPage").exists()).toEqual(true);
   });
+
+  it("Should render <DashboardPage> component when url is '/dashboard'", () => {
+    const pathSetted = (
+      <MemoryRouter initialEntries={["/dashboard"]}>
+        <App />
+      </MemoryRouter>
+    );
+    const wrappedLoginPage = mount(withReduxProvider(pathSetted));
+
+    expect(wrappedLoginPage.find("DashboardPage").exists()).toEqual(true);
+  });
 });
