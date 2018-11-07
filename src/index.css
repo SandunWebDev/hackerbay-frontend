@@ -15,3 +15,8 @@ html {
   box-sizing: inherit;
 }
 
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 12px;
+  }
+}

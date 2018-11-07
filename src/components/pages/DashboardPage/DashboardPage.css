@@ -1,4 +1,19 @@
 .DashboardPage {
+  width: 100%;
+}
+
+.DashboardPage__heading {
   display: flex;
-  flex: 1;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 2rem;
+  color: rgb(238, 237, 237);
+  margin-bottom: 10px;
+}
+
+.DashboardPage__heading svg {
+  width: 1.7rem;
+  height: 1.7rem;
+  margin-right: 5px;
 }

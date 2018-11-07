@@ -15,7 +15,11 @@ export const actions = {
 
 function loadAllWebsiteLinks(token = "") {
   return async dispatch => {
-    const websiteListPromise = axiosBase.get("website/list?token=" + token);
+    // const websiteListPromise = axiosBase.get("website/list?token=" + token);
+    const websiteListPromise = axiosBase.get(
+      "website/list?token=" +
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImUxMGMwM2MxLWRjYTEtNDRjNC05YTIxLTVhMGRkOWEwMjZmOCIsImlhdCI6MTU0MTU1MjgyOCwiZXhwIjoxNTQxNTU2NDI4fQ.V6da-22OSfmuee9oEy_9cjXo6t7WeNANQ8UcNnA1Mws"
+    );
 
     return dispatch({
       type: actionTypes.websiteList.DASHBOARD__WEBSITELIST__LOAD_ALL,

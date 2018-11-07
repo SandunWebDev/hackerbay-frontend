@@ -3,8 +3,10 @@ import PropTypes from "prop-types";
 
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-
 import { actions as dashboardActions } from "../../../../redux/actions/dashboardActions";
+
+import { Spinner, Icon } from "@blueprintjs/core";
+import moment from "moment";
 
 import "./WebsiteList.css";
 
@@ -17,30 +19,67 @@ class WebsiteList extends Component {
   }
 
   render() {
-    const { fullList } = this.props;
+    let { fullList, isFetching } = this.props;
+
+    if (isFetching) {
+      return (
+        <div className="WebsiteList">
+          <Spinner intent={"success"} size={100} />
+        </div>
+      );
+    }
 
     return (
       <div className="WebsiteList">
-        <div>WebSite List</div>
-        <ul>
-          {fullList.map((website, id) => {
-            const {
-              websiteName,
-              url,
-              onlineStatus,
-              createdAt,
-              updatedAt
-            } = website;
+        {fullList.map((website, id) => {
+          const { websiteName, url, onlineStatus, updatedAt } = website;
 
-            return [
-              <li>{websiteName}</li>,
-              <li>{url}</li>,
-              <li>{onlineStatus}</li>,
-              <li>{createdAt}</li>,
-              <li>{updatedAt}</li>
-            ];
-          })}
-        </ul>
+          const modifiedUpdatedAt = moment(updatedAt).fromNow();
+
+          return (
+            <div className="WebsiteList__item" key={id}>
+              <div className="WebsiteList__item__logo ">
+                {/* Getting the first letter of url. */}
+                <span className="WebsiteList__item__logo--text">
+                  {url.split("://")[1][0]}
+                </span>
+              </div>
+              <div className="WebsiteList__item__mainInfo">
+                <div className="WebsiteList__item__mainInfo__websiteName">
+                  {websiteName}
+                </div>
+                <div className="WebsiteList__item__mainInfo__url">{url}</div>
+              </div>
+              <div className="WebsiteList__item__status">
+                <div className="WebsiteList__item__status__icon">
+                  <Icon
+                    icon={onlineStatus ? "tick-circle" : "warning-sign"}
+                    color={
+                      onlineStatus ? "rgb(102, 190, 90)" : "rgb(255, 187, 90)"
+                    }
+                  />
+                </div>
+                <div className="WebsiteList__item__status__updatedAt">
+                  Last Checked @ {modifiedUpdatedAt}
+                </div>
+              </div>
+              <div className="WebsiteList__item__toolbar">
+                <div title="Update Now">
+                  <Icon icon="automatic-updates" iconSize="13" />
+                </div>
+                <div title="Edit">
+                  <Icon icon="edit" iconSize="13" />
+                </div>
+                <div title="Delete">
+                  <Icon icon="trash" iconSize="13" />
+                </div>
+                <div title="Notifications">
+                  <Icon icon="notifications-updated" iconSize="13" />
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </div>
     );
   }
