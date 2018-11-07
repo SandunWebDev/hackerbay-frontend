@@ -87,7 +87,9 @@ describe("Header Component", () => {
       expect(rightSideMenu.find("Link[to='/myaccount']").exists()).toEqual(
         true
       );
-      expect(rightSideMenu.find("Link[to='/']").exists()).toEqual(true);
+      expect(rightSideMenu.find("Link[to='/dashboard']").exists()).toEqual(
+        true
+      );
     });
 
     it("Should render uppercase of provided name in button which link to '/myaccount'", () => {

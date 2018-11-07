@@ -1,0 +1,18 @@
+.AddWebsiteForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.AddWebsiteForm form {
+  flex: 1;
+}
+
+.AddWebsiteForm__successMessage {
+  text-align: center;
+}
+.AddWebsiteForm__successMessage svg {
+  width: 3rem;
+  height: 3rem;
+  color: green;
+}

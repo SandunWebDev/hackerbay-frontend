@@ -25,7 +25,7 @@ export class Header extends Component {
               {name.toUpperCase()}
             </Button>
           </Link>
-          <Link to="/">
+          <Link to="/login">
             <Button
               icon="log-out"
               minimal={true}

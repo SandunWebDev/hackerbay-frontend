@@ -1,0 +1,33 @@
+.AddWebsite {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.AddWebsite--open {
+  padding: 15px;
+  border-radius: 5px;
+  background: rgba(233, 229, 229, 0.815);
+  position: relative;
+  margin: 0 auto;
+}
+
+.AddWebsite__closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.AddWebsite__closeButton:hover {
+  color: rgb(18, 72, 172);
+}
+
+.AddWebsite--closed {
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.AddWebsite--closed div:hover {
+  color: rgb(18, 72, 172);
+}

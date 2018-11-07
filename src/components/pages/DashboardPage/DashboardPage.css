@@ -17,3 +17,19 @@
   height: 1.7rem;
   margin-right: 5px;
 }
+
+.DashboardPage__mainSections--item {
+  background: rgba(250, 250, 250, 0.6);
+  padding: 10px;
+  border-radius: 5px;
+  margin: 4px;
+}
+
+.DashboardPage__mainSections__topBar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.info {
+  background: red;
+}
