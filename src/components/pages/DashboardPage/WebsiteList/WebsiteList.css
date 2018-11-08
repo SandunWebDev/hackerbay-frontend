@@ -1,6 +1,16 @@
 .WebsiteList {
-  color: white;
+  color: rgb(243, 235, 235);
   width: 100%;
+}
+
+.WebsiteList--noItems {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(12, 11, 11);
+  font-weight: bold;
+  text-align: center;
+  min-height: 300px;
 }
 
 .WebsiteList__item {
@@ -63,7 +73,6 @@
 
 .WebsiteList__item__status__updatedAt {
   font-size: 0.7rem;
-  color: gray;
 }
 
 .WebsiteList__item__toolbar {

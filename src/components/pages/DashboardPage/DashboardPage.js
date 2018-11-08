@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import securePage from "../../hoc/securePage";
+
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actions as dashboardActions } from "../../../redux/actions/dashboardActions";
@@ -13,7 +15,29 @@ import "./DashboardPage.css";
 
 class DashboardPage extends Component {
   render() {
-    const { addWebsite, websiteActions, token } = this.props;
+    const {
+      addWebsite: addWebsiteReduxState,
+      websiteList: websiteListReduxState,
+      websiteActions,
+      websiteListActions,
+      token
+    } = this.props;
+
+    const fullWebsiteList = websiteListReduxState.fullList;
+    const noOfSites = fullWebsiteList.length;
+
+    let noOfOnlineSites = 0,
+      noOfOfflineSites = 0;
+
+    // Calulating How many sites are online & offline
+    fullWebsiteList.forEach(site => {
+      if (site.onlineStatus) {
+        noOfOnlineSites++;
+      } else {
+        noOfOfflineSites++;
+      }
+    });
+
     return (
       <div className="DashboardPage">
         <div className="DashboardPage__heading">
@@ -23,26 +47,50 @@ class DashboardPage extends Component {
         <div className="DashboardPage__mainSections">
           <div className="DashboardPage__mainSections__topBar">
             <div className="DashboardPage__mainSections--item">
-              <div className="info">
-                <div>SITES</div>
-                <div>10</div>
+              <div className="DashboardSmallInfo DashboardSmallInfo--sites">
+                <div className="DashboardSmallInfo__info">{noOfSites}</div>
+                <div className="DashboardSmallInfo__title">
+                  <Icon icon="globe-network" />
+                  <span>SITES</span>
+                </div>
               </div>
             </div>
-            <div className="DashboardPage__mainSections--item">2</div>
-            <div className="DashboardPage__mainSections--item">3</div>
             <div className="DashboardPage__mainSections--item">
-              <Icon icon="add" />
+              <div className="DashboardSmallInfo DashboardSmallInfo--online">
+                <div className="DashboardSmallInfo__info">
+                  {noOfOnlineSites}
+                </div>
+                <div className="DashboardSmallInfo__title">
+                  <Icon icon="feed" />
+                  <span> ONLINE</span>
+                </div>
+              </div>
+            </div>
+            <div className="DashboardPage__mainSections--item">
+              <div className="DashboardSmallInfo DashboardSmallInfo--offline">
+                <div className="DashboardSmallInfo__info">
+                  {noOfOfflineSites}
+                </div>
+                <div className="DashboardSmallInfo__title">
+                  <Icon icon="disable" />
+                  <span> OFFLINE</span>
+                </div>
+              </div>
             </div>
           </div>
           <div className="DashboardPage__mainSections--item">
             <AddWebsite
-              addWebsiteReduxState={addWebsite}
+              addWebsiteReduxState={addWebsiteReduxState}
               onSubmitAction={websiteActions.addWebsite}
               token={token}
             />
           </div>
-          <div className="DashboardPage__mainSections--item">
-            <WebsiteList />
+          <div className="xyz DashboardPage__mainSections--item">
+            <WebsiteList
+              websiteListReduxState={websiteListReduxState}
+              websiteListActions={websiteListActions}
+              token={token}
+            />
           </div>
         </div>
       </div>

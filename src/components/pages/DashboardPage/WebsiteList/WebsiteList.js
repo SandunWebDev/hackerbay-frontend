@@ -1,16 +1,12 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
-import { actions as dashboardActions } from "../../../../redux/actions/dashboardActions";
-
 import { Spinner, Icon } from "@blueprintjs/core";
 import moment from "moment";
 
 import "./WebsiteList.css";
 
-class WebsiteList extends Component {
+export default class WebsiteList extends Component {
   componentDidMount() {
     const { websiteListActions, token } = this.props;
 
@@ -19,12 +15,26 @@ class WebsiteList extends Component {
   }
 
   render() {
-    let { fullList, isFetching } = this.props;
+    let { fullList, isFetching } = this.props.websiteListReduxState;
 
     if (isFetching) {
       return (
         <div className="WebsiteList">
           <Spinner intent={"success"} size={100} />
+        </div>
+      );
+    }
+
+    if (fullList.length === 0) {
+      return (
+        <div className="WebsiteList">
+          <div className="WebsiteList--noItems">
+            <div>
+              <Icon icon="filter-remove" iconSize="30" />
+              <div>Hi, Seems like you haven't added any websites yet.</div>
+              <div> Try adding website by clicking on above button.</div>
+            </div>
+          </div>
         </div>
       );
     }
@@ -85,37 +95,24 @@ class WebsiteList extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    ...state.dashboard.websiteList,
-    token: state.user.token
-  };
-}
-
-function mapActionsToProps(dispatch) {
-  return {
-    websiteListActions: bindActionCreators(
-      dashboardActions.websiteListActions,
-      dispatch
-    )
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  mapActionsToProps
-)(WebsiteList);
-
 WebsiteList.propTypes = {
-  isFetching: PropTypes.bool.isRequired,
-  error: PropTypes.string.isRequired,
-  fullList: PropTypes.arrayOf(PropTypes.object).isRequired,
+  websiteListReduxState: PropTypes.shape({
+    isFetching: PropTypes.bool.isRequired,
+    fullList: PropTypes.arrayOf(PropTypes.object).isRequired
+  }).isRequired,
+  websiteListActions: PropTypes.shape({
+    loadAllWebsiteLinks: PropTypes.func.isRequired
+  }).isRequired,
   token: PropTypes.string.isRequired
 };
 
 WebsiteList.defaultProps = {
-  isFetching: false,
-  error: "",
-  fullList: [],
+  websiteListReduxState: {
+    isFetching: false,
+    fullList: []
+  },
+  websiteListActions: {
+    loadAllWebsiteLinks: () => {}
+  },
   token: ""
 };
