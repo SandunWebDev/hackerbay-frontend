@@ -28,18 +28,8 @@ Since right now refactoring code is time consuming just force editing blueprintj
   cursor: pointer;
 }
 
-@media screen and (max-width: 860px) {
-  /* Hiding all parts of header except logo */
-  .Header__Navbar__leftmenu,
-  .Header__Navbar__rightmenu,
-  .Header__Navbar__devider {
-    display: none !important;
-  }
-
-  /* Showing mobileMenuIcon */
-  .Header__Navbar__mobilemenuIcon {
-    display: flex !important;
-  }
+.Header__Navbar__leftmenu__username {
+  text-transform: capitalize;
 }
 
 .Header__mobileMenu {
@@ -81,4 +71,18 @@ Since right now refactoring code is time consuming just force editing blueprintj
 .Header__mobileMenu .bp3-icon {
   width: 20px;
   text-align: center;
+}
+
+@media screen and (max-width: 860px) {
+  /* Hiding all parts of header except logo */
+  .Header__Navbar__leftmenu,
+  .Header__Navbar__rightmenu,
+  .Header__Navbar__devider {
+    display: none !important;
+  }
+
+  /* Showing mobileMenuIcon */
+  .Header__Navbar__mobilemenuIcon {
+    display: flex !important;
+  }
 }

@@ -35,7 +35,12 @@ export class Header extends Component {
           <Button icon="dashboard" text="Dashboard" minimal={true} />
         </Link>,
         <Link to="/myaccount">
-          <Button icon="user" minimal={true} data-testid="myAccountButton">
+          <Button
+            icon="user"
+            minimal={true}
+            data-testid="myAccountButton"
+            className="Header__Navbar__leftmenu__username"
+          >
             {name.split(" ")[0]}
           </Button>
         </Link>,

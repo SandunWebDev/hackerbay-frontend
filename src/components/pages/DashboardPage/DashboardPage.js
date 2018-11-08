@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-import securePage from "../../hoc/securePage";
-
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actions as dashboardActions } from "../../../redux/actions/dashboardActions";

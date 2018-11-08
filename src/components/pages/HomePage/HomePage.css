@@ -1,16 +1,115 @@
-.HomePage{
+.HomePage {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  flex:1;
+  flex: 1;
+  color: rgb(255, 242, 242);
 }
 
-.HomePage h1, .HomePage h2{
-  color:white;
+.HomePage h1,
+.HomePage h2 {
   text-align: center;
+  margin: 5px;
 }
 
-.HomePage h1{
-  font-size: 3rem;
+.HomePage h1 {
+  font-size: 2.6rem;
+}
+
+.HomePage h2 {
+  font-size: 1.3rem;
+}
+
+.HomePage__mainArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.HomePage__mainArea > div {
+  margin: 15px;
+}
+
+.HomePage__mainArea__descriptions {
+  flex: 2;
+}
+
+.HomePage__mainArea__descriptions p {
+  font-size: 1.2rem;
+  /* text-align: justify; */
+  letter-spacing: 0.03rem;
+  word-spacing: 0.1rem;
+  line-height: 1.7rem;
+}
+
+.HomePage__mainArea__descriptions p::first-letter {
+  font-size: 2.5rem;
+}
+
+.HomePage__mainArea__photo {
+  flex: 3;
+}
+
+.HomePage__mainArea__photo img {
+  max-width: 100%;
+  /* min-width: 320px; */
+}
+
+.HomePage__links {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 50px;
+  line-height: 40px;
+}
+
+.HomePage__links a,
+.HomePage__links a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.HomePage__loginButton,
+.HomePage__signupButton {
+  font-size: 1.4rem;
+  justify-content: center;
+  align-content: center;
+  margin: 0 7px;
+  padding: 8px;
+  border-radius: 3px;
+  border: 2px solid;
+  cursor: pointer;
+}
+
+.HomePage__loginButton svg,
+.HomePage__signupButton svg {
+  width: 1.3em;
+  height: 1.3rem;
+  margin-bottom: -3px;
+  margin-right: 5px;
+}
+
+.HomePage__loginButton:hover,
+.HomePage__signupButton:hover {
+  color: rgb(68, 68, 68);
+}
+
+.HomePage__loginButton {
+  color: rgb(194, 227, 255);
+}
+
+.HomePage__signupButton {
+  color: rgb(255, 234, 190);
+}
+
+@media screen and (max-width: 640px) {
+  .HomePage__mainArea {
+    flex-wrap: wrap;
+  }
+
+  .HomePage__mainArea__descriptions {
+    flex-basis: 600px;
+  }
 }
