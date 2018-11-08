@@ -7,7 +7,7 @@ import "./SignupPage.css";
 export default class SignupPage extends Component {
   render() {
     return (
-      <div className="SignupPage">
+      <div className="SignupPage animation--pageTransition">
         <div>
           <h1 className="SignupPage__header">
             Let's Create Your Hackerbay Account

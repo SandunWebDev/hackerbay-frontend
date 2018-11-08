@@ -9,6 +9,7 @@
   background: rgba(233, 229, 229, 0.815);
   position: relative;
   margin: 0 auto;
+  transition: all 0.2s;
 }
 
 .AddWebsite__closeButton {
@@ -26,8 +27,14 @@
   text-align: center;
   font-weight: bold;
   cursor: pointer;
+  transition: all 0.5s;
 }
 
 .AddWebsite--closed div:hover {
   color: rgb(18, 72, 172);
+}
+
+.AddWebsite--open,
+.AddWebsite--closed {
+  font-size: 0.9rem;
 }

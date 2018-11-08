@@ -23,6 +23,9 @@ class DashboardPage extends Component {
       token
     } = this.props;
 
+    const isWebsiteListFetching = websiteListReduxState.isFetching;
+    const websiteListFetchingError = websiteListReduxState.error;
+
     const fullWebsiteList = websiteListReduxState.fullList;
     const noOfSites = fullWebsiteList.length;
 
@@ -39,13 +42,19 @@ class DashboardPage extends Component {
     });
 
     return (
-      <div className="DashboardPage">
+      <div className="DashboardPage animation--pageTransition">
         <div className="DashboardPage__heading">
           <Icon icon="dashboard" />
           DASHBOARD
         </div>
         <div className="DashboardPage__mainSections">
-          <div className="DashboardPage__mainSections__topBar">
+          <div
+            className={`DashboardPage__mainSections__topBar ${
+              isWebsiteListFetching || websiteListFetchingError
+                ? "DashboardPage__mainSections__topBar--hide"
+                : ""
+            }`}
+          >
             <div className="DashboardPage__mainSections--item">
               <div className="DashboardSmallInfo DashboardSmallInfo--sites">
                 <div className="DashboardSmallInfo__info">{noOfSites}</div>

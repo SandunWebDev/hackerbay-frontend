@@ -4,6 +4,8 @@
 @import "~@blueprintjs/core/lib/css/blueprint.css";
 @import "~@blueprintjs/icons/lib/css/blueprint-icons.css";
 
+@import "./animations.css";
+
 html {
   box-sizing: border-box;
   font-size: 16px;
