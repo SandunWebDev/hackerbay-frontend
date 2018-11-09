@@ -31,10 +31,10 @@ export class Header extends Component {
     let rightSideMenu = "";
     if (loggedIn) {
       rightSideMenu = [
-        <Link to="/dashboard">
+        <Link to="/dashboard" key="R1">
           <Button icon="dashboard" text="Dashboard" minimal={true} />
         </Link>,
-        <Link to="/myaccount">
+        <Link to="/myaccount" key="R2">
           <Button
             icon="user"
             minimal={true}
@@ -44,7 +44,7 @@ export class Header extends Component {
             {name.split(" ")[0]}
           </Button>
         </Link>,
-        <Link to="/login">
+        <Link to="/login" key="R3">
           <Button
             icon="log-out"
             minimal={true}
@@ -57,13 +57,13 @@ export class Header extends Component {
       ];
     } else {
       rightSideMenu = [
-        <Link to="/signup">
+        <Link to="/signup" key="R1">
           <Button icon="badge" minimal={true}>
             Signup
           </Button>
         </Link>,
 
-        <Link to="/login">
+        <Link to="/login" key="R2">
           <Button icon="log-in" minimal={true}>
             Login
           </Button>
@@ -72,13 +72,13 @@ export class Header extends Component {
     }
 
     const leftsideMenu = [
-      <Link to="/">
+      <Link to="/" key="L1">
         <Button icon="projects" text="Services" minimal={true} />
       </Link>,
-      <Link to="/">
+      <Link to="/" key="L2">
         <Button icon="dollar" text="Pricing" minimal={true} />
       </Link>,
-      <Link to="/">
+      <Link to="/" key="L3">
         <Button icon="compass" text="About Us" minimal={true} />
       </Link>
     ];

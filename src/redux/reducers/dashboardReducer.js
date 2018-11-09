@@ -1,4 +1,5 @@
 import { actionTypes } from "../actions/dashboardActions";
+import { actionTypes as userActionTypes } from "../actions/userActions";
 import { handleAxiosErrors } from "../../configs/axiosInstancesErrorHandlers";
 
 export const dashboardReducerDefaultState = {
@@ -93,6 +94,11 @@ export default (state = dashboardReducerDefaultState, action) => {
           addedWebsite: ""
         }
       };
+    }
+
+    /* ----- External User Reducer Actions -----*/
+    case userActionTypes.USER__LOGOUT_ACCOUNT: {
+      return dashboardReducerDefaultState;
     }
 
     default:
