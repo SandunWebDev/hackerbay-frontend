@@ -48,7 +48,10 @@ export class AddWebsiteForm extends Component {
     if (submitSucceeded) {
       return (
         <div className="AddWebsiteForm">
-          <div className="AddWebsiteForm__successMessage">
+          <div
+            className="AddWebsiteForm__successMessage"
+            data-testid="successMessage"
+          >
             <Icon icon="endorsed" />
             <div>Sucessfully Added.</div>
           </div>
@@ -62,6 +65,7 @@ export class AddWebsiteForm extends Component {
           onSubmit={handleSubmit(formValues =>
             onSubmitAction(token, formValues)
           )}
+          data-testid="addWebSiteForm"
         >
           {/* Displaying loaders & errors if applicable. */}
           {(error || submitting) && (

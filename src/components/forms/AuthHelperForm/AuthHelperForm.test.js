@@ -2,8 +2,7 @@ import React from "react";
 import { mount, shallow } from "enzyme";
 
 import CustomInputWithErrorOutput from "../customInputs/CustomInputWithErrorOutput/CustomInputWithErrorOutput";
-import { Field, reduxForm } from "redux-form";
-import { withReduxProvider } from "../../../tests/helpers/enzymeHelpers";
+import { Field } from "redux-form";
 
 import AuthHelperForm from "./AuthHelperForm";
 
