@@ -5,7 +5,8 @@ import { MemoryRouter } from "react-router-dom";
 import App from "./App";
 import {
   withReduxAndRouter,
-  withReduxProvider
+  withReduxProvider,
+  withReactRouter
 } from "../../../tests/helpers/enzymeHelpers";
 
 describe("App Component", () => {
@@ -52,13 +53,20 @@ describe("App Component", () => {
     expect(wrappedLoginPage.find("SignupPage").exists()).toEqual(true);
   });
 
-  it("Should render <DashboardPage> component when url is '/dashboard'", () => {
+  it("Should render <DashboardPage> component when url is '/dashboard' and User is LOGGED IN.", () => {
     const pathSetted = (
       <MemoryRouter initialEntries={["/dashboard"]}>
         <App />
       </MemoryRouter>
     );
-    const wrappedLoginPage = mount(withReduxAndRouter(pathSetted));
+
+    const wrappedLoginPage = mount(
+      withReduxProvider(pathSetted, {
+        user: {
+          loggedIn: true // Mocking User loggedIn.
+        }
+      })
+    );
 
     expect(wrappedLoginPage.find("DashboardPage").exists()).toEqual(true);
   });

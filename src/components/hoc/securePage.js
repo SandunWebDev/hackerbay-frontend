@@ -1,18 +1,17 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
 
-import store from "../../redux/reduxStore";
+export default function securePage(
+  isSecured = false,
+  OnSuccess = () => <div>Secured Page</div>,
+  OnFailure = "/"
+) {
+  // Getting "isSecured" as argument instead of just getting directly from store because that makes testing easier.
+  // OnSuccess arguments must be a "React Component" (Not React Element) and OnFailure must be string which is a Redirect Path.
 
-export default function securePage(Component, redirectTo = "/") {
-  const isLoggedIn = store.getState().user.loggedIn;
-
-  return class extends React.Component {
-    render() {
-      if (isLoggedIn) {
-        return <Component />;
-      } else {
-        return <Redirect to={redirectTo} />;
-      }
-    }
-  };
+  if (isSecured) {
+    return <OnSuccess />;
+  } else {
+    return <Redirect to={OnFailure} />;
+  }
 }

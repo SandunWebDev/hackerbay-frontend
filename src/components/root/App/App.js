@@ -12,8 +12,11 @@ import DashboardPage from "../../pages/DashboardPage/DashboardPage";
 
 import "./App.css";
 
+const a = <h1>adsd</h1>;
 class App extends Component {
   render() {
+    const { isLoggedIn } = this.props;
+
     return (
       <div className="App">
         <Header />
@@ -27,7 +30,8 @@ class App extends Component {
             <Route
               exact
               path="/dashboard"
-              component={securePage(DashboardPage, "/login")}
+              // render={() => securePage(isLoggedIn, DashboardPage, "/login")}
+              render={() => securePage(isLoggedIn, DashboardPage, "/login")}
             />
 
             {/* Fallback Route */}

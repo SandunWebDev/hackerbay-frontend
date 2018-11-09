@@ -22,9 +22,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom --testPathIgnorePatterns Imageshots",
+    "test": "react-scripts test --env=jsdom --testPathIgnorePatterns Imageshots Storyshots",
     "test:unitandintegration": "react-scripts test --env=jsdom --testPathIgnorePatterns Imageshots Storyshots",
-    "test:storyshots": "concurrently \"npm run storybook\" \"sleep 1 && react-scripts test --env=jsdom Storyshots.test.js\"",
+    "test:storyshots": "react-scripts test --env=jsdom Storyshots.test.js",
     "test:imageshots:local": "concurrently \"npm run storybook\" \"sleep 1 && react-scripts test --env=jsdom ImageshotsForLocal.test.js\"",
     "test:imageshots:ci": "npm run build-storybook && react-scripts test --env=jsdom ImageshotsForCI.test.js",
     "test:cypress:local": "concurrently \"npm start\" \"wait-on http://localhost:3000 && cypress open\"",

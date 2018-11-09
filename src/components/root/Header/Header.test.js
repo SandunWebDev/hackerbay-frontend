@@ -92,12 +92,12 @@ describe("Header Component", () => {
       );
     });
 
-    it("Should render uppercase of provided name in button which link to '/myaccount'", () => {
+    it("Should render only first part of user's name in the button which link to '/myaccount'", () => {
       const wrappedHeaderUnconnected = mount(
         withReactRouter(
           <HeaderUnconnected
             loggedIn={true}
-            name="John Doe"
+            name="john Doe"
             logoutAccount={() => {}}
           />
         )
@@ -107,7 +107,7 @@ describe("Header Component", () => {
         "button[data-testid='myAccountButton']"
       );
 
-      expect(myAccountButton.contains("JOHN DOE")).toEqual(true);
+      expect(myAccountButton.contains("john")).toEqual(true);
     });
 
     it("Should excute logout() function when LogOut button is clicked.", () => {
