@@ -3,15 +3,15 @@ import { Redirect } from "react-router-dom";
 
 export default function securePage(
   isSecured = false,
-  OnSuccess = () => <div>Secured Page</div>,
-  OnFailure = "/"
+  onSuccessComponent = <div>Secured Page</div>,
+  onFailureRedirect = "/"
 ) {
   // Getting "isSecured" as argument instead of just getting directly from store because that makes testing easier.
-  // OnSuccess arguments must be a "React Component" (Not React Element) and OnFailure must be string which is a Redirect Path.
+  // OnSuccess arguments must be passed as React Element (<Abc />) NOT as React Component Function and OnFailure must be string which is a Redirect Path.
 
   if (isSecured) {
-    return <OnSuccess />;
+    return onSuccessComponent;
   } else {
-    return <Redirect to={OnFailure} />;
+    return <Redirect to={onFailureRedirect} />;
   }
 }

@@ -4,6 +4,7 @@ import { withInfo } from "@storybook/addon-info";
 import { setConsoleOptions } from "@storybook/addon-console";
 import backgrounds from "@storybook/addon-backgrounds";
 import JSXAddon from "storybook-addon-jsx";
+import { host } from "storybook-host";
 
 // All global styles
 import "../src/index.css";
@@ -23,6 +24,14 @@ addDecorator(
     { name: "LightGreen", value: "#d3f9b5" },
     { name: "Brown", value: "#3d0c11" }
   ])
+);
+
+// Nicely and Simply center and wrap host container.
+addDecorator(
+  host({
+    align: "center middle",
+    width: "80%"
+  })
 );
 
 // Display JSX of component when used with ".addWithJSX()"

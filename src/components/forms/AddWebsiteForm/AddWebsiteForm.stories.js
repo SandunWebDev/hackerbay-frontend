@@ -25,13 +25,6 @@ const defaultProps = {
 
 storiesOf("Forms/AddWebsiteForm", module)
   .addDecorator(injectReduxAndRouter())
-  .addDecorator(
-    host({
-      align: "center bottom",
-      height: "80%",
-      width: "80%"
-    })
-  )
   .add("Initial View (Interactive)", () => {
     return <AddWebsiteForm />;
   });
@@ -39,13 +32,6 @@ storiesOf("Forms/AddWebsiteForm", module)
 // Directly working on compnent without redux-form wrapper.
 storiesOf("Forms/AddWebsiteForm", module)
   .addDecorator(withReduxForm) // Give ability to render "<Field/>" without redux-form.
-  .addDecorator(
-    host({
-      align: "center bottom",
-      height: "80%",
-      width: "80%"
-    })
-  )
   .add("While Submitting.", () => {
     return <AddWebsiteFormWithOutWrapper {...defaultProps} submitting={true} />;
   })

@@ -30,8 +30,7 @@ class App extends Component {
             <Route
               exact
               path="/dashboard"
-              // render={() => securePage(isLoggedIn, DashboardPage, "/login")}
-              render={() => securePage(isLoggedIn, DashboardPage, "/login")}
+              render={() => securePage(isLoggedIn, <DashboardPage />, "/login")}
             />
 
             {/* Fallback Route */}

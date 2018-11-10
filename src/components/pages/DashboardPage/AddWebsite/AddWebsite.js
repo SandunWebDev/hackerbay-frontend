@@ -7,7 +7,7 @@ import "./AddWebsite.css";
 
 export default class AddWebsite extends Component {
   state = {
-    isOpen: false
+    isOpen: this.props.isOpen || false
   };
 
   handleIsOpenState(forceIsOpenState) {
