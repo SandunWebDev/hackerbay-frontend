@@ -130,7 +130,7 @@ describe("WebsiteList Component", () => {
     );
   });
 
-  it("Should render websiteList items for each item in list.", () => {
+  it("Should render WebsiteListItems for each item in list.", () => {
     const customProps = {
       websiteListReduxState: {
         ...defaultProps.websiteListReduxState,
@@ -155,6 +155,6 @@ describe("WebsiteList Component", () => {
       <WebsiteList {...defaultProps} {...customProps} />
     );
 
-    expect(wrappedWebsiteList.find(".WebsiteList__item").length).toEqual(2);
+    expect(wrappedWebsiteList.find("WebsiteListItem").length).toEqual(2);
   });
 });

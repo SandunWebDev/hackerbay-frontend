@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import { Spinner, Icon, Button } from "@blueprintjs/core";
-import moment from "moment";
+
+import WebsiteListItem from "./WebsiteListItem/WebsiteListItem";
 
 import "./WebsiteList.css";
 
@@ -68,61 +69,14 @@ export default class WebsiteList extends Component {
         {fullList.map((website, id) => {
           const { websiteName, url, onlineStatus, updatedAt } = website;
 
-          const modifiedUpdatedAt = moment(updatedAt).fromNow();
-
           return (
-            <div className="WebsiteList__item animation--cardLoading" key={id}>
-              <div className="WebsiteList__item__logo ">
-                {/* Getting the first letter of url. */}
-                <span className="WebsiteList__item__logo--text">
-                  {url.split("://")[1][0]}
-                </span>
-              </div>
-              <div className="WebsiteList__item__mainInfo">
-                <div
-                  className="WebsiteList__item__mainInfo__websiteName"
-                  title="Website's Name"
-                >
-                  {websiteName}
-                </div>
-                <div
-                  className="WebsiteList__item__mainInfo__url"
-                  title="Website's URL"
-                >
-                  {url}
-                </div>
-              </div>
-              <div
-                className="WebsiteList__item__status"
-                title="Website's Status"
-              >
-                <div className="WebsiteList__item__status__icon">
-                  <Icon
-                    icon={onlineStatus ? "tick" : "warning-sign"}
-                    color={
-                      onlineStatus ? "rgb(102, 190, 90)" : "rgb(255, 187, 90)"
-                    }
-                  />
-                </div>
-                <div className="WebsiteList__item__status__updatedAt">
-                  Last Checked <br />@ {modifiedUpdatedAt}
-                </div>
-              </div>
-              <div className="WebsiteList__item__toolbar">
-                <div title="Update Now">
-                  <Icon icon="automatic-updates" iconSize="13" />
-                </div>
-                <div title="Edit">
-                  <Icon icon="edit" iconSize="13" />
-                </div>
-                <div title="Delete">
-                  <Icon icon="trash" iconSize="13" />
-                </div>
-                <div title="Notifications">
-                  <Icon icon="notifications-updated" iconSize="13" />
-                </div>
-              </div>
-            </div>
+            <WebsiteListItem
+              key={id}
+              websiteName={websiteName}
+              url={url}
+              onlineStatus={onlineStatus}
+              updatedAt={updatedAt}
+            />
           );
         })}
       </div>
