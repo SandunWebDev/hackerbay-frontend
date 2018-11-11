@@ -34,6 +34,7 @@ export default class WebsiteListItem extends Component {
         <div className="WebsiteListItem__status" title="Website's Status">
           <div className="WebsiteListItem__status__icon">
             <Icon
+              data-testid="onlineStatus"
               icon={onlineStatus ? "tick" : "warning-sign"}
               color={onlineStatus ? "rgb(102, 190, 90)" : "rgb(255, 187, 90)"}
             />

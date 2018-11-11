@@ -26,10 +26,6 @@ export const actions = {
 function loadAllWebsiteLinks(token = "") {
   return async dispatch => {
     const websiteListPromise = axiosBase.get("website/list?token=" + token);
-    // const websiteListPromise = axiosBase.get(
-    //   "website/list?token=" +
-    //     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImUxMGMwM2MxLWRjYTEtNDRjNC05YTIxLTVhMGRkOWEwMjZmOCIsImlhdCI6MTU0MTU3NTM0OCwiZXhwIjoxNTQxNTc4OTQ4fQ.80KJfO0X6IU5gmD-qTEdCy5N_p1gFAIickdlmaf9FYs"
-    // );
 
     return dispatch({
       type: actionTypes.websiteList.DASHBOARD__WEBSITELIST__LOAD_ALL,
@@ -47,7 +43,6 @@ function addWebsite(token = "", addWebsiteFormInputValues = {}) {
       websiteName,
       url,
       token
-      // "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImUxMGMwM2MxLWRjYTEtNDRjNC05YTIxLTVhMGRkOWEwMjZmOCIsImlhdCI6MTU0MTU3NTM0OCwiZXhwIjoxNTQxNTc4OTQ4fQ.80KJfO0X6IU5gmD-qTEdCy5N_p1gFAIickdlmaf9FYs"
     });
 
     return dispatch({

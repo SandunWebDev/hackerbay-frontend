@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -11,7 +12,7 @@ import AddWebsite from "./AddWebsite/AddWebsite";
 
 import "./DashboardPage.css";
 
-class DashboardPage extends Component {
+export class DashboardPage extends Component {
   render() {
     const {
       addWebsite: addWebsiteReduxState,
@@ -92,7 +93,7 @@ class DashboardPage extends Component {
               token={token}
             />
           </div>
-          <div className="xyz DashboardPage__mainSections--item">
+          <div className="DashboardPage__mainSections--item">
             <WebsiteList
               websiteListReduxState={websiteListReduxState}
               websiteListActions={websiteListActions}
@@ -126,3 +127,43 @@ export default connect(
   mapStateToProps,
   mapActionsToProps
 )(DashboardPage);
+
+WebsiteList.propTypes = {
+  addWebsite: PropTypes.shape({
+    isFetching: PropTypes.bool.isRequired,
+    error: PropTypes.string.isRequired,
+    success: PropTypes.bool.isRequired,
+    addedWebsite: PropTypes.object.isRequired
+  }),
+  websiteList: PropTypes.shape({
+    isFetching: PropTypes.bool.isRequired,
+    error: PropTypes.string.isRequired,
+    fullList: PropTypes.array.isRequired
+  }),
+  websiteActions: PropTypes.shape({
+    addWebsite: PropTypes.func.isRequired
+  }),
+  websiteListActions: PropTypes.shape({
+    loadAllWebsiteLinks: PropTypes.func.isRequired
+  }),
+  token: PropTypes.string.isRequired
+};
+
+WebsiteList.defaultProps = {
+  addWebsite: {
+    isFetching: false,
+    error: "",
+    success: false,
+    addedWebsite: {}
+  },
+  websiteList: {
+    isFetching: false,
+    error: "",
+    fullList: []
+  },
+  websiteActions: {
+    addWebsite: () => {}
+  },
+  websiteListActions: { loadAllWebsiteLinks: () => {} },
+  token: ""
+};
