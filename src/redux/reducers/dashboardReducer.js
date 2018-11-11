@@ -48,7 +48,8 @@ export default (state = dashboardReducerDefaultState, action) => {
         websiteList: {
           ...state.websiteList,
           isFetching: false,
-          error: serverError
+          error: serverError,
+          fullList: []
         }
       };
     }
