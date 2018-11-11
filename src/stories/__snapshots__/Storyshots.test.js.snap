@@ -2826,6 +2826,828 @@ exports[`Storyshots Pages/DashboardPage/AddWebsite Opened View 1`] = `
 </div>
 `;
 
+exports[`Storyshots Pages/DashboardPage/WebsiteList Error Occured 1`] = `
+<div
+  data-css-18sl43g=""
+>
+  <div
+    data-css-1uksfg7=""
+  >
+    <div
+      data-css-q8x515=""
+    >
+      <div
+        data-css-1cnasqg=""
+      >
+        <div
+          className="WebsiteList"
+        >
+          <div
+            className="WebsiteList--error"
+          >
+            <div>
+              <span
+                className="bp3-icon bp3-icon-disable"
+                icon="disable"
+              >
+                <svg
+                  data-icon="disable"
+                  fill={undefined}
+                  height="30"
+                  viewBox="0 0 20 20"
+                  width="30"
+                >
+                  <desc>
+                    disable
+                  </desc>
+                  <path
+                    d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zM2 10c0-4.42 3.58-8 8-8 1.85 0 3.55.63 4.9 1.69L3.69 14.9A7.902 7.902 0 0 1 2 10zm8 8c-1.85 0-3.55-.63-4.9-1.69L16.31 5.1A7.902 7.902 0 0 1 18 10c0 4.42-3.58 8-8 8z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </span>
+              <div
+                data-testid="errorMsg"
+              >
+                Some Error Occured
+              </div>
+              <div
+                className="WebsiteList--error__reloadButton"
+              >
+                <button
+                  className="bp3-button"
+                  data-testid="reloadButton"
+                  disabled={undefined}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={undefined}
+                  type="button"
+                >
+                  <span
+                    className="bp3-icon bp3-icon-refresh"
+                    icon="refresh"
+                  >
+                    <svg
+                      data-icon="refresh"
+                      fill={undefined}
+                      height={16}
+                      viewBox="0 0 16 16"
+                      width={16}
+                    >
+                      <desc>
+                        refresh
+                      </desc>
+                      <path
+                        d="M14.99 6.99c-.55 0-1 .45-1 1 0 3.31-2.69 6-6 6-1.77 0-3.36-.78-4.46-2h1.46c.55 0 1-.45 1-1s-.45-1-1-1h-4c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-1.74a7.95 7.95 0 0 0 6 2.74c4.42 0 8-3.58 8-8 0-.55-.45-1-1-1zm0-7c-.55 0-1 .45-1 1v1.74a7.95 7.95 0 0 0-6-2.74c-4.42 0-8 3.58-8 8 0 .55.45 1 1 1s1-.45 1-1c0-3.31 2.69-6 6-6 1.77 0 3.36.78 4.46 2h-1.46c-.55 0-1 .45-1 1s.45 1 1 1h4c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1z"
+                        fillRule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    className="bp3-button-text"
+                  >
+                    Reload
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            data-css-1xjdp6g=""
+          >
+            <div
+              data-css-1u3clyi=""
+            />
+            <div
+              data-css-1vfpuyw=""
+            />
+          </div>
+          <div
+            data-css-1l117w4=""
+          >
+            <div
+              data-css-6x2xk9=""
+            />
+            <div
+              data-css-dh4rml=""
+            />
+          </div>
+          <div
+            data-css-3dqrhs=""
+          >
+            <div
+              data-css-jidh41=""
+            />
+            <div
+              data-css-zkhvkf=""
+            />
+          </div>
+          <div
+            data-css-14agfjn=""
+          >
+            <div
+              data-css-1dkszzo=""
+            />
+            <div
+              data-css-mqumhe=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/DashboardPage/WebsiteList Intitial View 1`] = `
+<div
+  data-css-18sl43g=""
+>
+  <div
+    data-css-1uksfg7=""
+  >
+    <div
+      data-css-q8x515=""
+    >
+      <div
+        data-css-1cnasqg=""
+      >
+        <div
+          className="WebsiteList"
+        >
+          <div
+            className="WebsiteList--noItems"
+          >
+            <div>
+              <span
+                className="bp3-icon bp3-icon-filter-remove"
+                icon="filter-remove"
+              >
+                <svg
+                  data-icon="filter-remove"
+                  fill={undefined}
+                  height="30"
+                  viewBox="0 0 20 20"
+                  width="30"
+                >
+                  <desc>
+                    filter-remove
+                  </desc>
+                  <path
+                    d="M15 2c0-.55-.45-1-1-1H1a1.003 1.003 0 0 0-.71 1.71L5 7.41V16a1.003 1.003 0 0 0 1.71.71l3-3c.18-.18.29-.43.29-.71V7.41l4.71-4.71c.18-.17.29-.42.29-.7zm2.91 13.5l1.79-1.79c.19-.18.3-.43.3-.71a1.003 1.003 0 0 0-1.71-.71l-1.79 1.79-1.79-1.79a1.003 1.003 0 0 0-1.42 1.42l1.79 1.79-1.79 1.79a1.003 1.003 0 0 0 1.42 1.42l1.79-1.79 1.79 1.79a1.003 1.003 0 0 0 1.42-1.42l-1.8-1.79z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </span>
+              <div>
+                Hi, Seems like you haven't added any websites yet.
+              </div>
+              <div>
+                 Try adding website by clicking on above button.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            data-css-1xjdp6g=""
+          >
+            <div
+              data-css-1u3clyi=""
+            />
+            <div
+              data-css-1vfpuyw=""
+            />
+          </div>
+          <div
+            data-css-1l117w4=""
+          >
+            <div
+              data-css-6x2xk9=""
+            />
+            <div
+              data-css-dh4rml=""
+            />
+          </div>
+          <div
+            data-css-3dqrhs=""
+          >
+            <div
+              data-css-jidh41=""
+            />
+            <div
+              data-css-zkhvkf=""
+            />
+          </div>
+          <div
+            data-css-14agfjn=""
+          >
+            <div
+              data-css-1dkszzo=""
+            />
+            <div
+              data-css-mqumhe=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/DashboardPage/WebsiteList When List Has Entries. 1`] = `
+<div
+  data-css-18sl43g=""
+>
+  <div
+    data-css-1uksfg7=""
+  >
+    <div
+      data-css-q8x515=""
+    >
+      <div
+        data-css-1cnasqg=""
+      >
+        <div
+          className="WebsiteList"
+        >
+          <div
+            className="WebsiteList__item animation--cardLoading"
+          >
+            <div
+              className="WebsiteList__item__logo "
+            >
+              <span
+                className="WebsiteList__item__logo--text"
+              >
+                g
+              </span>
+            </div>
+            <div
+              className="WebsiteList__item__mainInfo"
+            >
+              <div
+                className="WebsiteList__item__mainInfo__websiteName"
+                title="Website's Name"
+              >
+                Google
+              </div>
+              <div
+                className="WebsiteList__item__mainInfo__url"
+                title="Website's URL"
+              >
+                https://google.com
+              </div>
+            </div>
+            <div
+              className="WebsiteList__item__status"
+              title="Website's Status"
+            >
+              <div
+                className="WebsiteList__item__status__icon"
+              >
+                <span
+                  className="bp3-icon bp3-icon-tick"
+                  icon="tick"
+                >
+                  <svg
+                    data-icon="tick"
+                    fill="rgb(102, 190, 90)"
+                    height={16}
+                    viewBox="0 0 16 16"
+                    width={16}
+                  >
+                    <desc>
+                      tick
+                    </desc>
+                    <path
+                      d="M14 3c-.28 0-.53.11-.71.29L6 10.59l-3.29-3.3a1.003 1.003 0 0 0-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l8-8A1.003 1.003 0 0 0 14 3z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                className="WebsiteList__item__status__updatedAt"
+              >
+                Last Checked 
+                <br />
+                @ 
+                a few seconds ago
+              </div>
+            </div>
+            <div
+              className="WebsiteList__item__toolbar"
+            >
+              <div
+                title="Update Now"
+              >
+                <span
+                  className="bp3-icon bp3-icon-automatic-updates"
+                  icon="automatic-updates"
+                >
+                  <svg
+                    data-icon="automatic-updates"
+                    fill={undefined}
+                    height="13"
+                    viewBox="0 0 16 16"
+                    width="13"
+                  >
+                    <desc>
+                      automatic-updates
+                    </desc>
+                    <path
+                      d="M8 14c-3.31 0-6-2.69-6-6 0-1.77.78-3.36 2-4.46V5c0 .55.45 1 1 1s1-.45 1-1V1c0-.55-.45-1-1-1H1C.45 0 0 .45 0 1s.45 1 1 1h1.74A7.95 7.95 0 0 0 0 8c0 4.42 3.58 8 8 8 .55 0 1-.45 1-1s-.45-1-1-1zM8 2a5.9 5.9 0 0 1 2.95.81l1.47-1.47A7.893 7.893 0 0 0 8 0c-.55 0-1 .45-1 1s.45 1 1 1zm2.71 6.71l5-5a1.003 1.003 0 0 0-1.42-1.42L10 6.59l-1.29-1.3a1.003 1.003 0 0 0-1.42 1.42l2 2c.18.18.43.29.71.29s.53-.11.71-.29zM16 8c0-.55-.06-1.08-.16-1.6l-1.87 1.87A5.966 5.966 0 0 1 12 12.45V11c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .55.45 1 1 1h4c.55 0 1-.45 1-1s-.45-1-1-1h-1.74A7.95 7.95 0 0 0 16 8z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                title="Edit"
+              >
+                <span
+                  className="bp3-icon bp3-icon-edit"
+                  icon="edit"
+                >
+                  <svg
+                    data-icon="edit"
+                    fill={undefined}
+                    height="13"
+                    viewBox="0 0 16 16"
+                    width="13"
+                  >
+                    <desc>
+                      edit
+                    </desc>
+                    <path
+                      d="M3.25 10.26l2.47 2.47 6.69-6.69-2.46-2.48-6.7 6.7zM.99 14.99l3.86-1.39-2.46-2.44-1.4 3.83zm12.25-14c-.48 0-.92.2-1.24.51l-1.44 1.44 2.47 2.47 1.44-1.44c.32-.32.51-.75.51-1.24.01-.95-.77-1.74-1.74-1.74z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                title="Delete"
+              >
+                <span
+                  className="bp3-icon bp3-icon-trash"
+                  icon="trash"
+                >
+                  <svg
+                    data-icon="trash"
+                    fill={undefined}
+                    height="13"
+                    viewBox="0 0 16 16"
+                    width="13"
+                  >
+                    <desc>
+                      trash
+                    </desc>
+                    <path
+                      d="M14.49 3.99h-13c-.28 0-.5.22-.5.5s.22.5.5.5h.5v10c0 .55.45 1 1 1h10c.55 0 1-.45 1-1v-10h.5c.28 0 .5-.22.5-.5s-.22-.5-.5-.5zm-8.5 9c0 .55-.45 1-1 1s-1-.45-1-1v-6c0-.55.45-1 1-1s1 .45 1 1v6zm3 0c0 .55-.45 1-1 1s-1-.45-1-1v-6c0-.55.45-1 1-1s1 .45 1 1v6zm3 0c0 .55-.45 1-1 1s-1-.45-1-1v-6c0-.55.45-1 1-1s1 .45 1 1v6zm2-12h-4c0-.55-.45-1-1-1h-2c-.55 0-1 .45-1 1h-4c-.55 0-1 .45-1 1v1h14v-1c0-.55-.45-1-1-1z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                title="Notifications"
+              >
+                <span
+                  className="bp3-icon bp3-icon-notifications-updated"
+                  icon="notifications-updated"
+                >
+                  <svg
+                    data-icon="notifications-updated"
+                    fill={undefined}
+                    height="13"
+                    viewBox="0 0 16 16"
+                    width="13"
+                  >
+                    <desc>
+                      notifications-updated
+                    </desc>
+                    <path
+                      d="M8 16c1.1 0 2-.9 2-2H6c0 1.1.9 2 2 2zm3.399-13.667l-.413.412A2.99 2.99 0 0 0 9 1.99a3 3 0 0 0-3 2.99c0 .8.32 1.558.876 2.114l2.002 1.992A2.99 2.99 0 0 0 13 9.184V10c0 .55.45 1 1 1s1 .45 1 1-.45 1-1 1H2c-.55 0-1-.45-1-1s.45-1 1-1 1-.45 1-1V6c0-2.43 1.73-4.45 4.02-4.9 0-.04-.02-.06-.02-.1 0-.55.45-1 1-1s1 .45 1 1c0 .04-.02.06-.02.1a4.97 4.97 0 0 1 2.419 1.233zM10.29 7.67l-2-1.99a.99.99 0 0 1-.29-.7 1 1 0 0 1 1-.99c.27 0 .52.11.7.29l1.29 1.29 3.28-3.28c.18-.18.42-.29.7-.29.55 0 1 .44 1 .99 0 .28-.11.52-.3.7l-3.98 3.98a.99.99 0 0 1-1.4 0z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            className="WebsiteList__item animation--cardLoading"
+          >
+            <div
+              className="WebsiteList__item__logo "
+            >
+              <span
+                className="WebsiteList__item__logo--text"
+              >
+                y
+              </span>
+            </div>
+            <div
+              className="WebsiteList__item__mainInfo"
+            >
+              <div
+                className="WebsiteList__item__mainInfo__websiteName"
+                title="Website's Name"
+              >
+                Yahoo
+              </div>
+              <div
+                className="WebsiteList__item__mainInfo__url"
+                title="Website's URL"
+              >
+                https://yahoo.com
+              </div>
+            </div>
+            <div
+              className="WebsiteList__item__status"
+              title="Website's Status"
+            >
+              <div
+                className="WebsiteList__item__status__icon"
+              >
+                <span
+                  className="bp3-icon bp3-icon-warning-sign"
+                  icon="warning-sign"
+                >
+                  <svg
+                    data-icon="warning-sign"
+                    fill="rgb(255, 187, 90)"
+                    height={16}
+                    viewBox="0 0 16 16"
+                    width={16}
+                  >
+                    <desc>
+                      warning-sign
+                    </desc>
+                    <path
+                      d="M15.84 13.5l.01-.01-7-12-.01.01c-.17-.3-.48-.5-.85-.5s-.67.2-.85.5l-.01-.01-7 12 .01.01c-.09.15-.15.31-.15.5 0 .55.45 1 1 1h14c.55 0 1-.45 1-1 0-.19-.06-.35-.15-.5zm-6.85-.51h-2v-2h2v2zm0-3h-2v-5h2v5z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                className="WebsiteList__item__status__updatedAt"
+              >
+                Last Checked 
+                <br />
+                @ 
+                9 months ago
+              </div>
+            </div>
+            <div
+              className="WebsiteList__item__toolbar"
+            >
+              <div
+                title="Update Now"
+              >
+                <span
+                  className="bp3-icon bp3-icon-automatic-updates"
+                  icon="automatic-updates"
+                >
+                  <svg
+                    data-icon="automatic-updates"
+                    fill={undefined}
+                    height="13"
+                    viewBox="0 0 16 16"
+                    width="13"
+                  >
+                    <desc>
+                      automatic-updates
+                    </desc>
+                    <path
+                      d="M8 14c-3.31 0-6-2.69-6-6 0-1.77.78-3.36 2-4.46V5c0 .55.45 1 1 1s1-.45 1-1V1c0-.55-.45-1-1-1H1C.45 0 0 .45 0 1s.45 1 1 1h1.74A7.95 7.95 0 0 0 0 8c0 4.42 3.58 8 8 8 .55 0 1-.45 1-1s-.45-1-1-1zM8 2a5.9 5.9 0 0 1 2.95.81l1.47-1.47A7.893 7.893 0 0 0 8 0c-.55 0-1 .45-1 1s.45 1 1 1zm2.71 6.71l5-5a1.003 1.003 0 0 0-1.42-1.42L10 6.59l-1.29-1.3a1.003 1.003 0 0 0-1.42 1.42l2 2c.18.18.43.29.71.29s.53-.11.71-.29zM16 8c0-.55-.06-1.08-.16-1.6l-1.87 1.87A5.966 5.966 0 0 1 12 12.45V11c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .55.45 1 1 1h4c.55 0 1-.45 1-1s-.45-1-1-1h-1.74A7.95 7.95 0 0 0 16 8z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                title="Edit"
+              >
+                <span
+                  className="bp3-icon bp3-icon-edit"
+                  icon="edit"
+                >
+                  <svg
+                    data-icon="edit"
+                    fill={undefined}
+                    height="13"
+                    viewBox="0 0 16 16"
+                    width="13"
+                  >
+                    <desc>
+                      edit
+                    </desc>
+                    <path
+                      d="M3.25 10.26l2.47 2.47 6.69-6.69-2.46-2.48-6.7 6.7zM.99 14.99l3.86-1.39-2.46-2.44-1.4 3.83zm12.25-14c-.48 0-.92.2-1.24.51l-1.44 1.44 2.47 2.47 1.44-1.44c.32-.32.51-.75.51-1.24.01-.95-.77-1.74-1.74-1.74z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                title="Delete"
+              >
+                <span
+                  className="bp3-icon bp3-icon-trash"
+                  icon="trash"
+                >
+                  <svg
+                    data-icon="trash"
+                    fill={undefined}
+                    height="13"
+                    viewBox="0 0 16 16"
+                    width="13"
+                  >
+                    <desc>
+                      trash
+                    </desc>
+                    <path
+                      d="M14.49 3.99h-13c-.28 0-.5.22-.5.5s.22.5.5.5h.5v10c0 .55.45 1 1 1h10c.55 0 1-.45 1-1v-10h.5c.28 0 .5-.22.5-.5s-.22-.5-.5-.5zm-8.5 9c0 .55-.45 1-1 1s-1-.45-1-1v-6c0-.55.45-1 1-1s1 .45 1 1v6zm3 0c0 .55-.45 1-1 1s-1-.45-1-1v-6c0-.55.45-1 1-1s1 .45 1 1v6zm3 0c0 .55-.45 1-1 1s-1-.45-1-1v-6c0-.55.45-1 1-1s1 .45 1 1v6zm2-12h-4c0-.55-.45-1-1-1h-2c-.55 0-1 .45-1 1h-4c-.55 0-1 .45-1 1v1h14v-1c0-.55-.45-1-1-1z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                title="Notifications"
+              >
+                <span
+                  className="bp3-icon bp3-icon-notifications-updated"
+                  icon="notifications-updated"
+                >
+                  <svg
+                    data-icon="notifications-updated"
+                    fill={undefined}
+                    height="13"
+                    viewBox="0 0 16 16"
+                    width="13"
+                  >
+                    <desc>
+                      notifications-updated
+                    </desc>
+                    <path
+                      d="M8 16c1.1 0 2-.9 2-2H6c0 1.1.9 2 2 2zm3.399-13.667l-.413.412A2.99 2.99 0 0 0 9 1.99a3 3 0 0 0-3 2.99c0 .8.32 1.558.876 2.114l2.002 1.992A2.99 2.99 0 0 0 13 9.184V10c0 .55.45 1 1 1s1 .45 1 1-.45 1-1 1H2c-.55 0-1-.45-1-1s.45-1 1-1 1-.45 1-1V6c0-2.43 1.73-4.45 4.02-4.9 0-.04-.02-.06-.02-.1 0-.55.45-1 1-1s1 .45 1 1c0 .04-.02.06-.02.1a4.97 4.97 0 0 1 2.419 1.233zM10.29 7.67l-2-1.99a.99.99 0 0 1-.29-.7 1 1 0 0 1 1-.99c.27 0 .52.11.7.29l1.29 1.29 3.28-3.28c.18-.18.42-.29.7-.29.55 0 1 .44 1 .99 0 .28-.11.52-.3.7l-3.98 3.98a.99.99 0 0 1-1.4 0z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            data-css-1xjdp6g=""
+          >
+            <div
+              data-css-1u3clyi=""
+            />
+            <div
+              data-css-1vfpuyw=""
+            />
+          </div>
+          <div
+            data-css-1l117w4=""
+          >
+            <div
+              data-css-6x2xk9=""
+            />
+            <div
+              data-css-dh4rml=""
+            />
+          </div>
+          <div
+            data-css-3dqrhs=""
+          >
+            <div
+              data-css-jidh41=""
+            />
+            <div
+              data-css-zkhvkf=""
+            />
+          </div>
+          <div
+            data-css-14agfjn=""
+          >
+            <div
+              data-css-1dkszzo=""
+            />
+            <div
+              data-css-mqumhe=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/DashboardPage/WebsiteList When List Is Empty 1`] = `
+<div
+  data-css-18sl43g=""
+>
+  <div
+    data-css-1uksfg7=""
+  >
+    <div
+      data-css-q8x515=""
+    >
+      <div
+        data-css-1cnasqg=""
+      >
+        <div
+          className="WebsiteList"
+        >
+          <div
+            className="WebsiteList--noItems"
+          >
+            <div>
+              <span
+                className="bp3-icon bp3-icon-filter-remove"
+                icon="filter-remove"
+              >
+                <svg
+                  data-icon="filter-remove"
+                  fill={undefined}
+                  height="30"
+                  viewBox="0 0 20 20"
+                  width="30"
+                >
+                  <desc>
+                    filter-remove
+                  </desc>
+                  <path
+                    d="M15 2c0-.55-.45-1-1-1H1a1.003 1.003 0 0 0-.71 1.71L5 7.41V16a1.003 1.003 0 0 0 1.71.71l3-3c.18-.18.29-.43.29-.71V7.41l4.71-4.71c.18-.17.29-.42.29-.7zm2.91 13.5l1.79-1.79c.19-.18.3-.43.3-.71a1.003 1.003 0 0 0-1.71-.71l-1.79 1.79-1.79-1.79a1.003 1.003 0 0 0-1.42 1.42l1.79 1.79-1.79 1.79a1.003 1.003 0 0 0 1.42 1.42l1.79-1.79 1.79 1.79a1.003 1.003 0 0 0 1.42-1.42l-1.8-1.79z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </span>
+              <div>
+                Hi, Seems like you haven't added any websites yet.
+              </div>
+              <div>
+                 Try adding website by clicking on above button.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            data-css-1xjdp6g=""
+          >
+            <div
+              data-css-1u3clyi=""
+            />
+            <div
+              data-css-1vfpuyw=""
+            />
+          </div>
+          <div
+            data-css-1l117w4=""
+          >
+            <div
+              data-css-6x2xk9=""
+            />
+            <div
+              data-css-dh4rml=""
+            />
+          </div>
+          <div
+            data-css-3dqrhs=""
+          >
+            <div
+              data-css-jidh41=""
+            />
+            <div
+              data-css-zkhvkf=""
+            />
+          </div>
+          <div
+            data-css-14agfjn=""
+          >
+            <div
+              data-css-1dkszzo=""
+            />
+            <div
+              data-css-mqumhe=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/DashboardPage/WebsiteList While Fetching 1`] = `
+<div
+  data-css-18sl43g=""
+>
+  <div
+    data-css-1uksfg7=""
+  >
+    <div
+      data-css-q8x515=""
+    >
+      <div
+        data-css-1cnasqg=""
+      >
+        <div
+          className="WebsiteList"
+        >
+          <div
+            className="WebsiteList--fetching"
+          >
+            <div
+              className="bp3-spinner bp3-intent-success"
+            >
+              <span
+                className="bp3-spinner-animation"
+              >
+                <svg
+                  height={100}
+                  strokeWidth={4}
+                  viewBox="0 0 100 100"
+                  width={100}
+                >
+                  <path
+                    className="bp3-spinner-track"
+                    d="M 50,50 m 0,-44.5 a 44.5,44.5 0 1 1 0,89 a 44.5,44.5 0 1 1 0,-89"
+                  />
+                  <path
+                    className="bp3-spinner-head"
+                    d="M 50,50 m 0,-44.5 a 44.5,44.5 0 1 1 0,89 a 44.5,44.5 0 1 1 0,-89"
+                    pathLength={280}
+                    strokeDasharray="280 280"
+                    strokeDashoffset={210}
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            data-css-1xjdp6g=""
+          >
+            <div
+              data-css-1u3clyi=""
+            />
+            <div
+              data-css-1vfpuyw=""
+            />
+          </div>
+          <div
+            data-css-1l117w4=""
+          >
+            <div
+              data-css-6x2xk9=""
+            />
+            <div
+              data-css-dh4rml=""
+            />
+          </div>
+          <div
+            data-css-3dqrhs=""
+          >
+            <div
+              data-css-jidh41=""
+            />
+            <div
+              data-css-zkhvkf=""
+            />
+          </div>
+          <div
+            data-css-14agfjn=""
+          >
+            <div
+              data-css-1dkszzo=""
+            />
+            <div
+              data-css-mqumhe=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Pages/HomePage Intitial View 1`] = `
 <div
   data-css-18sl43g=""

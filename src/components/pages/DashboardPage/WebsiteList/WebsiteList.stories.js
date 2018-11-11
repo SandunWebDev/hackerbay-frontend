@@ -1,12 +1,76 @@
 import React from "react";
 import { storiesOf, addDecorator } from "@storybook/react";
+import { action } from "@storybook/addon-actions";
 
 import WebsiteList from "./WebsiteList";
 
-import { injectReduxAndRouter } from "../../../../stories/customDecorators/injectContexts";
+const defaultProps = {
+  websiteListReduxState: {
+    isFetching: false,
+    fullList: [],
+    error: ""
+  },
+  websiteListActions: {
+    loadAllWebsiteLinks: action("Fetched Action Fired")
+  },
+  token: ""
+};
 
-storiesOf("Pages/WebsiteList", module)
-  .addDecorator(injectReduxAndRouter())
+storiesOf("Pages/DashboardPage/WebsiteList", module)
+  // .addDecorator(injectReduxAndRouter())
   .addWithJSX("Intitial View", () => {
-    return <WebsiteList />;
+    return <WebsiteList {...defaultProps} />;
+  })
+  .addWithJSX("While Fetching", () => {
+    const customProps = {
+      websiteListReduxState: {
+        ...defaultProps.websiteListReduxState,
+        isFetching: true
+      }
+    };
+
+    return <WebsiteList {...defaultProps} {...customProps} />;
+  })
+  .addWithJSX("Error Occured", () => {
+    const customProps = {
+      websiteListReduxState: {
+        ...defaultProps.websiteListReduxState,
+        error: "Some Error Occured"
+      }
+    };
+
+    return <WebsiteList {...defaultProps} {...customProps} />;
+  })
+  .addWithJSX("When List Is Empty", () => {
+    const customProps = {
+      websiteListReduxState: {
+        ...defaultProps.websiteListReduxState,
+        fullList: []
+      }
+    };
+
+    return <WebsiteList {...defaultProps} {...customProps} />;
+  })
+  .addWithJSX("When List Has Entries.", () => {
+    const customProps = {
+      websiteListReduxState: {
+        ...defaultProps.websiteListReduxState,
+        fullList: [
+          {
+            websiteName: "Google",
+            url: "https://google.com",
+            onlineStatus: true,
+            updatedAt: new Date()
+          },
+          {
+            websiteName: "Yahoo",
+            url: "https://yahoo.com",
+            onlineStatus: false,
+            updatedAt: new Date("2018-02-15")
+          }
+        ]
+      }
+    };
+
+    return <WebsiteList {...defaultProps} {...customProps} />;
   });

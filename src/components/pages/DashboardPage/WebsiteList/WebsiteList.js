@@ -21,7 +21,9 @@ export default class WebsiteList extends Component {
     if (isFetching) {
       return (
         <div className="WebsiteList">
-          <Spinner intent={"success"} size={100} />
+          <div className="WebsiteList--fetching">
+            <Spinner intent={"success"} size={100} />
+          </div>
         </div>
       );
     }
@@ -32,28 +34,15 @@ export default class WebsiteList extends Component {
           <div className="WebsiteList--error">
             <div>
               <Icon icon="disable" iconSize="30" />
-              <div>{error}</div>
+              <div data-testid="errorMsg">{error}</div>
               <div className="WebsiteList--error__reloadButton">
                 <Button
                   icon="refresh"
                   text="Reload"
                   onClick={() => websiteListActions.loadAllWebsiteLinks(token)}
+                  data-testid="reloadButton"
                 />
               </div>
-            </div>
-          </div>
-        </div>
-      );
-    }
-
-    if (fullList.length === 0) {
-      return (
-        <div className="WebsiteList">
-          <div className="WebsiteList--noItems">
-            <div>
-              <Icon icon="filter-remove" iconSize="30" />
-              <div>Hi, Seems like you haven't added any websites yet.</div>
-              <div> Try adding website by clicking on above button.</div>
             </div>
           </div>
         </div>
