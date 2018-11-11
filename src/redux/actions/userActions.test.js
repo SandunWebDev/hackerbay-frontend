@@ -29,7 +29,7 @@ const paramsFromReduxForm = {
   password: "supersecret"
 };
 
-describe("userReducer", () => {
+describe("Redux Actions - userActions", () => {
   let mockStore;
 
   beforeEach(() => {

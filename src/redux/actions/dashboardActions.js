@@ -36,7 +36,7 @@ function loadAllWebsiteLinks(token = "") {
 
 /* ----- A Website Actions-----*/
 function addWebsite(token = "", addWebsiteFormInputValues = {}) {
-  const { websiteName, url } = addWebsiteFormInputValues;
+  const { websiteName = "", url = "" } = addWebsiteFormInputValues;
 
   return async dispatch => {
     const websiteAddingPromise = axiosBase.post("website/add", {
