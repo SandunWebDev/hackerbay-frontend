@@ -132,7 +132,7 @@ describe("Header Component", () => {
       expect(mockLogoutFn).toHaveBeenCalled();
     });
 
-    it("Should excute LogOut button is clicked loggedIn props should be false.", () => {
+    it("When LogOut button is clicked loggedIn props should be changed to false.", () => {
       // Making sure user is initially logged in.
       const wrappedHeader = mount(
         withReduxAndRouter(
@@ -155,6 +155,49 @@ describe("Header Component", () => {
       logoutButton.simulate("click");
 
       expect(wrappedHeader.find("Header").props().loggedIn).toEqual(false);
+    });
+  });
+
+  describe("Mobile Menu", () => {
+    it("Should render mobile menu when clicked on burger icon.", () => {
+      const wrappedHeader = mount(withReduxAndRouter(<Header />));
+
+      const mobieBurgerIcon = wrappedHeader
+        .find(".Header__Navbar__mobilemenuIcon")
+        .at(0);
+
+      mobieBurgerIcon.simulate("click");
+
+      expect(wrappedHeader.find(".Header__mobileMenu").exists()).toEqual(true);
+    });
+
+    it("Should hide mobile menu when clicked on burger icon.", () => {
+      const wrappedHeader = mount(withReduxAndRouter(<Header />));
+
+      const mobieBurgerIcon = wrappedHeader
+        .find(".Header__Navbar__mobilemenuIcon")
+        .at(0);
+
+      mobieBurgerIcon.simulate("click"); //Openning
+      mobieBurgerIcon.simulate("click"); //Closing
+
+      expect(wrappedHeader.find(".Header__mobileMenu").exists()).toEqual(false);
+    });
+
+    it("Should hide mobile menu when clicked on opend mobile menu", () => {
+      const wrappedHeader = mount(withReduxAndRouter(<Header />));
+
+      const mobieBurgerIcon = wrappedHeader
+        .find(".Header__Navbar__mobilemenuIcon")
+        .at(0);
+
+      mobieBurgerIcon.simulate("click"); //Openning
+
+      const mobieMenu = wrappedHeader.find(".Header__mobileMenu").at(0);
+
+      mobieMenu.simulate("click"); //Closing
+
+      expect(wrappedHeader.find(".Header__mobileMenu").exists()).toEqual(false);
     });
   });
 });

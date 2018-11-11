@@ -153,5 +153,6 @@ Header.propTypes = {
 
 Header.defaultProps = {
   name: "",
-  loggedIn: false
+  loggedIn: false,
+  logoutAccount: () => {}
 };

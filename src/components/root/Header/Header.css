@@ -34,7 +34,7 @@ Since right now refactoring code is time consuming just force editing blueprintj
 
 .Header__mobileMenu {
   z-index: 9999;
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
