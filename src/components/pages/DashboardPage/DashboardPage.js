@@ -97,6 +97,7 @@ export class DashboardPage extends Component {
             <WebsiteList
               websiteListReduxState={websiteListReduxState}
               websiteListActions={websiteListActions}
+              websiteActions={websiteActions}
               token={token}
             />
           </div>
@@ -142,7 +143,8 @@ WebsiteList.propTypes = {
     sortedAndFilteredList: PropTypes.array.isRequired
   }),
   websiteActions: PropTypes.shape({
-    addWebsite: PropTypes.func.isRequired
+    addWebsite: PropTypes.func.isRequired,
+    deleteWebsite: PropTypes.func.isRequired
   }),
   websiteListActions: PropTypes.shape({
     loadAllWebsiteLinks: PropTypes.func.isRequired,
@@ -165,7 +167,8 @@ WebsiteList.defaultProps = {
     sortedAndFilteredList: []
   },
   websiteActions: {
-    addWebsite: () => {}
+    addWebsite: () => {},
+    deleteWebsite: () => {}
   },
   websiteListActions: {
     loadAllWebsiteLinks: () => {},

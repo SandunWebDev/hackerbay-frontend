@@ -11,7 +11,8 @@ export const actionTypes = {
       "DASHBOARD__WEBSITELIST__SORT_AND_FILTER"
   },
   website: {
-    DASHBOARD__WEBSITE__ADD_WEBSITE: "DASHBOARD__WEBSITE__ADD_WEBSITE"
+    DASHBOARD__WEBSITE__ADD_WEBSITE: "DASHBOARD__WEBSITE__ADD_WEBSITE",
+    DASHBOARD__WEBSITE__DELETE_WEBSITE: "DASHBOARD__WEBSITE__DELETE_WEBSITE"
   }
 };
 
@@ -21,7 +22,8 @@ export const actions = {
     sortAndFilter: sortAndFilter
   },
   websiteActions: {
-    addWebsite: addWebsite
+    addWebsite: addWebsite,
+    deleteWebsite: deleteWebsite
   }
 };
 
@@ -126,5 +128,21 @@ function addWebsite(token = "", addWebsiteFormInputValues = {}) {
       type: actionTypes.website.DASHBOARD__WEBSITE__ADD_WEBSITE,
       payload: websiteAddingPromise
     }).catch(axiosBaseReduxFormErrorHandler);
+  };
+}
+
+function deleteWebsite(token = "", websiteItemId = "") {
+  return async dispatch => {
+    const websiteDeletingPromise = axiosBase.delete("website/delete", {
+      data: {
+        token,
+        websiteItemId
+      }
+    });
+
+    return dispatch({
+      type: actionTypes.website.DASHBOARD__WEBSITE__DELETE_WEBSITE,
+      payload: websiteDeletingPromise
+    }).catch(axiosBaseDefaultErrorHandler);
   };
 }

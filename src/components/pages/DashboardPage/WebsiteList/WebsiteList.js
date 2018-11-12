@@ -23,7 +23,7 @@ export default class WebsiteList extends Component {
       isFetching,
       error
     } = this.props.websiteListReduxState;
-    const { websiteListActions, token } = this.props;
+    const { websiteListActions, websiteActions, token } = this.props;
 
     if (isFetching) {
       return (
@@ -93,16 +93,19 @@ export default class WebsiteList extends Component {
         )}
 
         <div className="WebsiteList__items">
-          {sortedAndFilteredList.map((website, id) => {
-            const { websiteName, url, onlineStatus, updatedAt } = website;
+          {sortedAndFilteredList.map(website => {
+            const { id, websiteName, url, onlineStatus, updatedAt } = website;
 
             return (
               <WebsiteListItem
                 key={id}
+                websiteItemId={id}
                 websiteName={websiteName}
                 url={url}
                 onlineStatus={onlineStatus}
                 updatedAt={updatedAt}
+                onDeleteAction={websiteActions.deleteWebsite}
+                token={token}
               />
             );
           })}
@@ -122,6 +125,9 @@ WebsiteList.propTypes = {
   websiteListActions: PropTypes.shape({
     loadAllWebsiteLinks: PropTypes.func.isRequired
   }).isRequired,
+  websiteActions: PropTypes.shape({
+    deleteWebsite: PropTypes.func.isRequired
+  }).isRequired,
   token: PropTypes.string.isRequired
 };
 
@@ -135,6 +141,9 @@ WebsiteList.defaultProps = {
   websiteListActions: {
     loadAllWebsiteLinks: () => {},
     sortAndFilter: () => {}
+  },
+  websiteActions: {
+    deleteWebsite: () => {}
   },
   token: ""
 };

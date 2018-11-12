@@ -9,6 +9,7 @@ import "./WebsiteListItem.css";
 export default class WebsiteListItem extends Component {
   render() {
     const { websiteName, url, onlineStatus, updatedAt } = this.props;
+    const { token, websiteItemId, onDeleteAction } = this.props;
 
     const modifiedUpdatedAt = moment(updatedAt).fromNow();
 
@@ -50,7 +51,10 @@ export default class WebsiteListItem extends Component {
           <div title="Edit">
             <Icon icon="edit" iconSize="13" />
           </div>
-          <div title="Delete">
+          <div
+            title="Delete"
+            onClick={() => onDeleteAction(token, websiteItemId)}
+          >
             <Icon icon="trash" iconSize="13" />
           </div>
           <div title="Notifications">
@@ -63,18 +67,22 @@ export default class WebsiteListItem extends Component {
 }
 
 WebsiteListItem.propTypes = {
-  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  websiteItemId: PropTypes.string.isRequired,
   websiteName: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   onlineStatus: PropTypes.bool.isRequired,
   updatedAt: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)])
-    .isRequired
+    .isRequired,
+  token: PropTypes.string.isRequired,
+  onDeleteAction: PropTypes.func.isRequired
 };
 
 WebsiteListItem.defaultProps = {
-  id: "",
+  websiteItemId: "",
   websiteName: "Website Name",
   url: "http://website.url",
   onlineStatus: true,
-  updatedAt: new Date()
+  updatedAt: new Date(),
+  token: "",
+  onDeleteAction: () => {}
 };

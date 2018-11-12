@@ -14,6 +14,11 @@ export const dashboardReducerDefaultState = {
     error: "",
     success: false,
     addedWebsite: ""
+  },
+  deleteWebsite: {
+    isFetching: false,
+    error: "",
+    success: false
   }
 };
 
@@ -68,6 +73,7 @@ export default (state = dashboardReducerDefaultState, action) => {
     }
 
     /* ----- A Website Actions-----*/
+    // DASHBOARD__WEBSITE__ADD_WEBSITE
     case actionTypes.website.DASHBOARD__WEBSITE__ADD_WEBSITE + "_PENDING": {
       return {
         ...state,
@@ -107,6 +113,59 @@ export default (state = dashboardReducerDefaultState, action) => {
           error: serverError,
           success: false,
           addedWebsite: ""
+        }
+      };
+    }
+
+    // DASHBOARD__WEBSITE__DELETE_WEBSITE
+    case actionTypes.website.DASHBOARD__WEBSITE__DELETE_WEBSITE + "_PENDING": {
+      return {
+        ...state,
+        deleteWebsite: {
+          ...state.deleteWebsite,
+          isFetching: true,
+          error: "",
+          success: false
+        }
+      };
+    }
+    case actionTypes.website.DASHBOARD__WEBSITE__DELETE_WEBSITE +
+      "_FULFILLED": {
+      const deletedWebsiteItemId = resData.deletedWebsiteItemId;
+
+      const currentFullList = state.websiteList.fullList;
+
+      const newFullList = currentFullList.filter(item => {
+        if (item.id !== deletedWebsiteItemId) {
+          return item;
+        }
+      });
+
+      return {
+        ...state,
+        deleteWebsite: {
+          ...state.deleteWebsite,
+          isFetching: false,
+          error: "",
+          success: true
+        },
+        websiteList: {
+          ...state.websiteList,
+          fullList: newFullList,
+          sortedAndFilteredList: newFullList
+        }
+      };
+    }
+    case actionTypes.website.DASHBOARD__WEBSITE__DELETE_WEBSITE + "_REJECTED": {
+      const serverError = handleAxiosErrors(action.payload);
+
+      return {
+        ...state,
+        deleteWebsite: {
+          ...state.deleteWebsite,
+          isFetching: false,
+          error: serverError,
+          success: false
         }
       };
     }
