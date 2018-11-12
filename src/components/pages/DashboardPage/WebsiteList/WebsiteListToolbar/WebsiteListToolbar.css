@@ -1,0 +1,14 @@
+.WebsiteListToolbar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.WebsiteListToolbar > div {
+  margin-top: 10px;
+}
+
+/* Just overriding blueprintjs disabled button */
+.WebsiteListToolbar button[disabled] {
+  cursor: auto !important;
+}

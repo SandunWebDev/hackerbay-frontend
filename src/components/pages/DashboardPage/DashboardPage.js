@@ -138,13 +138,15 @@ WebsiteList.propTypes = {
   websiteList: PropTypes.shape({
     isFetching: PropTypes.bool.isRequired,
     error: PropTypes.string.isRequired,
-    fullList: PropTypes.array.isRequired
+    fullList: PropTypes.array.isRequired,
+    sortedAndFilteredList: PropTypes.array.isRequired
   }),
   websiteActions: PropTypes.shape({
     addWebsite: PropTypes.func.isRequired
   }),
   websiteListActions: PropTypes.shape({
-    loadAllWebsiteLinks: PropTypes.func.isRequired
+    loadAllWebsiteLinks: PropTypes.func.isRequired,
+    sortAndFilter: PropTypes.func.isRequired
   }),
   token: PropTypes.string.isRequired
 };
@@ -159,11 +161,15 @@ WebsiteList.defaultProps = {
   websiteList: {
     isFetching: false,
     error: "",
-    fullList: []
+    fullList: [],
+    sortedAndFilteredList: []
   },
   websiteActions: {
     addWebsite: () => {}
   },
-  websiteListActions: { loadAllWebsiteLinks: () => {} },
+  websiteListActions: {
+    loadAllWebsiteLinks: () => {},
+    sortAndFilter: () => {}
+  },
   token: ""
 };

@@ -6,7 +6,8 @@ export const dashboardReducerDefaultState = {
   websiteList: {
     isFetching: false,
     error: "",
-    fullList: []
+    fullList: [],
+    sortedAndFilteredList: []
   },
   addWebsite: {
     isFetching: false,
@@ -36,7 +37,8 @@ export default (state = dashboardReducerDefaultState, action) => {
           ...state.websiteList,
           isFetching: false,
           error: "",
-          fullList: resData.result
+          fullList: resData.result,
+          sortedAndFilteredList: resData.result
         }
       };
     }
@@ -49,7 +51,18 @@ export default (state = dashboardReducerDefaultState, action) => {
           ...state.websiteList,
           isFetching: false,
           error: serverError,
-          fullList: []
+          fullList: [],
+          sortedAndFilteredList: []
+        }
+      };
+    }
+
+    case actionTypes.websiteList.DASHBOARD__WEBSITELIST__SORT_AND_FILTER: {
+      return {
+        ...state,
+        websiteList: {
+          ...state.websiteList,
+          sortedAndFilteredList: action.payload
         }
       };
     }
@@ -71,7 +84,8 @@ export default (state = dashboardReducerDefaultState, action) => {
         ...state,
         websiteList: {
           ...state.websiteList,
-          fullList: [...state.websiteList.fullList, resData.added]
+          fullList: [...state.websiteList.fullList, resData.added],
+          sortedAndFilteredList: [...state.websiteList.fullList, resData.added]
         },
         addWebsite: {
           ...state.addWebsite,

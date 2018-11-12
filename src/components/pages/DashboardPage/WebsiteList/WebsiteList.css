@@ -4,6 +4,7 @@
 }
 
 .WebsiteList--noItems,
+.WebsiteList--noSearchResults,
 .WebsiteList--error {
   display: flex;
   justify-content: center;

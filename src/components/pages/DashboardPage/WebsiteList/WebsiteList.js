@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { Spinner, Icon, Button } from "@blueprintjs/core";
 
 import WebsiteListItem from "./WebsiteListItem/WebsiteListItem";
+import WebsiteListToolbar from "./WebsiteListToolbar/WebsiteListToolbar";
 
 import "./WebsiteList.css";
 
@@ -16,7 +17,12 @@ export default class WebsiteList extends Component {
   }
 
   render() {
-    const { fullList, isFetching, error } = this.props.websiteListReduxState;
+    const {
+      fullList,
+      sortedAndFilteredList,
+      isFetching,
+      error
+    } = this.props.websiteListReduxState;
     const { websiteListActions, token } = this.props;
 
     if (isFetching) {
@@ -66,19 +72,41 @@ export default class WebsiteList extends Component {
 
     return (
       <div className="WebsiteList">
-        {fullList.map((website, id) => {
-          const { websiteName, url, onlineStatus, updatedAt } = website;
+        <div className="WebsiteList__toolbar">
+          <WebsiteListToolbar
+            sortAndFilter={websiteListActions.sortAndFilter}
+            fullList={fullList}
+            currentSortedAndFilteredList={sortedAndFilteredList}
+          />
+        </div>
 
-          return (
-            <WebsiteListItem
-              key={id}
-              websiteName={websiteName}
-              url={url}
-              onlineStatus={onlineStatus}
-              updatedAt={updatedAt}
-            />
-          );
-        })}
+        {sortedAndFilteredList.length === 0 ? (
+          <div className="WebsiteList--noSearchResults">
+            <div>
+              <Icon icon="filter-remove" iconSize="30" />
+              <div>No Results Found For This Query.</div>
+              <div> Try Again With Changing Criteria.</div>
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
+
+        <div className="WebsiteList__items">
+          {sortedAndFilteredList.map((website, id) => {
+            const { websiteName, url, onlineStatus, updatedAt } = website;
+
+            return (
+              <WebsiteListItem
+                key={id}
+                websiteName={websiteName}
+                url={url}
+                onlineStatus={onlineStatus}
+                updatedAt={updatedAt}
+              />
+            );
+          })}
+        </div>
       </div>
     );
   }
@@ -88,6 +116,7 @@ WebsiteList.propTypes = {
   websiteListReduxState: PropTypes.shape({
     isFetching: PropTypes.bool.isRequired,
     fullList: PropTypes.arrayOf(PropTypes.object).isRequired,
+    sortedAndFilteredList: PropTypes.arrayOf(PropTypes.object).isRequired,
     error: PropTypes.string.isRequired
   }).isRequired,
   websiteListActions: PropTypes.shape({
@@ -100,10 +129,12 @@ WebsiteList.defaultProps = {
   websiteListReduxState: {
     isFetching: false,
     fullList: [],
+    sortedAndFilteredList: [],
     error: ""
   },
   websiteListActions: {
-    loadAllWebsiteLinks: () => {}
+    loadAllWebsiteLinks: () => {},
+    sortAndFilter: () => {}
   },
   token: ""
 };
