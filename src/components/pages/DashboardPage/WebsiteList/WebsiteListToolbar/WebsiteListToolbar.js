@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 import {
   Button,
@@ -111,21 +112,20 @@ export default class WebsiteListToolbar extends Component {
     });
 
     return (
-      <div
-        className="WebsiteListToolbar"
-        onClick={() => this.handleSortAndFilter()}
-      >
+      <div className="WebsiteListToolbar">
         <ControlGroup vertical={false}>
           <Button icon="filter" minimal={true} intent="warning" disabled={true}>
             Filter By
           </Button>
           <HTMLSelect
+            data-testid="filterTagSelector"
             title="Filter"
             onChange={e => this.handleFilterTagSelection(e)}
           >
             {tagOptionItems}
           </HTMLSelect>
           <InputGroup
+            data-testid="filterTagTextBox"
             id="filterText"
             onChange={e => this.handleFilterTextChange(e)}
             placeholder={selectedFilterPlaceholder}
@@ -137,18 +137,21 @@ export default class WebsiteListToolbar extends Component {
             Sort By
           </Button>
           <HTMLSelect
+            data-testid="sortTagSelector"
             title="Sort By"
             onChange={e => this.handleSortTagSelection(e)}
           >
             {tagOptionItems}
           </HTMLSelect>
           <Button
+            data-testid="sortDescendingButton"
             icon="sort-alphabetical"
             title="Decending"
             intent={selectedSortOrder === "descending" ? "primary" : "none"}
             onClick={e => this.handleSortOrderSelection("descending")}
           />
           <Button
+            data-testid="sortAscendingButton"
             icon="sort-alphabetical-desc"
             title="Ascending"
             intent={selectedSortOrder === "ascending" ? "primary" : "none"}
@@ -159,3 +162,15 @@ export default class WebsiteListToolbar extends Component {
     );
   }
 }
+
+WebsiteListToolbar.propTypes = {
+  sortAndFilter: PropTypes.func.isRequired,
+  fullList: PropTypes.array.isRequired,
+  currentSortedAndFilteredList: PropTypes.array.isRequired
+};
+
+WebsiteListToolbar.defaultProps = {
+  sortAndFilter: () => {},
+  fullList: [],
+  currentSortedAndFilteredList: []
+};

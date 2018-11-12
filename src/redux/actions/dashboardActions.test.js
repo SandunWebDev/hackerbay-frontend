@@ -180,5 +180,95 @@ describe("Redux Actions - dashboardActions", () => {
         );
       });
     });
+
+    describe("When sortAndFailed() called.", () => {
+      // Paramters arefullList, currentSortedAndFilteredList, selectedFilterTag, selectedFilterText, selectedSortTag, selectedSortOrderType;
+      const defaultParameters = [[], [], "", "", "", ""];
+
+      it("Should dispatch DASHBOARD__WEBSITELIST__SORT_AND_FILTER action.", () => {
+        mockStore.dispatch(
+          websiteListActions.sortAndFilter(...defaultParameters)
+        );
+
+        expect(mockStore.getActions()[0]).toEqual(
+          expect.objectContaining({
+            type: websiteListActionTypes.DASHBOARD__WEBSITELIST__SORT_AND_FILTER
+          })
+        );
+      });
+
+      it("Should return provided fulllist in payload when selectedFilterText param is empty.", () => {
+        const fullList = [{ a: "hello" }];
+        const selectedFilterText = "";
+
+        mockStore.dispatch(
+          websiteListActions.sortAndFilter(fullList, [], "", selectedFilterText)
+        );
+
+        expect(mockStore.getActions()[0]).toEqual(
+          expect.objectContaining({
+            type:
+              websiteListActionTypes.DASHBOARD__WEBSITELIST__SORT_AND_FILTER,
+            payload: fullList
+          })
+        );
+      });
+
+      it("Should return provided just filerdList in payload when specific orderType is not specified. (ex:descending)", () => {
+        const fullList = [{ a: "hello" }];
+        const selectedSortOrderType = "";
+
+        mockStore.dispatch(
+          websiteListActions.sortAndFilter(
+            fullList,
+            [],
+            "",
+            "",
+            "",
+            selectedSortOrderType
+          )
+        );
+
+        expect(mockStore.getActions()[0]).toEqual(
+          expect.objectContaining({
+            type:
+              websiteListActionTypes.DASHBOARD__WEBSITELIST__SORT_AND_FILTER,
+            payload: fullList
+          })
+        );
+      });
+
+      it("Should return filtered and sorted list in payload when necessary parameter are provided.", () => {
+        const fullList = [
+            { a: "bed ship", b: "2" },
+            { a: "cat", b: "1" },
+            { a: "apple ship", b: "3" }
+          ],
+          currentSortedAndFilteredList = [],
+          selectedFilterTag = "a",
+          selectedFilterText = "ship",
+          selectedSortTag = "b",
+          selectedSortOrderType = "descending";
+
+        mockStore.dispatch(
+          websiteListActions.sortAndFilter(
+            fullList,
+            currentSortedAndFilteredList,
+            selectedFilterTag,
+            selectedFilterText,
+            selectedSortTag,
+            selectedSortOrderType
+          )
+        );
+
+        expect(mockStore.getActions()[0]).toEqual(
+          expect.objectContaining({
+            type:
+              websiteListActionTypes.DASHBOARD__WEBSITELIST__SORT_AND_FILTER,
+            payload: [{ a: "bed ship", b: "2" }, { a: "apple ship", b: "3" }]
+          })
+        );
+      });
+    });
   });
 });

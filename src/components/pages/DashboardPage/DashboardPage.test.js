@@ -16,12 +16,16 @@ const defaultProps = {
   websiteList: {
     isFetching: false,
     error: "",
-    fullList: []
+    fullList: [],
+    sortedAndFilteredList: []
   },
   websiteActions: {
     addWebsite: () => {}
   },
-  websiteListActions: { loadAllWebsiteLinks: () => {} },
+  websiteListActions: {
+    loadAllWebsiteLinks: () => {},
+    sortAndFilter: () => {}
+  },
   token: ""
 };
 

@@ -8,10 +8,12 @@ const defaultProps = {
   websiteListReduxState: {
     isFetching: false,
     fullList: [],
+    sortedAndFilteredList: [],
     error: ""
   },
   websiteListActions: {
-    loadAllWebsiteLinks: action("Fetched Action Fired")
+    loadAllWebsiteLinks: action("Fetched Action Fired"),
+    sortAndFilter: action("SortAndFilter Action Fired")
   },
   token: ""
 };
@@ -56,6 +58,20 @@ storiesOf("Pages/DashboardPage/WebsiteList", module)
       websiteListReduxState: {
         ...defaultProps.websiteListReduxState,
         fullList: [
+          {
+            websiteName: "Google",
+            url: "https://google.com",
+            onlineStatus: true,
+            updatedAt: new Date()
+          },
+          {
+            websiteName: "Yahoo",
+            url: "https://yahoo.com",
+            onlineStatus: false,
+            updatedAt: new Date("2018-02-15")
+          }
+        ],
+        sortedAndFilteredList: [
           {
             websiteName: "Google",
             url: "https://google.com",

@@ -8,10 +8,12 @@ const defaultProps = {
   websiteListReduxState: {
     isFetching: false,
     fullList: [],
+    sortedAndFilteredList: [],
     error: ""
   },
   websiteListActions: {
-    loadAllWebsiteLinks: jest.fn()
+    loadAllWebsiteLinks: jest.fn(),
+    sortAndFilter: jest.fn
   },
   token: ""
 };
@@ -135,6 +137,20 @@ describe("WebsiteList Component", () => {
       websiteListReduxState: {
         ...defaultProps.websiteListReduxState,
         fullList: [
+          {
+            websiteName: "Google",
+            url: "https://google.com",
+            onlineStatus: true,
+            updatedAt: new Date()
+          },
+          {
+            websiteName: "Yahoo",
+            url: "https://yahoo.com",
+            onlineStatus: false,
+            updatedAt: new Date("2018-02-15")
+          }
+        ],
+        sortedAndFilteredList: [
           {
             websiteName: "Google",
             url: "https://google.com",

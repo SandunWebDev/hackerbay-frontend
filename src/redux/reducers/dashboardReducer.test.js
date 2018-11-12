@@ -6,7 +6,8 @@ const defaultState = {
   websiteList: {
     isFetching: false,
     error: "",
-    fullList: []
+    fullList: [],
+    sortedAndFilteredList: []
   },
   addWebsite: {
     isFetching: false,
@@ -85,7 +86,8 @@ describe("Reducer/dashboardReducer", () => {
           ...defaultState.websiteList,
           isFetching: false,
           error: "",
-          fullList: payload.data.result
+          fullList: payload.data.result,
+          sortedAndFilteredList: payload.data.result
         }
       });
     });
@@ -113,6 +115,27 @@ describe("Reducer/dashboardReducer", () => {
           isFetching: false,
           error: "Some Error Occured",
           fullList: []
+        }
+      });
+    });
+
+    it("Should handle DASHBOARD__WEBSITELIST__SORT_AND_FILTER.", () => {
+      // Payload should be array of website data.
+      const payload = [{ a: "hello" }];
+
+      const stateBefore = defaultState;
+      deepFreeze(stateBefore);
+
+      const stateAfter = dashboardReducer(stateBefore, {
+        type: actionTypes.websiteList.DASHBOARD__WEBSITELIST__SORT_AND_FILTER,
+        payload
+      });
+
+      expect(stateAfter).toEqual({
+        ...defaultState,
+        websiteList: {
+          ...defaultState.websiteList,
+          sortedAndFilteredList: payload
         }
       });
     });
@@ -165,7 +188,11 @@ describe("Reducer/dashboardReducer", () => {
         ...defaultState,
         websiteList: {
           ...defaultState.websiteList,
-          fullList: [...defaultState.websiteList.fullList, payload.data.added]
+          fullList: [...defaultState.websiteList.fullList, payload.data.added],
+          sortedAndFilteredList: [
+            ...defaultState.websiteList.fullList,
+            payload.data.added
+          ]
         },
         addWebsite: {
           ...defaultState.addWebsite,

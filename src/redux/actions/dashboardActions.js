@@ -38,12 +38,12 @@ function loadAllWebsiteLinks(token = "") {
 }
 
 function sortAndFilter(
-  fullList,
-  currentSortedAndFilteredList,
-  selectedFilterTag,
-  selectedFilterText,
-  selectedSortTag,
-  selectedSortOrderType
+  fullList = [],
+  currentSortedAndFilteredList = [],
+  selectedFilterTag = "",
+  selectedFilterText = "",
+  selectedSortTag = "",
+  selectedSortOrderType = ""
 ) {
   function filter(list, selectedFilterTag, selectedFilterText) {
     if (!selectedFilterText) {
@@ -87,6 +87,8 @@ function sortAndFilter(
         }
       });
     }
+
+    return list;
   }
 
   let nextSortedAndFilterdList = [];

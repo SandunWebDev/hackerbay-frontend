@@ -17,12 +17,16 @@ const defaultProps = {
   websiteList: {
     isFetching: false,
     error: "",
-    fullList: []
+    fullList: [],
+    sortedAndFilteredList: []
   },
   websiteActions: {
     addWebsite: () => {}
   },
-  websiteListActions: { loadAllWebsiteLinks: () => {} },
+  websiteListActions: {
+    loadAllWebsiteLinks: () => {},
+    sortAndFilter: () => {}
+  },
   token: ""
 };
 
@@ -71,6 +75,20 @@ storiesOf("Pages/DashboardPage", module)
       websiteList: {
         ...defaultProps.websiteList,
         fullList: [
+          {
+            websiteName: "Google",
+            url: "https://google.com",
+            onlineStatus: true,
+            updatedAt: new Date()
+          },
+          {
+            websiteName: "Yahoo",
+            url: "https://yahoo.com",
+            onlineStatus: false,
+            updatedAt: new Date("2018-02-15")
+          }
+        ],
+        sortedAndFilteredList: [
           {
             websiteName: "Google",
             url: "https://google.com",
