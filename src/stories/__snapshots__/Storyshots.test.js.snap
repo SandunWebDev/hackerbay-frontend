@@ -2762,36 +2762,40 @@ exports[`Storyshots Pages/DashboardPage Intitial View 1`] = `
               </div>
             </div>
             <div
-              className="xyz DashboardPage__mainSections--item"
+              className="DashboardPage__mainSections--item"
             >
               <div
                 className="WebsiteList"
               >
                 <div
-                  className="bp3-spinner bp3-intent-success"
+                  className="WebsiteList--fetching"
                 >
-                  <span
-                    className="bp3-spinner-animation"
+                  <div
+                    className="bp3-spinner bp3-intent-success"
                   >
-                    <svg
-                      height={100}
-                      strokeWidth={4}
-                      viewBox="0 0 100 100"
-                      width={100}
+                    <span
+                      className="bp3-spinner-animation"
                     >
-                      <path
-                        className="bp3-spinner-track"
-                        d="M 50,50 m 0,-44.5 a 44.5,44.5 0 1 1 0,89 a 44.5,44.5 0 1 1 0,-89"
-                      />
-                      <path
-                        className="bp3-spinner-head"
-                        d="M 50,50 m 0,-44.5 a 44.5,44.5 0 1 1 0,89 a 44.5,44.5 0 1 1 0,-89"
-                        pathLength={280}
-                        strokeDasharray="280 280"
-                        strokeDashoffset={210}
-                      />
-                    </svg>
-                  </span>
+                      <svg
+                        height={100}
+                        strokeWidth={4}
+                        viewBox="0 0 100 100"
+                        width={100}
+                      >
+                        <path
+                          className="bp3-spinner-track"
+                          d="M 50,50 m 0,-44.5 a 44.5,44.5 0 1 1 0,89 a 44.5,44.5 0 1 1 0,-89"
+                        />
+                        <path
+                          className="bp3-spinner-head"
+                          d="M 50,50 m 0,-44.5 a 44.5,44.5 0 1 1 0,89 a 44.5,44.5 0 1 1 0,-89"
+                          pathLength={280}
+                          strokeDasharray="280 280"
+                          strokeDashoffset={210}
+                        />
+                      </svg>
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -4599,42 +4603,43 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList When List Has Entries. 1`] =
           className="WebsiteList"
         >
           <div
-            className="WebsiteList__item animation--cardLoading"
+            className="WebsiteListItem animation--cardLoading"
           >
             <div
-              className="WebsiteList__item__logo "
+              className="WebsiteListItem__logo "
             >
               <span
-                className="WebsiteList__item__logo--text"
+                className="WebsiteListItem__logo--text"
               >
                 g
               </span>
             </div>
             <div
-              className="WebsiteList__item__mainInfo"
+              className="WebsiteListItem__mainInfo"
             >
               <div
-                className="WebsiteList__item__mainInfo__websiteName"
+                className="WebsiteListItem__mainInfo__websiteName"
                 title="Website's Name"
               >
                 Google
               </div>
               <div
-                className="WebsiteList__item__mainInfo__url"
+                className="WebsiteListItem__mainInfo__url"
                 title="Website's URL"
               >
                 https://google.com
               </div>
             </div>
             <div
-              className="WebsiteList__item__status"
+              className="WebsiteListItem__status"
               title="Website's Status"
             >
               <div
-                className="WebsiteList__item__status__icon"
+                className="WebsiteListItem__status__icon"
               >
                 <span
                   className="bp3-icon bp3-icon-tick"
+                  data-testid="onlineStatus"
                   icon="tick"
                 >
                   <svg
@@ -4655,7 +4660,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList When List Has Entries. 1`] =
                 </span>
               </div>
               <div
-                className="WebsiteList__item__status__updatedAt"
+                className="WebsiteListItem__status__updatedAt"
               >
                 Last Checked 
                 <br />
@@ -4664,7 +4669,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList When List Has Entries. 1`] =
               </div>
             </div>
             <div
-              className="WebsiteList__item__toolbar"
+              className="WebsiteListItem__toolbar"
             >
               <div
                 title="Update Now"
@@ -4765,42 +4770,43 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList When List Has Entries. 1`] =
             </div>
           </div>
           <div
-            className="WebsiteList__item animation--cardLoading"
+            className="WebsiteListItem animation--cardLoading"
           >
             <div
-              className="WebsiteList__item__logo "
+              className="WebsiteListItem__logo "
             >
               <span
-                className="WebsiteList__item__logo--text"
+                className="WebsiteListItem__logo--text"
               >
                 y
               </span>
             </div>
             <div
-              className="WebsiteList__item__mainInfo"
+              className="WebsiteListItem__mainInfo"
             >
               <div
-                className="WebsiteList__item__mainInfo__websiteName"
+                className="WebsiteListItem__mainInfo__websiteName"
                 title="Website's Name"
               >
                 Yahoo
               </div>
               <div
-                className="WebsiteList__item__mainInfo__url"
+                className="WebsiteListItem__mainInfo__url"
                 title="Website's URL"
               >
                 https://yahoo.com
               </div>
             </div>
             <div
-              className="WebsiteList__item__status"
+              className="WebsiteListItem__status"
               title="Website's Status"
             >
               <div
-                className="WebsiteList__item__status__icon"
+                className="WebsiteListItem__status__icon"
               >
                 <span
                   className="bp3-icon bp3-icon-warning-sign"
+                  data-testid="onlineStatus"
                   icon="warning-sign"
                 >
                   <svg
@@ -4821,7 +4827,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList When List Has Entries. 1`] =
                 </span>
               </div>
               <div
-                className="WebsiteList__item__status__updatedAt"
+                className="WebsiteListItem__status__updatedAt"
               >
                 Last Checked 
                 <br />
@@ -4830,7 +4836,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList When List Has Entries. 1`] =
               </div>
             </div>
             <div
-              className="WebsiteList__item__toolbar"
+              className="WebsiteListItem__toolbar"
             >
               <div
                 title="Update Now"
@@ -5703,7 +5709,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Updated Ago @ 1`] = `
               Last Checked 
               <br />
               @ 
-              9 days ago
+              10 days ago
             </div>
           </div>
           <div
@@ -6966,103 +6972,6 @@ exports[`Storyshots Pages/SignupPage Intitial View 1`] = `
                   LogIn
                 </a>
               </p>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div
-            data-css-1xjdp6g=""
-          >
-            <div
-              data-css-1u3clyi=""
-            />
-            <div
-              data-css-1vfpuyw=""
-            />
-          </div>
-          <div
-            data-css-1l117w4=""
-          >
-            <div
-              data-css-6x2xk9=""
-            />
-            <div
-              data-css-dh4rml=""
-            />
-          </div>
-          <div
-            data-css-3dqrhs=""
-          >
-            <div
-              data-css-jidh41=""
-            />
-            <div
-              data-css-zkhvkf=""
-            />
-          </div>
-          <div
-            data-css-14agfjn=""
-          >
-            <div
-              data-css-1dkszzo=""
-            />
-            <div
-              data-css-mqumhe=""
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Pages/WebsiteList Intitial View 1`] = `
-<div
-  data-css-18sl43g=""
->
-  <div
-    data-css-1uksfg7=""
-  >
-    <div
-      data-css-q8x515=""
-    >
-      <div
-        data-css-1cnasqg=""
-      >
-        <div
-          className="WebsiteList"
-        >
-          <div
-            className="WebsiteList--noItems"
-          >
-            <div>
-              <span
-                className="bp3-icon bp3-icon-filter-remove"
-                icon="filter-remove"
-              >
-                <svg
-                  data-icon="filter-remove"
-                  fill={undefined}
-                  height="30"
-                  viewBox="0 0 20 20"
-                  width="30"
-                >
-                  <desc>
-                    filter-remove
-                  </desc>
-                  <path
-                    d="M15 2c0-.55-.45-1-1-1H1a1.003 1.003 0 0 0-.71 1.71L5 7.41V16a1.003 1.003 0 0 0 1.71.71l3-3c.18-.18.29-.43.29-.71V7.41l4.71-4.71c.18-.17.29-.42.29-.7zm2.91 13.5l1.79-1.79c.19-.18.3-.43.3-.71a1.003 1.003 0 0 0-1.71-.71l-1.79 1.79-1.79-1.79a1.003 1.003 0 0 0-1.42 1.42l1.79 1.79-1.79 1.79a1.003 1.003 0 0 0 1.42 1.42l1.79-1.79 1.79 1.79a1.003 1.003 0 0 0 1.42-1.42l-1.8-1.79z"
-                    fillRule="evenodd"
-                  />
-                </svg>
-              </span>
-              <div>
-                Hi, Seems like you haven't added any websites yet.
-              </div>
-              <div>
-                 Try adding website by clicking on above button.
-              </div>
             </div>
           </div>
         </div>
