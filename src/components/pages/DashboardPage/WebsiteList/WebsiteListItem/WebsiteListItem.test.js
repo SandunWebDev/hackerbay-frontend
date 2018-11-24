@@ -70,4 +70,20 @@ describe("WebsiteListItem Component", () => {
 
     expect(onlineStatusIcon.props().icon).toEqual("warning-sign");
   });
+
+  it("Should fire onDeleteAction when delete button is clicked.", () => {
+    const onDeleteAction = jest.fn();
+
+    const wrappedWebsiteListItem = mount(
+      <WebsiteListItem {...defaultProps} onDeleteAction={onDeleteAction} />
+    );
+
+    const deleteButton = wrappedWebsiteListItem.find(
+      "[data-testid='deleteButton']"
+    );
+
+    deleteButton.simulate("click");
+
+    expect(onDeleteAction).toHaveBeenCalledTimes(1);
+  });
 });

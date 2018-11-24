@@ -53,6 +53,7 @@ export default class WebsiteListItem extends Component {
           </div>
           <div
             title="Delete"
+            data-testid="deleteButton"
             onClick={() => onDeleteAction(token, websiteItemId)}
           >
             <Icon icon="trash" iconSize="13" />

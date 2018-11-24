@@ -2,7 +2,6 @@ import React from "react";
 import { mount } from "enzyme";
 
 import WebsiteList from "./WebsiteList";
-import { withReduxAndRouter } from "../../../../tests/helpers/enzymeHelpers";
 
 const defaultProps = {
   websiteListReduxState: {
@@ -12,8 +11,11 @@ const defaultProps = {
     error: ""
   },
   websiteListActions: {
-    loadAllWebsiteLinks: jest.fn(),
-    sortAndFilter: jest.fn
+    loadAllWebsiteLinks: () => {},
+    sortAndFilter: () => {}
+  },
+  websiteActions: {
+    deleteWebsite: () => {}
   },
   token: ""
 };

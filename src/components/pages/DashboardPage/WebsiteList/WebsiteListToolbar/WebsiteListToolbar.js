@@ -100,6 +100,13 @@ export default class WebsiteListToolbar extends Component {
     this.handleSortAndFilter();
   }
 
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    // Just update local tempState to update sort and filter if fullItem have changed.
+    if (!(this.props.fullList.length === prevProps.fullList.length)) {
+      this.handleSortAndFilter();
+    }
+  }
+
   render() {
     const { selectedSortOrder, selectedFilterPlaceholder } = this.tempState;
 
@@ -113,9 +120,9 @@ export default class WebsiteListToolbar extends Component {
 
     return (
       <div className="WebsiteListToolbar">
-        <ControlGroup vertical={false}>
+        <ControlGroup vertical={false} fill={true}>
           <Button icon="filter" minimal={true} intent="warning" disabled={true}>
-            Filter By
+            Filter&nbsp;By&nbsp;
           </Button>
           <HTMLSelect
             data-testid="filterTagSelector"
@@ -132,9 +139,9 @@ export default class WebsiteListToolbar extends Component {
           />
         </ControlGroup>
 
-        <ControlGroup vertical={false}>
+        <ControlGroup vertical={false} fill={true}>
           <Button icon="sort" intent="warning" minimal={true} disabled={true}>
-            Sort By
+            Sort&nbsp;By
           </Button>
           <HTMLSelect
             data-testid="sortTagSelector"

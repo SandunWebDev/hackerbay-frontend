@@ -39,7 +39,6 @@
 .WebsiteListItem__mainInfo {
   margin: 5px;
   padding: 10px;
-  /* flex: 1; */
 }
 
 .WebsiteListItem__mainInfo__websiteName {
@@ -81,4 +80,26 @@
 
 .WebsiteListItem__toolbar svg:hover {
   color: rgb(75, 119, 185);
+}
+
+@media screen and (max-width: 600px) {
+  .WebsiteListItem {
+    flex-direction: column;
+  }
+
+  .WebsiteListItem__logo {
+    border-radius: 5px 5px 0 0;
+  }
+
+  .WebsiteListItem__mainInfo {
+    text-align: center;
+  }
+
+  .WebsiteListItem__status {
+    margin: 0;
+  }
+
+  .WebsiteListItem__toolbar {
+    flex-direction: row;
+  }
 }

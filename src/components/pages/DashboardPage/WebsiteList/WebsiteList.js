@@ -93,12 +93,12 @@ export default class WebsiteList extends Component {
         )}
 
         <div className="WebsiteList__items">
-          {sortedAndFilteredList.map(website => {
+          {sortedAndFilteredList.map((website, index) => {
             const { id, websiteName, url, onlineStatus, updatedAt } = website;
 
             return (
               <WebsiteListItem
-                key={id}
+                key={index}
                 websiteItemId={id}
                 websiteName={websiteName}
                 url={url}
