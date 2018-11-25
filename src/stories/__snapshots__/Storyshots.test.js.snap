@@ -3362,7 +3362,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar & Items 1`] = `
                     className="WebsiteListToolbar"
                   >
                     <div
-                      className="bp3-control-group"
+                      className="bp3-control-group bp3-fill"
                     >
                       <button
                         className="bp3-button bp3-disabled bp3-minimal bp3-intent-warning"
@@ -3396,7 +3396,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar & Items 1`] = `
                         <span
                           className="bp3-button-text"
                         >
-                          Filter By
+                          Filter By 
                         </span>
                       </button>
                       <div
@@ -3475,7 +3475,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar & Items 1`] = `
                       </div>
                     </div>
                     <div
-                      className="bp3-control-group"
+                      className="bp3-control-group bp3-fill"
                     >
                       <button
                         className="bp3-button bp3-disabled bp3-minimal bp3-intent-warning"
@@ -3509,7 +3509,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar & Items 1`] = `
                         <span
                           className="bp3-button-text"
                         >
-                          Sort By
+                          Sort By
                         </span>
                       </button>
                       <div
@@ -3758,6 +3758,8 @@ exports[`Storyshots Pages/DashboardPage With Top Bar & Items 1`] = `
                         </span>
                       </div>
                       <div
+                        data-testid="deleteButton"
+                        onClick={[Function]}
                         title="Delete"
                       >
                         <span
@@ -3925,6 +3927,8 @@ exports[`Storyshots Pages/DashboardPage With Top Bar & Items 1`] = `
                         </span>
                       </div>
                       <div
+                        data-testid="deleteButton"
+                        onClick={[Function]}
                         title="Delete"
                       >
                         <span
@@ -4895,7 +4899,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList When List Has Entries. 1`] =
               className="WebsiteListToolbar"
             >
               <div
-                className="bp3-control-group"
+                className="bp3-control-group bp3-fill"
               >
                 <button
                   className="bp3-button bp3-disabled bp3-minimal bp3-intent-warning"
@@ -4929,7 +4933,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList When List Has Entries. 1`] =
                   <span
                     className="bp3-button-text"
                   >
-                    Filter By
+                    Filter By 
                   </span>
                 </button>
                 <div
@@ -5008,7 +5012,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList When List Has Entries. 1`] =
                 </div>
               </div>
               <div
-                className="bp3-control-group"
+                className="bp3-control-group bp3-fill"
               >
                 <button
                   className="bp3-button bp3-disabled bp3-minimal bp3-intent-warning"
@@ -5042,7 +5046,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList When List Has Entries. 1`] =
                   <span
                     className="bp3-button-text"
                   >
-                    Sort By
+                    Sort By
                   </span>
                 </button>
                 <div
@@ -5291,6 +5295,8 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList When List Has Entries. 1`] =
                   </span>
                 </div>
                 <div
+                  data-testid="deleteButton"
+                  onClick={[Function]}
                   title="Delete"
                 >
                   <span
@@ -5458,6 +5464,8 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList When List Has Entries. 1`] =
                   </span>
                 </div>
                 <div
+                  data-testid="deleteButton"
+                  onClick={[Function]}
                   title="Delete"
                 >
                   <span
@@ -5880,6 +5888,8 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Intitial View 1`] = `
               </span>
             </div>
             <div
+              data-testid="deleteButton"
+              onClick={[Function]}
               title="Delete"
             >
               <span
@@ -6108,6 +6118,8 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Name & URL 1`] = `
               </span>
             </div>
             <div
+              data-testid="deleteButton"
+              onClick={[Function]}
               title="Delete"
             >
               <span
@@ -6281,7 +6293,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Updated Ago @ 1`] = `
               Last Checked 
               <br />
               @ 
-              10 days ago
+              13 days ago
             </div>
           </div>
           <div
@@ -6336,6 +6348,8 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Updated Ago @ 1`] = `
               </span>
             </div>
             <div
+              data-testid="deleteButton"
+              onClick={[Function]}
               title="Delete"
             >
               <span
@@ -6564,6 +6578,8 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Website is Offline 1`] =
               </span>
             </div>
             <div
+              data-testid="deleteButton"
+              onClick={[Function]}
               title="Delete"
             >
               <span
@@ -6792,6 +6808,8 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Website is Online 1`] = 
               </span>
             </div>
             <div
+              data-testid="deleteButton"
+              onClick={[Function]}
               title="Delete"
             >
               <span
@@ -6906,7 +6924,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListToolbar Intitial View 1`] = `
           className="WebsiteListToolbar"
         >
           <div
-            className="bp3-control-group"
+            className="bp3-control-group bp3-fill"
           >
             <button
               className="bp3-button bp3-disabled bp3-minimal bp3-intent-warning"
@@ -6940,7 +6958,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListToolbar Intitial View 1`] = `
               <span
                 className="bp3-button-text"
               >
-                Filter By
+                Filter By 
               </span>
             </button>
             <div
@@ -7019,7 +7037,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListToolbar Intitial View 1`] = `
             </div>
           </div>
           <div
-            className="bp3-control-group"
+            className="bp3-control-group bp3-fill"
           >
             <button
               className="bp3-button bp3-disabled bp3-minimal bp3-intent-warning"
@@ -7053,7 +7071,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListToolbar Intitial View 1`] = `
               <span
                 className="bp3-button-text"
               >
-                Sort By
+                Sort By
               </span>
             </button>
             <div
@@ -7283,73 +7301,400 @@ exports[`Storyshots Pages/HomePage Intitial View 1`] = `
               <div
                 className="HomePage__links"
               >
-                <a
-                  href="/login"
-                  onClick={[Function]}
-                >
-                  <span
-                    className="HomePage__loginButton"
+                <div>
+                  <a
+                    href="/login"
+                    onClick={[Function]}
                   >
                     <span
-                      className="bp3-icon bp3-icon-log-in"
-                      icon="log-in"
+                      className="HomePage__loginButton"
                     >
-                      <svg
-                        data-icon="log-in"
-                        fill={undefined}
-                        height={16}
-                        viewBox="0 0 16 16"
-                        width={16}
+                      <span
+                        className="bp3-icon bp3-icon-log-in"
+                        icon="log-in"
                       >
-                        <desc>
-                          log-in
-                        </desc>
-                        <path
-                          d="M11 8c0-.28-.11-.53-.29-.71l-3-3a1.003 1.003 0 0 0-1.42 1.42L7.59 7H1c-.55 0-1 .45-1 1s.45 1 1 1h6.59L6.3 10.29c-.19.18-.3.43-.3.71a1.003 1.003 0 0 0 1.71.71l3-3c.18-.18.29-.43.29-.71zm4-8H9c-.55 0-1 .45-1 1s.45 1 1 1h5v12H9c-.55 0-1 .45-1 1s.45 1 1 1h6c.55 0 1-.45 1-1V1c0-.55-.45-1-1-1z"
-                          fillRule="evenodd"
-                        />
-                      </svg>
+                        <svg
+                          data-icon="log-in"
+                          fill={undefined}
+                          height={16}
+                          viewBox="0 0 16 16"
+                          width={16}
+                        >
+                          <desc>
+                            log-in
+                          </desc>
+                          <path
+                            d="M11 8c0-.28-.11-.53-.29-.71l-3-3a1.003 1.003 0 0 0-1.42 1.42L7.59 7H1c-.55 0-1 .45-1 1s.45 1 1 1h6.59L6.3 10.29c-.19.18-.3.43-.3.71a1.003 1.003 0 0 0 1.71.71l3-3c.18-.18.29-.43.29-.71zm4-8H9c-.55 0-1 .45-1 1s.45 1 1 1h5v12H9c-.55 0-1 .45-1 1s.45 1 1 1h6c.55 0 1-.45 1-1V1c0-.55-.45-1-1-1z"
+                            fillRule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                      <span>
+                        Login
+                      </span>
                     </span>
-                    <span>
-                      Login
-                    </span>
+                  </a>
+                  <span>
+                    Or
                   </span>
-                </a>
+                  <a
+                    href="/signup"
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="HomePage__signupButton"
+                    >
+                      <span
+                        className="bp3-icon bp3-icon-badge"
+                        icon="badge"
+                      >
+                        <svg
+                          data-icon="badge"
+                          fill={undefined}
+                          height={16}
+                          viewBox="0 0 16 16"
+                          width={16}
+                        >
+                          <desc>
+                            badge
+                          </desc>
+                          <path
+                            d="M13.36 4.59c-.15-1.13.5-2.01 1.1-2.87L13.43.53c-1.72.88-4.12.65-5.63-.53-1.51 1.18-3.91 1.41-5.63.52l-1.03 1.2c.61.86 1.25 1.74 1.1 2.87-.3 2.29-2.45 4.17-1.32 6.68.45 1.14 1.44 1.9 2.72 2.2 1.56.36 3.52.72 4.16 2.53.64-1.81 2.6-2.16 4.16-2.54 1.28-.3 2.27-1.06 2.72-2.2 1.12-2.5-1.03-4.38-1.32-6.67z"
+                            fillRule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                      <span>
+                        Signup
+                      </span>
+                    </span>
+                  </a>
+                </div>
                 <span>
-                  Or
+                  To Get Started.
                 </span>
-                <a
-                  href="/signup"
-                  onClick={[Function]}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            data-css-1xjdp6g=""
+          >
+            <div
+              data-css-1u3clyi=""
+            />
+            <div
+              data-css-1vfpuyw=""
+            />
+          </div>
+          <div
+            data-css-1l117w4=""
+          >
+            <div
+              data-css-6x2xk9=""
+            />
+            <div
+              data-css-dh4rml=""
+            />
+          </div>
+          <div
+            data-css-3dqrhs=""
+          >
+            <div
+              data-css-jidh41=""
+            />
+            <div
+              data-css-zkhvkf=""
+            />
+          </div>
+          <div
+            data-css-14agfjn=""
+          >
+            <div
+              data-css-1dkszzo=""
+            />
+            <div
+              data-css-mqumhe=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/HomePage When Logged In 1`] = `
+<div
+  data-css-18sl43g=""
+>
+  <div
+    data-css-1uksfg7=""
+  >
+    <div
+      data-css-q8x515=""
+    >
+      <div
+        data-css-1cnasqg=""
+      >
+        <div
+          style={
+            Object {
+              "background": "linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%)",
+            }
+          }
+        >
+          <div
+            className="HomePage animation--pageTransition"
+          >
+            <div>
+              <h1
+                className="animation--textExpand"
+              >
+                Hackerbay Server Monitoring
+              </h1>
+              <h2
+                className="animation--textExpand"
+              >
+                Status Page, Monitoring and On-call made simple.
+              </h2>
+              <div
+                className="HomePage__mainArea"
+              >
+                <div
+                  className="HomePage__mainArea__descriptions"
                 >
-                  <span
-                    className="HomePage__signupButton"
+                  <p>
+                    Hackerbay monitors your website, dashboards, API's, and more and alerts your team when downtime happens. We also give you a Status Page which keeps your customers looped in and improves transparency.
+                  </p>
+                </div>
+                <div
+                  className="HomePage__mainArea__photo"
+                >
+                  <img
+                    alt="Server Monitoring"
+                    src="serverMonitoring.svg"
+                  />
+                </div>
+              </div>
+              <div
+                className="HomePage__links"
+              >
+                <div>
+                  <a
+                    href="/dashboard"
+                    onClick={[Function]}
                   >
                     <span
-                      className="bp3-icon bp3-icon-badge"
-                      icon="badge"
+                      className="HomePage__dashboardButton"
                     >
-                      <svg
-                        data-icon="badge"
-                        fill={undefined}
-                        height={16}
-                        viewBox="0 0 16 16"
-                        width={16}
+                      <span
+                        className="bp3-icon bp3-icon-dashboard"
+                        icon="dashboard"
                       >
-                        <desc>
-                          badge
-                        </desc>
-                        <path
-                          d="M13.36 4.59c-.15-1.13.5-2.01 1.1-2.87L13.43.53c-1.72.88-4.12.65-5.63-.53-1.51 1.18-3.91 1.41-5.63.52l-1.03 1.2c.61.86 1.25 1.74 1.1 2.87-.3 2.29-2.45 4.17-1.32 6.68.45 1.14 1.44 1.9 2.72 2.2 1.56.36 3.52.72 4.16 2.53.64-1.81 2.6-2.16 4.16-2.54 1.28-.3 2.27-1.06 2.72-2.2 1.12-2.5-1.03-4.38-1.32-6.67z"
-                          fillRule="evenodd"
-                        />
-                      </svg>
+                        <svg
+                          data-icon="dashboard"
+                          fill={undefined}
+                          height={16}
+                          viewBox="0 0 16 16"
+                          width={16}
+                        >
+                          <desc>
+                            dashboard
+                          </desc>
+                          <path
+                            d="M5 4c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1zM4 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1zm4-2c.55 0 1-.45 1-1s-.45-1-1-1-1 .45-1 1 .45 1 1 1zm-2 6c0 1.1.9 2 2 2s2-.9 2-2c0-.53-2-5-2-5s-2 4.47-2 5zM8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm4-9c0-.55-.45-1-1-1s-1 .45-1 1 .45 1 1 1 1-.45 1-1zm0 2c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"
+                            fillRule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                      <span>
+                         Dashboard
+                      </span>
                     </span>
-                    <span>
-                      Signup
+                  </a>
+                </div>
+                <span>
+                  Let's Goto Dashbaord.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            data-css-1xjdp6g=""
+          >
+            <div
+              data-css-1u3clyi=""
+            />
+            <div
+              data-css-1vfpuyw=""
+            />
+          </div>
+          <div
+            data-css-1l117w4=""
+          >
+            <div
+              data-css-6x2xk9=""
+            />
+            <div
+              data-css-dh4rml=""
+            />
+          </div>
+          <div
+            data-css-3dqrhs=""
+          >
+            <div
+              data-css-jidh41=""
+            />
+            <div
+              data-css-zkhvkf=""
+            />
+          </div>
+          <div
+            data-css-14agfjn=""
+          >
+            <div
+              data-css-1dkszzo=""
+            />
+            <div
+              data-css-mqumhe=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/HomePage When Logged Out 1`] = `
+<div
+  data-css-18sl43g=""
+>
+  <div
+    data-css-1uksfg7=""
+  >
+    <div
+      data-css-q8x515=""
+    >
+      <div
+        data-css-1cnasqg=""
+      >
+        <div
+          style={
+            Object {
+              "background": "linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%)",
+            }
+          }
+        >
+          <div
+            className="HomePage animation--pageTransition"
+          >
+            <div>
+              <h1
+                className="animation--textExpand"
+              >
+                Hackerbay Server Monitoring
+              </h1>
+              <h2
+                className="animation--textExpand"
+              >
+                Status Page, Monitoring and On-call made simple.
+              </h2>
+              <div
+                className="HomePage__mainArea"
+              >
+                <div
+                  className="HomePage__mainArea__descriptions"
+                >
+                  <p>
+                    Hackerbay monitors your website, dashboards, API's, and more and alerts your team when downtime happens. We also give you a Status Page which keeps your customers looped in and improves transparency.
+                  </p>
+                </div>
+                <div
+                  className="HomePage__mainArea__photo"
+                >
+                  <img
+                    alt="Server Monitoring"
+                    src="serverMonitoring.svg"
+                  />
+                </div>
+              </div>
+              <div
+                className="HomePage__links"
+              >
+                <div>
+                  <a
+                    href="/login"
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="HomePage__loginButton"
+                    >
+                      <span
+                        className="bp3-icon bp3-icon-log-in"
+                        icon="log-in"
+                      >
+                        <svg
+                          data-icon="log-in"
+                          fill={undefined}
+                          height={16}
+                          viewBox="0 0 16 16"
+                          width={16}
+                        >
+                          <desc>
+                            log-in
+                          </desc>
+                          <path
+                            d="M11 8c0-.28-.11-.53-.29-.71l-3-3a1.003 1.003 0 0 0-1.42 1.42L7.59 7H1c-.55 0-1 .45-1 1s.45 1 1 1h6.59L6.3 10.29c-.19.18-.3.43-.3.71a1.003 1.003 0 0 0 1.71.71l3-3c.18-.18.29-.43.29-.71zm4-8H9c-.55 0-1 .45-1 1s.45 1 1 1h5v12H9c-.55 0-1 .45-1 1s.45 1 1 1h6c.55 0 1-.45 1-1V1c0-.55-.45-1-1-1z"
+                            fillRule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                      <span>
+                        Login
+                      </span>
                     </span>
+                  </a>
+                  <span>
+                    Or
                   </span>
-                </a>
+                  <a
+                    href="/signup"
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="HomePage__signupButton"
+                    >
+                      <span
+                        className="bp3-icon bp3-icon-badge"
+                        icon="badge"
+                      >
+                        <svg
+                          data-icon="badge"
+                          fill={undefined}
+                          height={16}
+                          viewBox="0 0 16 16"
+                          width={16}
+                        >
+                          <desc>
+                            badge
+                          </desc>
+                          <path
+                            d="M13.36 4.59c-.15-1.13.5-2.01 1.1-2.87L13.43.53c-1.72.88-4.12.65-5.63-.53-1.51 1.18-3.91 1.41-5.63.52l-1.03 1.2c.61.86 1.25 1.74 1.1 2.87-.3 2.29-2.45 4.17-1.32 6.68.45 1.14 1.44 1.9 2.72 2.2 1.56.36 3.52.72 4.16 2.53.64-1.81 2.6-2.16 4.16-2.54 1.28-.3 2.27-1.06 2.72-2.2 1.12-2.5-1.03-4.38-1.32-6.67z"
+                            fillRule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                      <span>
+                        Signup
+                      </span>
+                    </span>
+                  </a>
+                </div>
                 <span>
                   To Get Started.
                 </span>
@@ -8283,73 +8628,75 @@ exports[`Storyshots Root/App Intitial View 1`] = `
                 <div
                   className="HomePage__links"
                 >
-                  <a
-                    href="/login"
-                    onClick={[Function]}
-                  >
-                    <span
-                      className="HomePage__loginButton"
+                  <div>
+                    <a
+                      href="/login"
+                      onClick={[Function]}
                     >
                       <span
-                        className="bp3-icon bp3-icon-log-in"
-                        icon="log-in"
+                        className="HomePage__loginButton"
                       >
-                        <svg
-                          data-icon="log-in"
-                          fill={undefined}
-                          height={16}
-                          viewBox="0 0 16 16"
-                          width={16}
+                        <span
+                          className="bp3-icon bp3-icon-log-in"
+                          icon="log-in"
                         >
-                          <desc>
-                            log-in
-                          </desc>
-                          <path
-                            d="M11 8c0-.28-.11-.53-.29-.71l-3-3a1.003 1.003 0 0 0-1.42 1.42L7.59 7H1c-.55 0-1 .45-1 1s.45 1 1 1h6.59L6.3 10.29c-.19.18-.3.43-.3.71a1.003 1.003 0 0 0 1.71.71l3-3c.18-.18.29-.43.29-.71zm4-8H9c-.55 0-1 .45-1 1s.45 1 1 1h5v12H9c-.55 0-1 .45-1 1s.45 1 1 1h6c.55 0 1-.45 1-1V1c0-.55-.45-1-1-1z"
-                            fillRule="evenodd"
-                          />
-                        </svg>
+                          <svg
+                            data-icon="log-in"
+                            fill={undefined}
+                            height={16}
+                            viewBox="0 0 16 16"
+                            width={16}
+                          >
+                            <desc>
+                              log-in
+                            </desc>
+                            <path
+                              d="M11 8c0-.28-.11-.53-.29-.71l-3-3a1.003 1.003 0 0 0-1.42 1.42L7.59 7H1c-.55 0-1 .45-1 1s.45 1 1 1h6.59L6.3 10.29c-.19.18-.3.43-.3.71a1.003 1.003 0 0 0 1.71.71l3-3c.18-.18.29-.43.29-.71zm4-8H9c-.55 0-1 .45-1 1s.45 1 1 1h5v12H9c-.55 0-1 .45-1 1s.45 1 1 1h6c.55 0 1-.45 1-1V1c0-.55-.45-1-1-1z"
+                              fillRule="evenodd"
+                            />
+                          </svg>
+                        </span>
+                        <span>
+                          Login
+                        </span>
                       </span>
-                      <span>
-                        Login
-                      </span>
+                    </a>
+                    <span>
+                      Or
                     </span>
-                  </a>
-                  <span>
-                    Or
-                  </span>
-                  <a
-                    href="/signup"
-                    onClick={[Function]}
-                  >
-                    <span
-                      className="HomePage__signupButton"
+                    <a
+                      href="/signup"
+                      onClick={[Function]}
                     >
                       <span
-                        className="bp3-icon bp3-icon-badge"
-                        icon="badge"
+                        className="HomePage__signupButton"
                       >
-                        <svg
-                          data-icon="badge"
-                          fill={undefined}
-                          height={16}
-                          viewBox="0 0 16 16"
-                          width={16}
+                        <span
+                          className="bp3-icon bp3-icon-badge"
+                          icon="badge"
                         >
-                          <desc>
-                            badge
-                          </desc>
-                          <path
-                            d="M13.36 4.59c-.15-1.13.5-2.01 1.1-2.87L13.43.53c-1.72.88-4.12.65-5.63-.53-1.51 1.18-3.91 1.41-5.63.52l-1.03 1.2c.61.86 1.25 1.74 1.1 2.87-.3 2.29-2.45 4.17-1.32 6.68.45 1.14 1.44 1.9 2.72 2.2 1.56.36 3.52.72 4.16 2.53.64-1.81 2.6-2.16 4.16-2.54 1.28-.3 2.27-1.06 2.72-2.2 1.12-2.5-1.03-4.38-1.32-6.67z"
-                            fillRule="evenodd"
-                          />
-                        </svg>
+                          <svg
+                            data-icon="badge"
+                            fill={undefined}
+                            height={16}
+                            viewBox="0 0 16 16"
+                            width={16}
+                          >
+                            <desc>
+                              badge
+                            </desc>
+                            <path
+                              d="M13.36 4.59c-.15-1.13.5-2.01 1.1-2.87L13.43.53c-1.72.88-4.12.65-5.63-.53-1.51 1.18-3.91 1.41-5.63.52l-1.03 1.2c.61.86 1.25 1.74 1.1 2.87-.3 2.29-2.45 4.17-1.32 6.68.45 1.14 1.44 1.9 2.72 2.2 1.56.36 3.52.72 4.16 2.53.64-1.81 2.6-2.16 4.16-2.54 1.28-.3 2.27-1.06 2.72-2.2 1.12-2.5-1.03-4.38-1.32-6.67z"
+                              fillRule="evenodd"
+                            />
+                          </svg>
+                        </span>
+                        <span>
+                          Signup
+                        </span>
                       </span>
-                      <span>
-                        Signup
-                      </span>
-                    </span>
-                  </a>
+                    </a>
+                  </div>
                   <span>
                     To Get Started.
                   </span>

@@ -14,6 +14,11 @@ const defaultState = {
     error: "",
     success: false,
     addedWebsite: ""
+  },
+  deleteWebsite: {
+    isFetching: false,
+    error: "",
+    success: false
   }
 };
 
@@ -143,90 +148,181 @@ describe("Reducer/dashboardReducer", () => {
 
   /* ----- Website Reducers----*/
   describe("Website", () => {
-    it("Should handle DASHBOARD__WEBSITE__ADD_WEBSITE__PENDING.", () => {
-      const stateBefore = defaultState;
-      deepFreeze(stateBefore);
+    describe("DASHBOARD__WEBSITE__ADD_WEBSITE", () => {
+      it("Should handle DASHBOARD__WEBSITE__ADD_WEBSITE__PENDING.", () => {
+        const stateBefore = defaultState;
+        deepFreeze(stateBefore);
 
-      const stateAfter = dashboardReducer(stateBefore, {
-        type: actionTypes.website.DASHBOARD__WEBSITE__ADD_WEBSITE + "_PENDING"
+        const stateAfter = dashboardReducer(stateBefore, {
+          type: actionTypes.website.DASHBOARD__WEBSITE__ADD_WEBSITE + "_PENDING"
+        });
+
+        expect(stateAfter).toEqual({
+          ...defaultState,
+          addWebsite: {
+            ...defaultState.addWebsite,
+            isFetching: true
+          }
+        });
       });
 
-      expect(stateAfter).toEqual({
-        ...defaultState,
-        addWebsite: {
-          ...defaultState.addWebsite,
-          isFetching: true
-        }
+      it("Should handle DASHBOARD__WEBSITE__ADD_WEBSITE__FULFILLED.", () => {
+        const payload = {
+          data: {
+            added: [
+              {
+                websiteName: "Google",
+                url: "https://google.com",
+                onlineStatus: "true",
+                createdAt: new Date("2018-10-05"),
+                updatedAt: new Date("2018-10-06")
+              }
+            ]
+          }
+        };
+
+        const stateBefore = defaultState;
+        deepFreeze(stateBefore);
+
+        const stateAfter = dashboardReducer(stateBefore, {
+          type:
+            actionTypes.website.DASHBOARD__WEBSITE__ADD_WEBSITE + "_FULFILLED",
+          payload
+        });
+
+        expect(stateAfter).toEqual({
+          ...defaultState,
+          websiteList: {
+            ...defaultState.websiteList,
+            fullList: [
+              ...defaultState.websiteList.fullList,
+              payload.data.added
+            ],
+            sortedAndFilteredList: [
+              ...defaultState.websiteList.fullList,
+              payload.data.added
+            ]
+          },
+          addWebsite: {
+            ...defaultState.addWebsite,
+            isFetching: false,
+            error: "",
+            success: true,
+            addedWebsite: payload.data.added
+          }
+        });
+      });
+
+      it("Should handle DASHBOARD__WEBSITE__ADD_WEBSITE__REJECTED.", () => {
+        const payload = {
+          // There is lot of ways error comes in. But this is the most basic way.
+          message: "Some Error Occured"
+        };
+
+        const stateBefore = defaultState;
+        deepFreeze(stateBefore);
+
+        const stateAfter = dashboardReducer(stateBefore, {
+          type:
+            actionTypes.website.DASHBOARD__WEBSITE__ADD_WEBSITE + "_REJECTED",
+          payload
+        });
+
+        expect(stateAfter).toEqual({
+          ...defaultState,
+          addWebsite: {
+            ...defaultState.addWebsite,
+            isFetching: false,
+            error: "Some Error Occured",
+            success: false,
+            addedWebsite: ""
+          }
+        });
       });
     });
 
-    it("Should handle DASHBOARD__WEBSITE__ADD_WEBSITE__FULFILLED.", () => {
-      const payload = {
-        data: {
-          added: [
-            {
-              websiteName: "Google",
-              url: "https://google.com",
-              onlineStatus: "true",
-              createdAt: new Date("2018-10-05"),
-              updatedAt: new Date("2018-10-06")
+    describe("DASHBOARD__WEBSITE__DELETE_WEBSITE", () => {
+      it("Should handle DASHBOARD__WEBSITE__DELETE_WEBSITE__PENDING.", () => {
+        const stateBefore = defaultState;
+        deepFreeze(stateBefore);
+
+        const stateAfter = dashboardReducer(stateBefore, {
+          type:
+            actionTypes.website.DASHBOARD__WEBSITE__DELETE_WEBSITE + "_PENDING"
+        });
+
+        expect(stateAfter).toEqual({
+          ...defaultState,
+          deleteWebsite: {
+            ...defaultState.deleteWebsite,
+            isFetching: true
+          }
+        });
+      });
+
+      it("Should handle DASHBOARD__WEBSITE__DELETE_WEBSITE__FULFILLED.", () => {
+        const stateBefore = {
+          ...defaultState,
+          websiteList: {
+            ...defaultState.websiteList,
+            fullList: [{ id: 1 }, { id: 2 }, { id: 3 }],
+            sortedAndFilteredList: [{ id: 1 }, { id: 2 }, { id: 3 }]
+          }
+        };
+        deepFreeze(stateBefore);
+
+        const stateAfter = dashboardReducer(stateBefore, {
+          type:
+            actionTypes.website.DASHBOARD__WEBSITE__DELETE_WEBSITE +
+            "_FULFILLED",
+          payload: {
+            data: {
+              deletedWebsiteItemId: 2 // Mocking server response that delete id2 item.
             }
-          ]
-        }
-      };
+          }
+        });
 
-      const stateBefore = defaultState;
-      deepFreeze(stateBefore);
-
-      const stateAfter = dashboardReducer(stateBefore, {
-        type:
-          actionTypes.website.DASHBOARD__WEBSITE__ADD_WEBSITE + "_FULFILLED",
-        payload
+        expect(stateAfter).toEqual({
+          ...defaultState,
+          deleteWebsite: {
+            ...defaultState.deleteWebsite,
+            isFetching: false,
+            error: "",
+            success: true
+          },
+          websiteList: {
+            ...defaultState.websiteList,
+            fullList: [{ id: 1 }, { id: 3 }],
+            sortedAndFilteredList: [{ id: 1 }, { id: 3 }]
+          }
+        });
       });
 
-      expect(stateAfter).toEqual({
-        ...defaultState,
-        websiteList: {
-          ...defaultState.websiteList,
-          fullList: [...defaultState.websiteList.fullList, payload.data.added],
-          sortedAndFilteredList: [
-            ...defaultState.websiteList.fullList,
-            payload.data.added
-          ]
-        },
-        addWebsite: {
-          ...defaultState.addWebsite,
-          isFetching: false,
-          error: "",
-          success: true,
-          addedWebsite: payload.data.added
-        }
-      });
-    });
+      it("Should handle DASHBOARD__WEBSITE__DELETE_WEBSITE__REJECTED.", () => {
+        const payload = {
+          // There is lot of ways error comes in. But this is the most basic way.
+          message: "Some Error Occured"
+        };
 
-    it("Should handle DASHBOARD__WEBSITE__ADD_WEBSITE__REJECTED.", () => {
-      const payload = {
-        // There is lot of ways error comes in. But this is the most basic way.
-        message: "Some Error Occured"
-      };
+        const stateBefore = defaultState;
+        deepFreeze(stateBefore);
 
-      const stateBefore = defaultState;
-      deepFreeze(stateBefore);
+        const stateAfter = dashboardReducer(stateBefore, {
+          type:
+            actionTypes.website.DASHBOARD__WEBSITE__DELETE_WEBSITE +
+            "_REJECTED",
+          payload
+        });
 
-      const stateAfter = dashboardReducer(stateBefore, {
-        type: actionTypes.website.DASHBOARD__WEBSITE__ADD_WEBSITE + "_REJECTED",
-        payload
-      });
-
-      expect(stateAfter).toEqual({
-        ...defaultState,
-        addWebsite: {
-          ...defaultState.addWebsite,
-          isFetching: false,
-          error: "Some Error Occured",
-          success: false,
-          addedWebsite: ""
-        }
+        expect(stateAfter).toEqual({
+          ...defaultState,
+          deleteWebsite: {
+            ...defaultState.deleteWebsite,
+            isFetching: false,
+            error: "Some Error Occured",
+            success: false
+          }
+        });
       });
     });
   });

@@ -20,7 +20,8 @@ const defaultProps = {
     sortedAndFilteredList: []
   },
   websiteActions: {
-    addWebsite: () => {}
+    addWebsite: () => {},
+    deleteWebsite: () => {}
   },
   websiteListActions: {
     loadAllWebsiteLinks: () => {},

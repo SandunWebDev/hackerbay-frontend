@@ -32,8 +32,8 @@ describe("Signup Flow", () => {
     // Submitting signup details.
     cy.get("button[type=submit]").click();
 
-    cy.location("pathname").should("eq", "/");
-    cy.get("[data-testid=myAccountButton]").contains("JOHN DOE");
+    cy.location("pathname").should("eq", "/dashboard");
+    cy.get("[data-testid=myAccountButton]").contains("John");
 
     // LogOut
     cy.contains("LogOut").click();
@@ -41,7 +41,7 @@ describe("Signup Flow", () => {
     cy.contains("Signup");
   });
 
-  it.only("Should failed and show errors when login failed.", () => {
+  it("Should failed and show errors when login failed.", () => {
     // Stubbing backend API.
     cy.server();
     cy.route({

@@ -27,7 +27,7 @@ describe("Redux Actions - dashboardActions", () => {
   });
 
   describe("Website Actions", () => {
-    describe("When addWebsite() is called", () => {
+    describe("When addWebsite() is called.", () => {
       it("Should dispatch DASHBOARD__WEBSITE__ADD_WEBSITE_PENDING action when network request initialized.", () => {
         axiosBaseMock.onPost("website/add").reply(200);
 
@@ -104,6 +104,76 @@ describe("Redux Actions - dashboardActions", () => {
 
               // Make sure reduxForm specific submission error is thrown.
               expect(err.name).toEqual("SubmissionError");
+            })
+        );
+      });
+    });
+
+    describe("When deleteWebsite() is called.", () => {
+      it("Should dispatch DASHBOARD__WEBSITE__DELETE_WEBSITE_PENDING action when network request initialized.", () => {
+        axiosBaseMock.onDelete("website/delete").reply(200);
+
+        mockStore.dispatch(
+          websiteActions.deleteWebsite("myToken", "XYZ!@#") // Parameters are token, websiteItemId
+        );
+
+        expect(mockStore.getActions()).toEqual([
+          {
+            type:
+              websiteActionTypes.DASHBOARD__WEBSITE__DELETE_WEBSITE + "_PENDING"
+          }
+        ]);
+      });
+
+      it("Should dispatch DASHBOARD__WEBSITE__DELETE_WEBSITE_FULFILLED action when network request successfull.", () => {
+        const serverResponse = { someServerResponse: "Hello" };
+
+        // Mock any GET request to "website/add"
+        axiosBaseMock.onDelete("website/delete").reply(200, serverResponse);
+
+        return (
+          mockStore
+            .dispatch(
+              websiteActions.deleteWebsite("myToken", "XYZ!@#") // Parameters are token, websiteItemId
+            )
+            // Action Finished
+            .then(() => {
+              // Using [1]st Index of mockStore.getActions() because [0]th index is aget filled by "USER___CREATE_ACCOUNT_PENDING" action.
+              expect(mockStore.getActions()[1]).toEqual(
+                expect.objectContaining({
+                  type:
+                    websiteActionTypes.DASHBOARD__WEBSITE__DELETE_WEBSITE +
+                    "_FULFILLED"
+                  // Payload Also Goes here (ex: payload: { serverResponse })
+                })
+              );
+
+              // Make sure action filled with server response data.
+              expect(mockStore.getActions()[1].payload.data).toEqual(
+                serverResponse
+              );
+            })
+        );
+      });
+
+      it("Should dispatch DASHBOARD__WEBSITE__DELETE_WEBSITE_REJECTED action & reduxFrom submission error when network request failed.", () => {
+        axiosBaseMock.onDelete("website/delete").networkError();
+
+        return (
+          mockStore
+            .dispatch(
+              websiteActions.deleteWebsite("myToken", "XYZ!@#") // Parameters are token, websiteItemId
+            )
+            // Action Finished
+            .catch(err => {
+              expect(mockStore.getActions()[1]).toEqual(
+                expect.objectContaining({
+                  type:
+                    websiteActionTypes.DASHBOARD__WEBSITE__ADD_WEBSITE +
+                    "_REJECTED",
+                  error: true
+                })
+              );
             })
         );
       });

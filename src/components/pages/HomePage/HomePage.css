@@ -72,7 +72,8 @@
 }
 
 .HomePage__loginButton,
-.HomePage__signupButton {
+.HomePage__signupButton,
+.HomePage__dashboardButton {
   font-size: 1.4rem;
   justify-content: center;
   align-content: center;

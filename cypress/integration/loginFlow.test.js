@@ -30,8 +30,8 @@ describe("Login Flow", () => {
     // Submitting login details.
     cy.get("button[type=submit]").click();
 
-    cy.location("pathname").should("eq", "/");
-    cy.get("[data-testid=myAccountButton]").contains("JOHN DOE");
+    cy.location("pathname").should("eq", "/dashboard");
+    cy.get("[data-testid=myAccountButton]").contains("John");
 
     // LogOut
     cy.contains("LogOut").click();

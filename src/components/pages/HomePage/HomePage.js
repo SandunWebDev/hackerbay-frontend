@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 import { Link } from "react-router-dom";
 import { Icon } from "@blueprintjs/core";
@@ -8,6 +9,8 @@ import serverMonitoringPhoto from "../../../assets/images/serverMonitoring.svg";
 
 export default class HomePage extends Component {
   render() {
+    const { isLoggedIn } = this.props;
+
     return (
       <div className="HomePage animation--pageTransition">
         <div>
@@ -30,23 +33,46 @@ export default class HomePage extends Component {
             </div>
           </div>
           <div className="HomePage__links">
-            <Link to="/login">
-              <span className="HomePage__loginButton">
-                <Icon icon="log-in" />
-                <span>Login</span>
-              </span>
-            </Link>
-            <span>Or</span>
-            <Link to="/signup">
-              <span className="HomePage__signupButton">
-                <Icon icon="badge" />
-                <span>Signup</span>
-              </span>
-            </Link>
-            <span>To Get Started.</span>
+            {isLoggedIn ? (
+              <div>
+                <Link to="/dashboard">
+                  <span className="HomePage__dashboardButton">
+                    <Icon icon="dashboard" />
+                    <span> Dashboard</span>
+                  </span>
+                </Link>
+              </div>
+            ) : (
+              <div>
+                <Link to="/login">
+                  <span className="HomePage__loginButton">
+                    <Icon icon="log-in" />
+                    <span>Login</span>
+                  </span>
+                </Link>
+                <span>Or</span>
+                <Link to="/signup">
+                  <span className="HomePage__signupButton">
+                    <Icon icon="badge" />
+                    <span>Signup</span>
+                  </span>
+                </Link>
+              </div>
+            )}
+            <span>
+              {isLoggedIn ? "Let's Goto Dashbaord." : "To Get Started."}
+            </span>
           </div>
         </div>
       </div>
     );
   }
 }
+
+HomePage.propTypes = {
+  isLoggedIn: PropTypes.bool.isRequired
+};
+
+HomePage.defaultProps = {
+  isLoggedIn: false
+};

@@ -22,7 +22,11 @@ class App extends Component {
         <Header />
         <div className="App__container">
           <Switch>
-            <Route exact path="/" component={HomePage} />
+            <Route
+              exact
+              path="/"
+              render={() => <HomePage isLoggedIn={isLoggedIn} />}
+            />
             <Route exact path="/signup" component={SignupPage} />
             <Route exact path="/login" component={LoginPage} />
 

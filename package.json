@@ -24,7 +24,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom --testPathIgnorePatterns Imageshots",
     "test:unitandintegration": "react-scripts test --env=jsdom --testPathIgnorePatterns Imageshots Storyshots",
-    "test:storyshots": "react-scripts test --env=jsdom Storyshots.test.js",
+    "test:storyshots": "react-scripts test --env=jsdom Storyshots.test.js --testPathIgnorePatterns Imageshots",
     "test:imageshots:local": "concurrently \"npm run storybook\" \"sleep 1 && react-scripts test --env=jsdom ImageshotsForLocal.test.js\"",
     "test:imageshots:ci": "npm run build-storybook && react-scripts test --env=jsdom ImageshotsForCI.test.js",
     "test:cypress:local": "concurrently \"npm start\" \"wait-on http://localhost:3000 && cypress open\"",
