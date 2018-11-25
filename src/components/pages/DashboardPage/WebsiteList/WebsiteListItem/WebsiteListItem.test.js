@@ -30,7 +30,7 @@ describe("WebsiteListItem Component", () => {
     );
 
     expect(wrappedWebsiteListItem.text()).toEqual(
-      expect.stringMatching(moment("2018-01-10").fromNow())
+      expect.stringMatching("Last Checked @")
     );
 
     expect(
