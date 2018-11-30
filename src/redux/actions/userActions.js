@@ -8,13 +8,14 @@ export const actionTypes = {
 };
 
 export function createAccount(signupformInputValues = {}) {
-  const { name, email, password } = signupformInputValues;
+  const { name, email, password, phoneNum } = signupformInputValues;
 
   return async dispatch => {
     const newUser = axiosBase.post("user/signup", {
       name,
       email,
-      password
+      password,
+      phoneNum
     });
 
     return dispatch({

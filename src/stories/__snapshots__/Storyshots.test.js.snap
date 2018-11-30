@@ -2134,6 +2134,49 @@ exports[`Storyshots Forms/SignupForm Initial View 1`] = `
                 </div>
               </div>
             </div>
+            <div>
+              <div
+                className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__phoneNum "
+              >
+                <label
+                  className="bp3-label"
+                  htmlFor="phoneNum"
+                >
+                  Phone Number: 
+                   
+                  <span
+                    className="bp3-text-muted"
+                  />
+                </label>
+                <div
+                  className="bp3-form-content"
+                >
+                  <div
+                    className="bp3-input-group"
+                  >
+                    <input
+                      className="bp3-input"
+                      id="phoneNum"
+                      name="phoneNum"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onDragStart={[Function]}
+                      onDrop={[Function]}
+                      onFocus={[Function]}
+                      placeholder="+94761234567"
+                      style={
+                        Object {
+                          "paddingRight": 10,
+                        }
+                      }
+                      type="text"
+                      value=""
+                    />
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
             <button
               className="bp3-button bp3-disabled bp3-fill bp3-large bp3-intent-success AuthHelperForm__Button"
               data-testid="submitButton"
@@ -3872,7 +3915,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar & Items 1`] = `
                         Last Checked 
                         <br />
                         @ 
-                        9 months ago
+                        10 months ago
                       </div>
                     </div>
                     <div
@@ -5409,7 +5452,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList When List Has Entries. 1`] =
                   Last Checked 
                   <br />
                   @ 
-                  9 months ago
+                  10 months ago
                 </div>
               </div>
               <div
@@ -6293,7 +6336,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Updated Ago @ 1`] = `
               Last Checked 
               <br />
               @ 
-              23 days ago
+              a month ago
             </div>
           </div>
           <div
@@ -8171,6 +8214,49 @@ exports[`Storyshots Pages/SignupPage Intitial View 1`] = `
                               }
                             }
                             type="password"
+                            value=""
+                          />
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__phoneNum "
+                    >
+                      <label
+                        className="bp3-label"
+                        htmlFor="phoneNum"
+                      >
+                        Phone Number: 
+                         
+                        <span
+                          className="bp3-text-muted"
+                        />
+                      </label>
+                      <div
+                        className="bp3-form-content"
+                      >
+                        <div
+                          className="bp3-input-group"
+                        >
+                          <input
+                            className="bp3-input"
+                            id="phoneNum"
+                            name="phoneNum"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            onDragStart={[Function]}
+                            onDrop={[Function]}
+                            onFocus={[Function]}
+                            placeholder="+94761234567"
+                            style={
+                              Object {
+                                "paddingRight": 10,
+                              }
+                            }
+                            type="text"
                             value=""
                           />
                         </div>

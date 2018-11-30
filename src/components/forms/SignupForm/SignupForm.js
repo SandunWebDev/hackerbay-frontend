@@ -9,7 +9,13 @@ import AuthHelperForm from "../AuthHelperForm/AuthHelperForm";
 import { reduxForm, Field } from "redux-form";
 import reduxFormLevelValidator from "../helpers/reduxFormLevelValidator";
 import CustomInputWithErrorOutput from "../customInputs/CustomInputWithErrorOutput/CustomInputWithErrorOutput";
-import { required, email, length, confirmation } from "redux-form-validators";
+import {
+  required,
+  email,
+  length,
+  format,
+  confirmation
+} from "redux-form-validators";
 
 const validateOptionsForFormLevelValidation = {
   name: [required({ message: "Required." })],
@@ -24,6 +30,10 @@ const validateOptionsForFormLevelValidation = {
   passwordConfirm: [
     required({ message: "Required." }),
     confirmation({ field: "password", message: "Passwords doesn't match." })
+  ],
+  phoneNum: [
+    required({ message: "Required." }),
+    format({ with: /^\+[1-9]\d{1,14}$/i, message: "Not A Valid Phone Number" })
   ]
 };
 
@@ -31,7 +41,8 @@ const formInitialValues = {
   name: "",
   email: "",
   password: "",
-  passwordConfirm: ""
+  passwordConfirm: "",
+  phoneNum: ""
 };
 
 export class SignupForm extends Component {
@@ -87,6 +98,15 @@ export class SignupForm extends Component {
           label="Confirm Password : "
           type="password"
           placeholder="Confirm Your Password"
+          intent="danger"
+        />
+
+        <Field
+          component={CustomInputWithErrorOutput}
+          name="phoneNum"
+          label="Phone Number: "
+          type="text"
+          placeholder="+94761234567"
           intent="danger"
         />
       </AuthHelperForm>

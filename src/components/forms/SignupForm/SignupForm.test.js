@@ -40,10 +40,10 @@ describe("SignupForm Component", () => {
     );
   });
 
-  it("Should render <AuthHelper> with four input fields.", () => {
+  it("Should render <AuthHelper> with five input fields.", () => {
     const wrappedSignupForm = mount(withReduxAndRouter(<SignupForm />));
 
-    expect(wrappedSignupForm.find("Field").length).toEqual(4);
+    expect(wrappedSignupForm.find("Field").length).toEqual(5);
 
     expect(wrappedSignupForm.find("Field[name='name']").exists()).toEqual(true);
     expect(wrappedSignupForm.find("Field[name='email']").exists()).toEqual(
@@ -55,5 +55,8 @@ describe("SignupForm Component", () => {
     expect(
       wrappedSignupForm.find("Field[name='passwordConfirm']").exists()
     ).toEqual(true);
+    expect(wrappedSignupForm.find("Field[name='phoneNum']").exists()).toEqual(
+      true
+    );
   });
 });
