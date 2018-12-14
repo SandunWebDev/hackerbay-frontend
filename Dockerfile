@@ -10,15 +10,27 @@ WORKDIR /app
 # Copying dependencies(package.json & package-lock.json) first to make use of cache layer.
 COPY package*.json ./
 
-# Only installing product dependencies.
+# Installing production and developer dependencies regardless of NODE_ENV.
 RUN npm install --only=production && npm install --only=development && npm cache clean --force
+
+# Installing Cypress Dependecies (We could have just use docker cypress image,
+# But since we are using cypress even outside of docker in this project need lots of changes to optimizing,So For now just installing dependencies manually here.)
+RUN apt-get update && \
+  apt-get install -y \
+  libgtk2.0-0 \
+  libnotify-dev \
+  libgconf-2-4 \
+  libnss3 \
+  libxss1 \
+  libasound2 \
+  xvfb
 
 # Adding node_modules binary to PATH.
 ENV PATH /app/node_modules/.bin:$PATH
 
 
 # ******************************************* SUB BUILD STAGE - For Development/Testing ******************************************* 
-FROM base as development
+FROM base as dev
 
 # Exposing Ports For
 #   3000 - Local Development Server
@@ -31,14 +43,14 @@ COPY . ./
 CMD npm start
 
 # ******************************************* SUB BUILD STAGE - For Produce React Artifacts ******************************************* 
-FROM development as build
+FROM dev as build
 
 # Building React Prodcution Files.
 RUN npm run build
 
-# ******************************************* FINAL BUILD STAGE *******************************************
+# ******************************************* FINAL BUILD STAGE - Production Build *******************************************
 # Loading official Node Alpine image as final image (For Smaller Finzlized Image).
-FROM nginx:1.14-alpine as production
+FROM nginx:1.14-alpine as prod
 EXPOSE 80
 
 # Copying React build artifacts from previous stage.

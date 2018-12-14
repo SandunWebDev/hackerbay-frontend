@@ -1,0 +1,17 @@
+version: "3.4"
+
+services:
+  frontend:
+    environment:
+      # Getting env. variable directly from host enviroment OR .env file and pass them into container.
+      - NODE_ENV
+      - REACT_APP_API_BASEURL
+
+      - DOCKER_USERNAME
+      - DOCKER_PASSWORD
+
+      - CODECOV_TOKEN
+
+# Custom volume to store database data premenetly.
+volumes:
+  ? frontendTempData # For holding container's node_modules without clashing with host node_modules. (See dc-development.yml)

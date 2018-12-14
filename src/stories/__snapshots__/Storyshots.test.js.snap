@@ -16,17 +16,9 @@ exports[`Storyshots Custom Inputs/CustomInputWithErrorOutput Initial View 1`] = 
         <div>
           <div
             className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__undefined "
+            style={undefined}
           >
-            <label
-              className="bp3-label"
-              htmlFor={undefined}
-            >
-              
-               
-              <span
-                className="bp3-text-muted"
-              />
-            </label>
+            
             <div
               className="bp3-form-content"
             >
@@ -113,17 +105,9 @@ exports[`Storyshots Custom Inputs/CustomInputWithErrorOutput With Error Text 1`]
         <div>
           <div
             className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__undefined "
+            style={undefined}
           >
-            <label
-              className="bp3-label"
-              htmlFor={undefined}
-            >
-              
-               
-              <span
-                className="bp3-text-muted"
-              />
-            </label>
+            
             <div
               className="bp3-form-content"
             >
@@ -216,6 +200,7 @@ exports[`Storyshots Custom Inputs/CustomInputWithErrorOutput With Label 1`] = `
         <div>
           <div
             className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__undefined "
+            style={undefined}
           >
             <label
               className="bp3-label"
@@ -322,6 +307,7 @@ exports[`Storyshots Forms/AddWebsiteForm Initial View (Interactive) 1`] = `
             <div>
               <div
                 className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__websiteName "
+                style={undefined}
               >
                 <label
                   className="bp3-label"
@@ -365,6 +351,7 @@ exports[`Storyshots Forms/AddWebsiteForm Initial View (Interactive) 1`] = `
             <div>
               <div
                 className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__url "
+                style={undefined}
               >
                 <label
                   className="bp3-label"
@@ -418,6 +405,7 @@ exports[`Storyshots Forms/AddWebsiteForm Initial View (Interactive) 1`] = `
               <span
                 className="bp3-icon bp3-icon-add"
                 icon="add"
+                title={undefined}
               >
                 <svg
                   data-icon="add"
@@ -514,6 +502,7 @@ exports[`Storyshots Forms/AddWebsiteForm Submit Button Enabled. 1`] = `
             <div>
               <div
                 className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__websiteName "
+                style={undefined}
               >
                 <label
                   className="bp3-label"
@@ -557,6 +546,7 @@ exports[`Storyshots Forms/AddWebsiteForm Submit Button Enabled. 1`] = `
             <div>
               <div
                 className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__url "
+                style={undefined}
               >
                 <label
                   className="bp3-label"
@@ -610,6 +600,7 @@ exports[`Storyshots Forms/AddWebsiteForm Submit Button Enabled. 1`] = `
               <span
                 className="bp3-icon bp3-icon-add"
                 icon="add"
+                title={undefined}
               >
                 <svg
                   data-icon="add"
@@ -710,6 +701,7 @@ exports[`Storyshots Forms/AddWebsiteForm Submit Error Occured. 1`] = `
               <span
                 className="bp3-icon bp3-icon-error"
                 icon="error"
+                title={undefined}
               >
                 <svg
                   data-icon="error"
@@ -737,6 +729,7 @@ exports[`Storyshots Forms/AddWebsiteForm Submit Error Occured. 1`] = `
             <div>
               <div
                 className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__websiteName "
+                style={undefined}
               >
                 <label
                   className="bp3-label"
@@ -780,6 +773,7 @@ exports[`Storyshots Forms/AddWebsiteForm Submit Error Occured. 1`] = `
             <div>
               <div
                 className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__url "
+                style={undefined}
               >
                 <label
                   className="bp3-label"
@@ -833,6 +827,7 @@ exports[`Storyshots Forms/AddWebsiteForm Submit Error Occured. 1`] = `
               <span
                 className="bp3-icon bp3-icon-add"
                 icon="add"
+                title={undefined}
               >
                 <svg
                   data-icon="add"
@@ -929,6 +924,7 @@ exports[`Storyshots Forms/AddWebsiteForm Submit Suceeded. 1`] = `
             <span
               className="bp3-icon bp3-icon-endorsed"
               icon="endorsed"
+              title={undefined}
             >
               <svg
                 data-icon="endorsed"
@@ -1039,6 +1035,7 @@ exports[`Storyshots Forms/AddWebsiteForm While Submitting. 1`] = `
             <div>
               <div
                 className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__websiteName "
+                style={undefined}
               >
                 <label
                   className="bp3-label"
@@ -1082,6 +1079,7 @@ exports[`Storyshots Forms/AddWebsiteForm While Submitting. 1`] = `
             <div>
               <div
                 className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__url "
+                style={undefined}
               >
                 <label
                   className="bp3-label"
@@ -1135,32 +1133,33 @@ exports[`Storyshots Forms/AddWebsiteForm While Submitting. 1`] = `
               <div
                 className="bp3-spinner bp3-button-spinner"
               >
-                <span
+                <div
                   className="bp3-spinner-animation"
                 >
                   <svg
                     height={20}
-                    strokeWidth={16}
-                    viewBox="0 0 100 100"
+                    strokeWidth="16.00"
+                    viewBox="-3.00 -3.00 106.00 106.00"
                     width={20}
                   >
                     <path
                       className="bp3-spinner-track"
-                      d="M 50,50 m 0,-44.5 a 44.5,44.5 0 1 1 0,89 a 44.5,44.5 0 1 1 0,-89"
+                      d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
                     />
                     <path
                       className="bp3-spinner-head"
-                      d="M 50,50 m 0,-44.5 a 44.5,44.5 0 1 1 0,89 a 44.5,44.5 0 1 1 0,-89"
+                      d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
                       pathLength={280}
                       strokeDasharray="280 280"
                       strokeDashoffset={210}
                     />
                   </svg>
-                </span>
+                </div>
               </div>
               <span
                 className="bp3-icon bp3-icon-add"
                 icon="add"
+                title={undefined}
               >
                 <svg
                   data-icon="add"
@@ -1256,6 +1255,7 @@ exports[`Storyshots Forms/AuthHelperForm Initial View 1`] = `
             <div>
               <div
                 className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__name "
+                style={undefined}
               >
                 <label
                   className="bp3-label"
@@ -1309,6 +1309,7 @@ exports[`Storyshots Forms/AuthHelperForm Initial View 1`] = `
               <span
                 className="bp3-icon bp3-icon-upload"
                 icon="upload"
+                title={undefined}
               >
                 <svg
                   data-icon="upload"
@@ -1408,6 +1409,7 @@ exports[`Storyshots Forms/AuthHelperForm Submit Failed OR Error 1`] = `
               <span
                 className="bp3-icon bp3-icon-error"
                 icon="error"
+                title={undefined}
               >
                 <svg
                   data-icon="error"
@@ -1435,6 +1437,7 @@ exports[`Storyshots Forms/AuthHelperForm Submit Failed OR Error 1`] = `
             <div>
               <div
                 className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__name "
+                style={undefined}
               >
                 <label
                   className="bp3-label"
@@ -1488,6 +1491,7 @@ exports[`Storyshots Forms/AuthHelperForm Submit Failed OR Error 1`] = `
               <span
                 className="bp3-icon bp3-icon-upload"
                 icon="upload"
+                title={undefined}
               >
                 <svg
                   data-icon="upload"
@@ -1600,6 +1604,7 @@ exports[`Storyshots Forms/AuthHelperForm When Sumbitting [SKIP-IMAGESHOTS] 1`] =
             <div>
               <div
                 className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__name "
+                style={undefined}
               >
                 <label
                   className="bp3-label"
@@ -1653,32 +1658,33 @@ exports[`Storyshots Forms/AuthHelperForm When Sumbitting [SKIP-IMAGESHOTS] 1`] =
               <div
                 className="bp3-spinner bp3-button-spinner"
               >
-                <span
+                <div
                   className="bp3-spinner-animation"
                 >
                   <svg
                     height={20}
-                    strokeWidth={16}
-                    viewBox="0 0 100 100"
+                    strokeWidth="16.00"
+                    viewBox="-3.00 -3.00 106.00 106.00"
                     width={20}
                   >
                     <path
                       className="bp3-spinner-track"
-                      d="M 50,50 m 0,-44.5 a 44.5,44.5 0 1 1 0,89 a 44.5,44.5 0 1 1 0,-89"
+                      d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
                     />
                     <path
                       className="bp3-spinner-head"
-                      d="M 50,50 m 0,-44.5 a 44.5,44.5 0 1 1 0,89 a 44.5,44.5 0 1 1 0,-89"
+                      d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
                       pathLength={280}
                       strokeDasharray="280 280"
                       strokeDashoffset={210}
                     />
                   </svg>
-                </span>
+                </div>
               </div>
               <span
                 className="bp3-icon bp3-icon-upload"
                 icon="upload"
+                title={undefined}
               >
                 <svg
                   data-icon="upload"
@@ -1774,6 +1780,7 @@ exports[`Storyshots Forms/LoginForm Initial View 1`] = `
             <div>
               <div
                 className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__email "
+                style={undefined}
               >
                 <label
                   className="bp3-label"
@@ -1817,6 +1824,7 @@ exports[`Storyshots Forms/LoginForm Initial View 1`] = `
             <div>
               <div
                 className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__password "
+                style={undefined}
               >
                 <label
                   className="bp3-label"
@@ -1870,6 +1878,7 @@ exports[`Storyshots Forms/LoginForm Initial View 1`] = `
               <span
                 className="bp3-icon bp3-icon-upload"
                 icon="upload"
+                title={undefined}
               >
                 <svg
                   data-icon="upload"
@@ -1965,6 +1974,7 @@ exports[`Storyshots Forms/SignupForm Initial View 1`] = `
             <div>
               <div
                 className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__name "
+                style={undefined}
               >
                 <label
                   className="bp3-label"
@@ -2008,6 +2018,7 @@ exports[`Storyshots Forms/SignupForm Initial View 1`] = `
             <div>
               <div
                 className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__email "
+                style={undefined}
               >
                 <label
                   className="bp3-label"
@@ -2051,6 +2062,7 @@ exports[`Storyshots Forms/SignupForm Initial View 1`] = `
             <div>
               <div
                 className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__password "
+                style={undefined}
               >
                 <label
                   className="bp3-label"
@@ -2094,6 +2106,7 @@ exports[`Storyshots Forms/SignupForm Initial View 1`] = `
             <div>
               <div
                 className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__passwordConfirm "
+                style={undefined}
               >
                 <label
                   className="bp3-label"
@@ -2137,6 +2150,7 @@ exports[`Storyshots Forms/SignupForm Initial View 1`] = `
             <div>
               <div
                 className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__phoneNum "
+                style={undefined}
               >
                 <label
                   className="bp3-label"
@@ -2190,6 +2204,7 @@ exports[`Storyshots Forms/SignupForm Initial View 1`] = `
               <span
                 className="bp3-icon bp3-icon-upload"
                 icon="upload"
+                title={undefined}
               >
                 <svg
                   data-icon="upload"
@@ -2285,6 +2300,7 @@ exports[`Storyshots Pages/DashboardPage Error Occured 1`] = `
             <span
               className="bp3-icon bp3-icon-dashboard"
               icon="dashboard"
+              title={undefined}
             >
               <svg
                 data-icon="dashboard"
@@ -2327,6 +2343,7 @@ exports[`Storyshots Pages/DashboardPage Error Occured 1`] = `
                     <span
                       className="bp3-icon bp3-icon-globe-network"
                       icon="globe-network"
+                      title={undefined}
                     >
                       <svg
                         data-icon="globe-network"
@@ -2367,6 +2384,7 @@ exports[`Storyshots Pages/DashboardPage Error Occured 1`] = `
                     <span
                       className="bp3-icon bp3-icon-feed"
                       icon="feed"
+                      title={undefined}
                     >
                       <svg
                         data-icon="feed"
@@ -2407,6 +2425,7 @@ exports[`Storyshots Pages/DashboardPage Error Occured 1`] = `
                     <span
                       className="bp3-icon bp3-icon-disable"
                       icon="disable"
+                      title={undefined}
                     >
                       <svg
                         data-icon="disable"
@@ -2445,6 +2464,7 @@ exports[`Storyshots Pages/DashboardPage Error Occured 1`] = `
                     <span
                       className="bp3-icon bp3-icon-add"
                       icon="add"
+                      title={undefined}
                     >
                       <svg
                         data-icon="add"
@@ -2482,6 +2502,7 @@ exports[`Storyshots Pages/DashboardPage Error Occured 1`] = `
                     <span
                       className="bp3-icon bp3-icon-disable"
                       icon="disable"
+                      title={undefined}
                     >
                       <svg
                         data-icon="disable"
@@ -2520,6 +2541,7 @@ exports[`Storyshots Pages/DashboardPage Error Occured 1`] = `
                         <span
                           className="bp3-icon bp3-icon-refresh"
                           icon="refresh"
+                          title={undefined}
                         >
                           <svg
                             data-icon="refresh"
@@ -2620,6 +2642,7 @@ exports[`Storyshots Pages/DashboardPage Intitial View 1`] = `
             <span
               className="bp3-icon bp3-icon-dashboard"
               icon="dashboard"
+              title={undefined}
             >
               <svg
                 data-icon="dashboard"
@@ -2662,6 +2685,7 @@ exports[`Storyshots Pages/DashboardPage Intitial View 1`] = `
                     <span
                       className="bp3-icon bp3-icon-globe-network"
                       icon="globe-network"
+                      title={undefined}
                     >
                       <svg
                         data-icon="globe-network"
@@ -2702,6 +2726,7 @@ exports[`Storyshots Pages/DashboardPage Intitial View 1`] = `
                     <span
                       className="bp3-icon bp3-icon-feed"
                       icon="feed"
+                      title={undefined}
                     >
                       <svg
                         data-icon="feed"
@@ -2742,6 +2767,7 @@ exports[`Storyshots Pages/DashboardPage Intitial View 1`] = `
                     <span
                       className="bp3-icon bp3-icon-disable"
                       icon="disable"
+                      title={undefined}
                     >
                       <svg
                         data-icon="disable"
@@ -2780,6 +2806,7 @@ exports[`Storyshots Pages/DashboardPage Intitial View 1`] = `
                     <span
                       className="bp3-icon bp3-icon-add"
                       icon="add"
+                      title={undefined}
                     >
                       <svg
                         data-icon="add"
@@ -2816,28 +2843,28 @@ exports[`Storyshots Pages/DashboardPage Intitial View 1`] = `
                   <div
                     className="bp3-spinner bp3-intent-success"
                   >
-                    <span
+                    <div
                       className="bp3-spinner-animation"
                     >
                       <svg
                         height={100}
-                        strokeWidth={4}
-                        viewBox="0 0 100 100"
+                        strokeWidth="4.00"
+                        viewBox="3.00 3.00 94.00 94.00"
                         width={100}
                       >
                         <path
                           className="bp3-spinner-track"
-                          d="M 50,50 m 0,-44.5 a 44.5,44.5 0 1 1 0,89 a 44.5,44.5 0 1 1 0,-89"
+                          d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
                         />
                         <path
                           className="bp3-spinner-head"
-                          d="M 50,50 m 0,-44.5 a 44.5,44.5 0 1 1 0,89 a 44.5,44.5 0 1 1 0,-89"
+                          d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
                           pathLength={280}
                           strokeDasharray="280 280"
                           strokeDashoffset={210}
                         />
                       </svg>
-                    </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -2914,6 +2941,7 @@ exports[`Storyshots Pages/DashboardPage While Fetching 1`] = `
             <span
               className="bp3-icon bp3-icon-dashboard"
               icon="dashboard"
+              title={undefined}
             >
               <svg
                 data-icon="dashboard"
@@ -2956,6 +2984,7 @@ exports[`Storyshots Pages/DashboardPage While Fetching 1`] = `
                     <span
                       className="bp3-icon bp3-icon-globe-network"
                       icon="globe-network"
+                      title={undefined}
                     >
                       <svg
                         data-icon="globe-network"
@@ -2996,6 +3025,7 @@ exports[`Storyshots Pages/DashboardPage While Fetching 1`] = `
                     <span
                       className="bp3-icon bp3-icon-feed"
                       icon="feed"
+                      title={undefined}
                     >
                       <svg
                         data-icon="feed"
@@ -3036,6 +3066,7 @@ exports[`Storyshots Pages/DashboardPage While Fetching 1`] = `
                     <span
                       className="bp3-icon bp3-icon-disable"
                       icon="disable"
+                      title={undefined}
                     >
                       <svg
                         data-icon="disable"
@@ -3074,6 +3105,7 @@ exports[`Storyshots Pages/DashboardPage While Fetching 1`] = `
                     <span
                       className="bp3-icon bp3-icon-add"
                       icon="add"
+                      title={undefined}
                     >
                       <svg
                         data-icon="add"
@@ -3110,28 +3142,28 @@ exports[`Storyshots Pages/DashboardPage While Fetching 1`] = `
                   <div
                     className="bp3-spinner bp3-intent-success"
                   >
-                    <span
+                    <div
                       className="bp3-spinner-animation"
                     >
                       <svg
                         height={100}
-                        strokeWidth={4}
-                        viewBox="0 0 100 100"
+                        strokeWidth="4.00"
+                        viewBox="3.00 3.00 94.00 94.00"
                         width={100}
                       >
                         <path
                           className="bp3-spinner-track"
-                          d="M 50,50 m 0,-44.5 a 44.5,44.5 0 1 1 0,89 a 44.5,44.5 0 1 1 0,-89"
+                          d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
                         />
                         <path
                           className="bp3-spinner-head"
-                          d="M 50,50 m 0,-44.5 a 44.5,44.5 0 1 1 0,89 a 44.5,44.5 0 1 1 0,-89"
+                          d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
                           pathLength={280}
                           strokeDasharray="280 280"
                           strokeDashoffset={210}
                         />
                       </svg>
-                    </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -3208,6 +3240,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar & Items 1`] = `
             <span
               className="bp3-icon bp3-icon-dashboard"
               icon="dashboard"
+              title={undefined}
             >
               <svg
                 data-icon="dashboard"
@@ -3250,6 +3283,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar & Items 1`] = `
                     <span
                       className="bp3-icon bp3-icon-globe-network"
                       icon="globe-network"
+                      title={undefined}
                     >
                       <svg
                         data-icon="globe-network"
@@ -3290,6 +3324,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar & Items 1`] = `
                     <span
                       className="bp3-icon bp3-icon-feed"
                       icon="feed"
+                      title={undefined}
                     >
                       <svg
                         data-icon="feed"
@@ -3330,6 +3365,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar & Items 1`] = `
                     <span
                       className="bp3-icon bp3-icon-disable"
                       icon="disable"
+                      title={undefined}
                     >
                       <svg
                         data-icon="disable"
@@ -3368,6 +3404,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar & Items 1`] = `
                     <span
                       className="bp3-icon bp3-icon-add"
                       icon="add"
+                      title={undefined}
                     >
                       <svg
                         data-icon="add"
@@ -3419,6 +3456,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar & Items 1`] = `
                         <span
                           className="bp3-icon bp3-icon-filter"
                           icon="filter"
+                          title={undefined}
                         >
                           <svg
                             data-icon="filter"
@@ -3481,6 +3519,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar & Items 1`] = `
                         <span
                           className="bp3-icon bp3-icon-double-caret-vertical"
                           icon="double-caret-vertical"
+                          title={undefined}
                         >
                           <svg
                             data-icon="double-caret-vertical"
@@ -3532,6 +3571,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar & Items 1`] = `
                         <span
                           className="bp3-icon bp3-icon-sort"
                           icon="sort"
+                          title={undefined}
                         >
                           <svg
                             data-icon="sort"
@@ -3594,6 +3634,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar & Items 1`] = `
                         <span
                           className="bp3-icon bp3-icon-double-caret-vertical"
                           icon="double-caret-vertical"
+                          title={undefined}
                         >
                           <svg
                             data-icon="double-caret-vertical"
@@ -3626,6 +3667,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar & Items 1`] = `
                         <span
                           className="bp3-icon bp3-icon-sort-alphabetical"
                           icon="sort-alphabetical"
+                          title={undefined}
                         >
                           <svg
                             data-icon="sort-alphabetical"
@@ -3658,6 +3700,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar & Items 1`] = `
                         <span
                           className="bp3-icon bp3-icon-sort-alphabetical-desc"
                           icon="sort-alphabetical-desc"
+                          title={undefined}
                         >
                           <svg
                             data-icon="sort-alphabetical-desc"
@@ -3722,6 +3765,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar & Items 1`] = `
                           className="bp3-icon bp3-icon-tick"
                           data-testid="onlineStatus"
                           icon="tick"
+                          title={undefined}
                         >
                           <svg
                             data-icon="tick"
@@ -3758,6 +3802,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar & Items 1`] = `
                         <span
                           className="bp3-icon bp3-icon-automatic-updates"
                           icon="automatic-updates"
+                          title={undefined}
                         >
                           <svg
                             data-icon="automatic-updates"
@@ -3782,6 +3827,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar & Items 1`] = `
                         <span
                           className="bp3-icon bp3-icon-edit"
                           icon="edit"
+                          title={undefined}
                         >
                           <svg
                             data-icon="edit"
@@ -3808,6 +3854,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar & Items 1`] = `
                         <span
                           className="bp3-icon bp3-icon-trash"
                           icon="trash"
+                          title={undefined}
                         >
                           <svg
                             data-icon="trash"
@@ -3832,6 +3879,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar & Items 1`] = `
                         <span
                           className="bp3-icon bp3-icon-notifications-updated"
                           icon="notifications-updated"
+                          title={undefined}
                         >
                           <svg
                             data-icon="notifications-updated"
@@ -3891,6 +3939,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar & Items 1`] = `
                           className="bp3-icon bp3-icon-warning-sign"
                           data-testid="onlineStatus"
                           icon="warning-sign"
+                          title={undefined}
                         >
                           <svg
                             data-icon="warning-sign"
@@ -3927,6 +3976,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar & Items 1`] = `
                         <span
                           className="bp3-icon bp3-icon-automatic-updates"
                           icon="automatic-updates"
+                          title={undefined}
                         >
                           <svg
                             data-icon="automatic-updates"
@@ -3951,6 +4001,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar & Items 1`] = `
                         <span
                           className="bp3-icon bp3-icon-edit"
                           icon="edit"
+                          title={undefined}
                         >
                           <svg
                             data-icon="edit"
@@ -3977,6 +4028,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar & Items 1`] = `
                         <span
                           className="bp3-icon bp3-icon-trash"
                           icon="trash"
+                          title={undefined}
                         >
                           <svg
                             data-icon="trash"
@@ -4001,6 +4053,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar & Items 1`] = `
                         <span
                           className="bp3-icon bp3-icon-notifications-updated"
                           icon="notifications-updated"
+                          title={undefined}
                         >
                           <svg
                             data-icon="notifications-updated"
@@ -4096,6 +4149,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar 1`] = `
             <span
               className="bp3-icon bp3-icon-dashboard"
               icon="dashboard"
+              title={undefined}
             >
               <svg
                 data-icon="dashboard"
@@ -4138,6 +4192,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar 1`] = `
                     <span
                       className="bp3-icon bp3-icon-globe-network"
                       icon="globe-network"
+                      title={undefined}
                     >
                       <svg
                         data-icon="globe-network"
@@ -4178,6 +4233,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar 1`] = `
                     <span
                       className="bp3-icon bp3-icon-feed"
                       icon="feed"
+                      title={undefined}
                     >
                       <svg
                         data-icon="feed"
@@ -4218,6 +4274,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar 1`] = `
                     <span
                       className="bp3-icon bp3-icon-disable"
                       icon="disable"
+                      title={undefined}
                     >
                       <svg
                         data-icon="disable"
@@ -4256,6 +4313,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar 1`] = `
                     <span
                       className="bp3-icon bp3-icon-add"
                       icon="add"
+                      title={undefined}
                     >
                       <svg
                         data-icon="add"
@@ -4293,6 +4351,7 @@ exports[`Storyshots Pages/DashboardPage With Top Bar 1`] = `
                     <span
                       className="bp3-icon bp3-icon-filter-remove"
                       icon="filter-remove"
+                      title={undefined}
                     >
                       <svg
                         data-icon="filter-remove"
@@ -4394,6 +4453,7 @@ exports[`Storyshots Pages/DashboardPage/AddWebsite Intitial View 1`] = `
               <span
                 className="bp3-icon bp3-icon-add"
                 icon="add"
+                title={undefined}
               >
                 <svg
                   data-icon="add"
@@ -4494,6 +4554,7 @@ exports[`Storyshots Pages/DashboardPage/AddWebsite Opened View 1`] = `
                 <div>
                   <div
                     className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__websiteName "
+                    style={undefined}
                   >
                     <label
                       className="bp3-label"
@@ -4537,6 +4598,7 @@ exports[`Storyshots Pages/DashboardPage/AddWebsite Opened View 1`] = `
                 <div>
                   <div
                     className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__url "
+                    style={undefined}
                   >
                     <label
                       className="bp3-label"
@@ -4590,6 +4652,7 @@ exports[`Storyshots Pages/DashboardPage/AddWebsite Opened View 1`] = `
                   <span
                     className="bp3-icon bp3-icon-add"
                     icon="add"
+                    title={undefined}
                   >
                     <svg
                       data-icon="add"
@@ -4619,6 +4682,7 @@ exports[`Storyshots Pages/DashboardPage/AddWebsite Opened View 1`] = `
               className="bp3-icon bp3-icon-cross AddWebsite__closeButton"
               icon="cross"
               onClick={[Function]}
+              title={undefined}
             >
               <svg
                 data-icon="cross"
@@ -4709,6 +4773,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList Error Occured 1`] = `
               <span
                 className="bp3-icon bp3-icon-disable"
                 icon="disable"
+                title={undefined}
               >
                 <svg
                   data-icon="disable"
@@ -4747,6 +4812,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList Error Occured 1`] = `
                   <span
                     className="bp3-icon bp3-icon-refresh"
                     icon="refresh"
+                    title={undefined}
                   >
                     <svg
                       data-icon="refresh"
@@ -4845,6 +4911,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList Intitial View 1`] = `
               <span
                 className="bp3-icon bp3-icon-filter-remove"
                 icon="filter-remove"
+                title={undefined}
               >
                 <svg
                   data-icon="filter-remove"
@@ -4956,6 +5023,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList When List Has Entries. 1`] =
                   <span
                     className="bp3-icon bp3-icon-filter"
                     icon="filter"
+                    title={undefined}
                   >
                     <svg
                       data-icon="filter"
@@ -5018,6 +5086,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList When List Has Entries. 1`] =
                   <span
                     className="bp3-icon bp3-icon-double-caret-vertical"
                     icon="double-caret-vertical"
+                    title={undefined}
                   >
                     <svg
                       data-icon="double-caret-vertical"
@@ -5069,6 +5138,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList When List Has Entries. 1`] =
                   <span
                     className="bp3-icon bp3-icon-sort"
                     icon="sort"
+                    title={undefined}
                   >
                     <svg
                       data-icon="sort"
@@ -5131,6 +5201,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList When List Has Entries. 1`] =
                   <span
                     className="bp3-icon bp3-icon-double-caret-vertical"
                     icon="double-caret-vertical"
+                    title={undefined}
                   >
                     <svg
                       data-icon="double-caret-vertical"
@@ -5163,6 +5234,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList When List Has Entries. 1`] =
                   <span
                     className="bp3-icon bp3-icon-sort-alphabetical"
                     icon="sort-alphabetical"
+                    title={undefined}
                   >
                     <svg
                       data-icon="sort-alphabetical"
@@ -5195,6 +5267,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList When List Has Entries. 1`] =
                   <span
                     className="bp3-icon bp3-icon-sort-alphabetical-desc"
                     icon="sort-alphabetical-desc"
+                    title={undefined}
                   >
                     <svg
                       data-icon="sort-alphabetical-desc"
@@ -5259,6 +5332,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList When List Has Entries. 1`] =
                     className="bp3-icon bp3-icon-tick"
                     data-testid="onlineStatus"
                     icon="tick"
+                    title={undefined}
                   >
                     <svg
                       data-icon="tick"
@@ -5295,6 +5369,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList When List Has Entries. 1`] =
                   <span
                     className="bp3-icon bp3-icon-automatic-updates"
                     icon="automatic-updates"
+                    title={undefined}
                   >
                     <svg
                       data-icon="automatic-updates"
@@ -5319,6 +5394,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList When List Has Entries. 1`] =
                   <span
                     className="bp3-icon bp3-icon-edit"
                     icon="edit"
+                    title={undefined}
                   >
                     <svg
                       data-icon="edit"
@@ -5345,6 +5421,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList When List Has Entries. 1`] =
                   <span
                     className="bp3-icon bp3-icon-trash"
                     icon="trash"
+                    title={undefined}
                   >
                     <svg
                       data-icon="trash"
@@ -5369,6 +5446,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList When List Has Entries. 1`] =
                   <span
                     className="bp3-icon bp3-icon-notifications-updated"
                     icon="notifications-updated"
+                    title={undefined}
                   >
                     <svg
                       data-icon="notifications-updated"
@@ -5428,6 +5506,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList When List Has Entries. 1`] =
                     className="bp3-icon bp3-icon-warning-sign"
                     data-testid="onlineStatus"
                     icon="warning-sign"
+                    title={undefined}
                   >
                     <svg
                       data-icon="warning-sign"
@@ -5464,6 +5543,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList When List Has Entries. 1`] =
                   <span
                     className="bp3-icon bp3-icon-automatic-updates"
                     icon="automatic-updates"
+                    title={undefined}
                   >
                     <svg
                       data-icon="automatic-updates"
@@ -5488,6 +5568,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList When List Has Entries. 1`] =
                   <span
                     className="bp3-icon bp3-icon-edit"
                     icon="edit"
+                    title={undefined}
                   >
                     <svg
                       data-icon="edit"
@@ -5514,6 +5595,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList When List Has Entries. 1`] =
                   <span
                     className="bp3-icon bp3-icon-trash"
                     icon="trash"
+                    title={undefined}
                   >
                     <svg
                       data-icon="trash"
@@ -5538,6 +5620,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList When List Has Entries. 1`] =
                   <span
                     className="bp3-icon bp3-icon-notifications-updated"
                     icon="notifications-updated"
+                    title={undefined}
                   >
                     <svg
                       data-icon="notifications-updated"
@@ -5631,6 +5714,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList When List Is Empty 1`] = `
               <span
                 className="bp3-icon bp3-icon-filter-remove"
                 icon="filter-remove"
+                title={undefined}
               >
                 <svg
                   data-icon="filter-remove"
@@ -5727,28 +5811,28 @@ exports[`Storyshots Pages/DashboardPage/WebsiteList While Fetching 1`] = `
             <div
               className="bp3-spinner bp3-intent-success"
             >
-              <span
+              <div
                 className="bp3-spinner-animation"
               >
                 <svg
                   height={100}
-                  strokeWidth={4}
-                  viewBox="0 0 100 100"
+                  strokeWidth="4.00"
+                  viewBox="3.00 3.00 94.00 94.00"
                   width={100}
                 >
                   <path
                     className="bp3-spinner-track"
-                    d="M 50,50 m 0,-44.5 a 44.5,44.5 0 1 1 0,89 a 44.5,44.5 0 1 1 0,-89"
+                    d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
                   />
                   <path
                     className="bp3-spinner-head"
-                    d="M 50,50 m 0,-44.5 a 44.5,44.5 0 1 1 0,89 a 44.5,44.5 0 1 1 0,-89"
+                    d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
                     pathLength={280}
                     strokeDasharray="280 280"
                     strokeDashoffset={210}
                   />
                 </svg>
-              </span>
+              </div>
             </div>
           </div>
         </div>
@@ -5852,6 +5936,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Intitial View 1`] = `
                 className="bp3-icon bp3-icon-tick"
                 data-testid="onlineStatus"
                 icon="tick"
+                title={undefined}
               >
                 <svg
                   data-icon="tick"
@@ -5888,6 +5973,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Intitial View 1`] = `
               <span
                 className="bp3-icon bp3-icon-automatic-updates"
                 icon="automatic-updates"
+                title={undefined}
               >
                 <svg
                   data-icon="automatic-updates"
@@ -5912,6 +5998,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Intitial View 1`] = `
               <span
                 className="bp3-icon bp3-icon-edit"
                 icon="edit"
+                title={undefined}
               >
                 <svg
                   data-icon="edit"
@@ -5938,6 +6025,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Intitial View 1`] = `
               <span
                 className="bp3-icon bp3-icon-trash"
                 icon="trash"
+                title={undefined}
               >
                 <svg
                   data-icon="trash"
@@ -5962,6 +6050,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Intitial View 1`] = `
               <span
                 className="bp3-icon bp3-icon-notifications-updated"
                 icon="notifications-updated"
+                title={undefined}
               >
                 <svg
                   data-icon="notifications-updated"
@@ -6082,6 +6171,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Name & URL 1`] = `
                 className="bp3-icon bp3-icon-tick"
                 data-testid="onlineStatus"
                 icon="tick"
+                title={undefined}
               >
                 <svg
                   data-icon="tick"
@@ -6118,6 +6208,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Name & URL 1`] = `
               <span
                 className="bp3-icon bp3-icon-automatic-updates"
                 icon="automatic-updates"
+                title={undefined}
               >
                 <svg
                   data-icon="automatic-updates"
@@ -6142,6 +6233,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Name & URL 1`] = `
               <span
                 className="bp3-icon bp3-icon-edit"
                 icon="edit"
+                title={undefined}
               >
                 <svg
                   data-icon="edit"
@@ -6168,6 +6260,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Name & URL 1`] = `
               <span
                 className="bp3-icon bp3-icon-trash"
                 icon="trash"
+                title={undefined}
               >
                 <svg
                   data-icon="trash"
@@ -6192,6 +6285,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Name & URL 1`] = `
               <span
                 className="bp3-icon bp3-icon-notifications-updated"
                 icon="notifications-updated"
+                title={undefined}
               >
                 <svg
                   data-icon="notifications-updated"
@@ -6312,6 +6406,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Updated Ago @ 1`] = `
                 className="bp3-icon bp3-icon-tick"
                 data-testid="onlineStatus"
                 icon="tick"
+                title={undefined}
               >
                 <svg
                   data-icon="tick"
@@ -6348,6 +6443,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Updated Ago @ 1`] = `
               <span
                 className="bp3-icon bp3-icon-automatic-updates"
                 icon="automatic-updates"
+                title={undefined}
               >
                 <svg
                   data-icon="automatic-updates"
@@ -6372,6 +6468,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Updated Ago @ 1`] = `
               <span
                 className="bp3-icon bp3-icon-edit"
                 icon="edit"
+                title={undefined}
               >
                 <svg
                   data-icon="edit"
@@ -6398,6 +6495,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Updated Ago @ 1`] = `
               <span
                 className="bp3-icon bp3-icon-trash"
                 icon="trash"
+                title={undefined}
               >
                 <svg
                   data-icon="trash"
@@ -6422,6 +6520,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Updated Ago @ 1`] = `
               <span
                 className="bp3-icon bp3-icon-notifications-updated"
                 icon="notifications-updated"
+                title={undefined}
               >
                 <svg
                   data-icon="notifications-updated"
@@ -6542,6 +6641,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Website is Offline 1`] =
                 className="bp3-icon bp3-icon-warning-sign"
                 data-testid="onlineStatus"
                 icon="warning-sign"
+                title={undefined}
               >
                 <svg
                   data-icon="warning-sign"
@@ -6578,6 +6678,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Website is Offline 1`] =
               <span
                 className="bp3-icon bp3-icon-automatic-updates"
                 icon="automatic-updates"
+                title={undefined}
               >
                 <svg
                   data-icon="automatic-updates"
@@ -6602,6 +6703,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Website is Offline 1`] =
               <span
                 className="bp3-icon bp3-icon-edit"
                 icon="edit"
+                title={undefined}
               >
                 <svg
                   data-icon="edit"
@@ -6628,6 +6730,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Website is Offline 1`] =
               <span
                 className="bp3-icon bp3-icon-trash"
                 icon="trash"
+                title={undefined}
               >
                 <svg
                   data-icon="trash"
@@ -6652,6 +6755,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Website is Offline 1`] =
               <span
                 className="bp3-icon bp3-icon-notifications-updated"
                 icon="notifications-updated"
+                title={undefined}
               >
                 <svg
                   data-icon="notifications-updated"
@@ -6772,6 +6876,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Website is Online 1`] = 
                 className="bp3-icon bp3-icon-tick"
                 data-testid="onlineStatus"
                 icon="tick"
+                title={undefined}
               >
                 <svg
                   data-icon="tick"
@@ -6808,6 +6913,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Website is Online 1`] = 
               <span
                 className="bp3-icon bp3-icon-automatic-updates"
                 icon="automatic-updates"
+                title={undefined}
               >
                 <svg
                   data-icon="automatic-updates"
@@ -6832,6 +6938,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Website is Online 1`] = 
               <span
                 className="bp3-icon bp3-icon-edit"
                 icon="edit"
+                title={undefined}
               >
                 <svg
                   data-icon="edit"
@@ -6858,6 +6965,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Website is Online 1`] = 
               <span
                 className="bp3-icon bp3-icon-trash"
                 icon="trash"
+                title={undefined}
               >
                 <svg
                   data-icon="trash"
@@ -6882,6 +6990,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListItem Website is Online 1`] = 
               <span
                 className="bp3-icon bp3-icon-notifications-updated"
                 icon="notifications-updated"
+                title={undefined}
               >
                 <svg
                   data-icon="notifications-updated"
@@ -6981,6 +7090,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListToolbar Intitial View 1`] = `
               <span
                 className="bp3-icon bp3-icon-filter"
                 icon="filter"
+                title={undefined}
               >
                 <svg
                   data-icon="filter"
@@ -7043,6 +7153,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListToolbar Intitial View 1`] = `
               <span
                 className="bp3-icon bp3-icon-double-caret-vertical"
                 icon="double-caret-vertical"
+                title={undefined}
               >
                 <svg
                   data-icon="double-caret-vertical"
@@ -7094,6 +7205,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListToolbar Intitial View 1`] = `
               <span
                 className="bp3-icon bp3-icon-sort"
                 icon="sort"
+                title={undefined}
               >
                 <svg
                   data-icon="sort"
@@ -7156,6 +7268,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListToolbar Intitial View 1`] = `
               <span
                 className="bp3-icon bp3-icon-double-caret-vertical"
                 icon="double-caret-vertical"
+                title={undefined}
               >
                 <svg
                   data-icon="double-caret-vertical"
@@ -7188,6 +7301,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListToolbar Intitial View 1`] = `
               <span
                 className="bp3-icon bp3-icon-sort-alphabetical"
                 icon="sort-alphabetical"
+                title={undefined}
               >
                 <svg
                   data-icon="sort-alphabetical"
@@ -7220,6 +7334,7 @@ exports[`Storyshots Pages/DashboardPage/WebsiteListToolbar Intitial View 1`] = `
               <span
                 className="bp3-icon bp3-icon-sort-alphabetical-desc"
                 icon="sort-alphabetical-desc"
+                title={undefined}
               >
                 <svg
                   data-icon="sort-alphabetical-desc"
@@ -7355,6 +7470,7 @@ exports[`Storyshots Pages/HomePage Intitial View 1`] = `
                       <span
                         className="bp3-icon bp3-icon-log-in"
                         icon="log-in"
+                        title={undefined}
                       >
                         <svg
                           data-icon="log-in"
@@ -7390,6 +7506,7 @@ exports[`Storyshots Pages/HomePage Intitial View 1`] = `
                       <span
                         className="bp3-icon bp3-icon-badge"
                         icon="badge"
+                        title={undefined}
                       >
                         <svg
                           data-icon="badge"
@@ -7535,6 +7652,7 @@ exports[`Storyshots Pages/HomePage When Logged In 1`] = `
                       <span
                         className="bp3-icon bp3-icon-dashboard"
                         icon="dashboard"
+                        title={undefined}
                       >
                         <svg
                           data-icon="dashboard"
@@ -7680,6 +7798,7 @@ exports[`Storyshots Pages/HomePage When Logged Out 1`] = `
                       <span
                         className="bp3-icon bp3-icon-log-in"
                         icon="log-in"
+                        title={undefined}
                       >
                         <svg
                           data-icon="log-in"
@@ -7715,6 +7834,7 @@ exports[`Storyshots Pages/HomePage When Logged Out 1`] = `
                       <span
                         className="bp3-icon bp3-icon-badge"
                         icon="badge"
+                        title={undefined}
                       >
                         <svg
                           data-icon="badge"
@@ -7831,6 +7951,7 @@ exports[`Storyshots Pages/LoginPage Intitial View 1`] = `
                   <div>
                     <div
                       className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__email "
+                      style={undefined}
                     >
                       <label
                         className="bp3-label"
@@ -7874,6 +7995,7 @@ exports[`Storyshots Pages/LoginPage Intitial View 1`] = `
                   <div>
                     <div
                       className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__password "
+                      style={undefined}
                     >
                       <label
                         className="bp3-label"
@@ -7927,6 +8049,7 @@ exports[`Storyshots Pages/LoginPage Intitial View 1`] = `
                     <span
                       className="bp3-icon bp3-icon-upload"
                       icon="upload"
+                      title={undefined}
                     >
                       <svg
                         data-icon="upload"
@@ -8052,6 +8175,7 @@ exports[`Storyshots Pages/SignupPage Intitial View 1`] = `
                   <div>
                     <div
                       className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__name "
+                      style={undefined}
                     >
                       <label
                         className="bp3-label"
@@ -8095,6 +8219,7 @@ exports[`Storyshots Pages/SignupPage Intitial View 1`] = `
                   <div>
                     <div
                       className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__email "
+                      style={undefined}
                     >
                       <label
                         className="bp3-label"
@@ -8138,6 +8263,7 @@ exports[`Storyshots Pages/SignupPage Intitial View 1`] = `
                   <div>
                     <div
                       className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__password "
+                      style={undefined}
                     >
                       <label
                         className="bp3-label"
@@ -8181,6 +8307,7 @@ exports[`Storyshots Pages/SignupPage Intitial View 1`] = `
                   <div>
                     <div
                       className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__passwordConfirm "
+                      style={undefined}
                     >
                       <label
                         className="bp3-label"
@@ -8224,6 +8351,7 @@ exports[`Storyshots Pages/SignupPage Intitial View 1`] = `
                   <div>
                     <div
                       className="bp3-form-group bp3-intent-danger CustomInputWithErrorOutput CustomInputWithErrorOutput__phoneNum "
+                      style={undefined}
                     >
                       <label
                         className="bp3-label"
@@ -8277,6 +8405,7 @@ exports[`Storyshots Pages/SignupPage Intitial View 1`] = `
                     <span
                       className="bp3-icon bp3-icon-upload"
                       icon="upload"
+                      title={undefined}
                     >
                       <svg
                         data-icon="upload"
@@ -8409,6 +8538,7 @@ exports[`Storyshots Root/App Intitial View 1`] = `
                       <span
                         className="bp3-icon bp3-icon-search-around"
                         icon="search-around"
+                        title={undefined}
                       >
                         <svg
                           data-icon="search-around"
@@ -8456,6 +8586,7 @@ exports[`Storyshots Root/App Intitial View 1`] = `
                       <span
                         className="bp3-icon bp3-icon-projects"
                         icon="projects"
+                        title={undefined}
                       >
                         <svg
                           data-icon="projects"
@@ -8496,6 +8627,7 @@ exports[`Storyshots Root/App Intitial View 1`] = `
                       <span
                         className="bp3-icon bp3-icon-dollar"
                         icon="dollar"
+                        title={undefined}
                       >
                         <svg
                           data-icon="dollar"
@@ -8536,6 +8668,7 @@ exports[`Storyshots Root/App Intitial View 1`] = `
                       <span
                         className="bp3-icon bp3-icon-compass"
                         icon="compass"
+                        title={undefined}
                       >
                         <svg
                           data-icon="compass"
@@ -8582,6 +8715,7 @@ exports[`Storyshots Root/App Intitial View 1`] = `
                     <span
                       className="bp3-icon bp3-icon-badge"
                       icon="badge"
+                      title={undefined}
                     >
                       <svg
                         data-icon="badge"
@@ -8622,6 +8756,7 @@ exports[`Storyshots Root/App Intitial View 1`] = `
                     <span
                       className="bp3-icon bp3-icon-log-in"
                       icon="log-in"
+                      title={undefined}
                     >
                       <svg
                         data-icon="log-in"
@@ -8655,6 +8790,7 @@ exports[`Storyshots Root/App Intitial View 1`] = `
                 <span
                   className="bp3-icon bp3-icon-menu"
                   icon="menu"
+                  title={undefined}
                 >
                   <svg
                     data-icon="menu"
@@ -8725,6 +8861,7 @@ exports[`Storyshots Root/App Intitial View 1`] = `
                         <span
                           className="bp3-icon bp3-icon-log-in"
                           icon="log-in"
+                          title={undefined}
                         >
                           <svg
                             data-icon="log-in"
@@ -8760,6 +8897,7 @@ exports[`Storyshots Root/App Intitial View 1`] = `
                         <span
                           className="bp3-icon bp3-icon-badge"
                           icon="badge"
+                          title={undefined}
                         >
                           <svg
                             data-icon="badge"
@@ -8881,6 +9019,7 @@ exports[`Storyshots Root/Header Intitial View 1`] = `
                     <span
                       className="bp3-icon bp3-icon-search-around"
                       icon="search-around"
+                      title={undefined}
                     >
                       <svg
                         data-icon="search-around"
@@ -8928,6 +9067,7 @@ exports[`Storyshots Root/Header Intitial View 1`] = `
                     <span
                       className="bp3-icon bp3-icon-projects"
                       icon="projects"
+                      title={undefined}
                     >
                       <svg
                         data-icon="projects"
@@ -8968,6 +9108,7 @@ exports[`Storyshots Root/Header Intitial View 1`] = `
                     <span
                       className="bp3-icon bp3-icon-dollar"
                       icon="dollar"
+                      title={undefined}
                     >
                       <svg
                         data-icon="dollar"
@@ -9008,6 +9149,7 @@ exports[`Storyshots Root/Header Intitial View 1`] = `
                     <span
                       className="bp3-icon bp3-icon-compass"
                       icon="compass"
+                      title={undefined}
                     >
                       <svg
                         data-icon="compass"
@@ -9054,6 +9196,7 @@ exports[`Storyshots Root/Header Intitial View 1`] = `
                   <span
                     className="bp3-icon bp3-icon-badge"
                     icon="badge"
+                    title={undefined}
                   >
                     <svg
                       data-icon="badge"
@@ -9094,6 +9237,7 @@ exports[`Storyshots Root/Header Intitial View 1`] = `
                   <span
                     className="bp3-icon bp3-icon-log-in"
                     icon="log-in"
+                    title={undefined}
                   >
                     <svg
                       data-icon="log-in"
@@ -9127,6 +9271,7 @@ exports[`Storyshots Root/Header Intitial View 1`] = `
               <span
                 className="bp3-icon bp3-icon-menu"
                 icon="menu"
+                title={undefined}
               >
                 <svg
                   data-icon="menu"
@@ -9237,6 +9382,7 @@ exports[`Storyshots Root/Header User Logged In 1`] = `
                     <span
                       className="bp3-icon bp3-icon-search-around"
                       icon="search-around"
+                      title={undefined}
                     >
                       <svg
                         data-icon="search-around"
@@ -9284,6 +9430,7 @@ exports[`Storyshots Root/Header User Logged In 1`] = `
                     <span
                       className="bp3-icon bp3-icon-projects"
                       icon="projects"
+                      title={undefined}
                     >
                       <svg
                         data-icon="projects"
@@ -9324,6 +9471,7 @@ exports[`Storyshots Root/Header User Logged In 1`] = `
                     <span
                       className="bp3-icon bp3-icon-dollar"
                       icon="dollar"
+                      title={undefined}
                     >
                       <svg
                         data-icon="dollar"
@@ -9364,6 +9512,7 @@ exports[`Storyshots Root/Header User Logged In 1`] = `
                     <span
                       className="bp3-icon bp3-icon-compass"
                       icon="compass"
+                      title={undefined}
                     >
                       <svg
                         data-icon="compass"
@@ -9410,6 +9559,7 @@ exports[`Storyshots Root/Header User Logged In 1`] = `
                   <span
                     className="bp3-icon bp3-icon-dashboard"
                     icon="dashboard"
+                    title={undefined}
                   >
                     <svg
                       data-icon="dashboard"
@@ -9451,6 +9601,7 @@ exports[`Storyshots Root/Header User Logged In 1`] = `
                   <span
                     className="bp3-icon bp3-icon-user"
                     icon="user"
+                    title={undefined}
                   >
                     <svg
                       data-icon="user"
@@ -9492,6 +9643,7 @@ exports[`Storyshots Root/Header User Logged In 1`] = `
                   <span
                     className="bp3-icon bp3-icon-log-out"
                     icon="log-out"
+                    title={undefined}
                   >
                     <svg
                       data-icon="log-out"
@@ -9525,6 +9677,7 @@ exports[`Storyshots Root/Header User Logged In 1`] = `
               <span
                 className="bp3-icon bp3-icon-menu"
                 icon="menu"
+                title={undefined}
               >
                 <svg
                   data-icon="menu"
