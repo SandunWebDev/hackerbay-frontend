@@ -11,7 +11,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Installing production and developer dependencies regardless of NODE_ENV.
-RUN npm install --only=production && npm install --only=development && npm cache clean --force
+RUN npm install --only=production --quiet && npm install --only=development --quiet && npm cache clean --force
 
 # Installing Cypress Dependecies (We could have just use docker cypress image,
 # But since we are using cypress even outside of docker in this project need lots of changes to optimizing,So For now just installing dependencies manually here.)
