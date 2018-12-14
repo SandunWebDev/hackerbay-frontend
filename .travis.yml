@@ -1,12 +1,19 @@
 language: node_js
-node_js: 
-  - "stable"
-cache:
-  directories:
-    - ~/.npm
-    - ~/.cache
-install:
-  - npm install -g codecov
-  - npm ci
-script:
-  - npm run test:ci
+node_js:
+  - 10
+services:
+  - docker
+addons:
+  apt:
+    packages:
+      # Updating Docker.
+      - docker-ce
+jobs:
+  include:
+    - stage: "Tests"
+      script: docker-compose -f docker-compose.yml -f dc-development.yml run --rm -e NODE_ENV=test frontend npm run test:ci
+
+    # Docker deployment only happen for "master" and "release" branches. Pull requesting to those branches also trigger this build unless disabled in Travis CI Settings.
+    - stage: "Docker-Deployment"
+      if: branch = master OR branch = release
+      script: ./docker/helpers/dockerHubUpload.sh
