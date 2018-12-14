@@ -18,4 +18,4 @@ services:
       - .:/app
       # Below is a workaround to prevent host node_modules from accidently getting mounted in container. So host node_module folder don't have no effect on container.
       # Useful when want to use node/npm both outside container for test/lint, OR CI envoroments, etc.
-      - frontendTempData:/usr/app/node_modules
+      - frontendTempData:/app/node_modules

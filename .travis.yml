@@ -10,7 +10,7 @@ addons:
       - docker-ce
 
 install:
-  - echo "Overriding npm install becuase we are using Docker."
+  - echo "Overriding default npm install because we are using Docker."
 
 jobs:
   include:
