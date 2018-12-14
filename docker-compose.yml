@@ -10,6 +10,9 @@ services:
       - DOCKER_USERNAME
       - DOCKER_PASSWORD
 
+      - CYPRESS_PROJECT_ID
+      - CYPRESS_RECORD_KEY
+
       - CODECOV_TOKEN
 
 # Custom volume to store database data premenetly.
