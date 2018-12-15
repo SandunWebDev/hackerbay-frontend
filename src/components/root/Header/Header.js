@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Navbar, Button } from "@blueprintjs/core";
+import { Navbar, Button, Icon } from "@blueprintjs/core";
 
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
@@ -9,48 +9,79 @@ import { logoutAccount } from "../../../redux/actions/userActions";
 import "./Header.css";
 
 export class Header extends Component {
+  state = {
+    isMobileMenuOpen: false
+  };
+
+  handleMobieMenuState() {
+    // This function flip the current state of mobile menu.
+
+    const { isMobileMenuOpen } = this.state;
+
+    this.setState({
+      isMobileMenuOpen: isMobileMenuOpen ? false : true
+    });
+  }
+
   render() {
     const { loggedIn, name, logoutAccount } = this.props;
+    const { isMobileMenuOpen } = this.state;
 
     // Condionally rendering right side menu according user is logged in or not.
     let rightSideMenu = "";
     if (loggedIn) {
-      rightSideMenu = (
-        <div>
-          <Link to="/myaccount">
-            <Button icon="user" minimal={true} data-testid="myAccountButton">
-              {name.toUpperCase()}
-            </Button>
-          </Link>
-          <Link to="/">
-            <Button
-              icon="log-out"
-              minimal={true}
-              onClick={logoutAccount}
-              data-testid="logoutButton"
-            >
-              LogOut
-            </Button>
-          </Link>
-        </div>
-      );
+      rightSideMenu = [
+        <Link to="/dashboard" key="R1">
+          <Button icon="dashboard" text="Dashboard" minimal={true} />
+        </Link>,
+        <Link to="/myaccount" key="R2">
+          <Button
+            icon="user"
+            minimal={true}
+            data-testid="myAccountButton"
+            className="Header__Navbar__leftmenu__username"
+          >
+            {name.split(" ")[0]}
+          </Button>
+        </Link>,
+        <Link to="/login" key="R3">
+          <Button
+            icon="log-out"
+            minimal={true}
+            onClick={logoutAccount}
+            data-testid="logoutButton"
+          >
+            LogOut
+          </Button>
+        </Link>
+      ];
     } else {
-      rightSideMenu = (
-        <div>
-          <Link to="/signup">
-            <Button icon="badge" minimal={true}>
-              Signup
-            </Button>
-          </Link>
+      rightSideMenu = [
+        <Link to="/signup" key="R1">
+          <Button icon="badge" minimal={true}>
+            Signup
+          </Button>
+        </Link>,
 
-          <Link to="/login">
-            <Button icon="log-in" minimal={true}>
-              Login
-            </Button>
-          </Link>
-        </div>
-      );
+        <Link to="/login" key="R2">
+          <Button icon="log-in" minimal={true}>
+            Login
+          </Button>
+        </Link>
+      ];
     }
+
+    const leftsideMenu = [
+      <Link to="/" key="L1">
+        <Button icon="projects" text="Services" minimal={true} />
+      </Link>,
+      <Link to="/" key="L2">
+        <Button icon="dollar" text="Pricing" minimal={true} />
+      </Link>,
+      <Link to="/" key="L3">
+        <Button icon="compass" text="About Us" minimal={true} />
+      </Link>
+    ];
 
     return (
       <div className="Header">
@@ -63,12 +94,9 @@ export class Header extends Component {
                 </Button>
               </Link>
             </Navbar.Heading>
-            <Navbar.Divider />
+            <Navbar.Divider className="Header__Navbar__devider" />
             <Navbar.Group className="Header__Navbar__leftmenu">
-              <Button icon="projects" text="Products" minimal={true} />
-              <Button icon="dollar" text="Pricing" minimal={true} />
-              <Button icon="dashboard" text="Dashboard" minimal={true} />
-              <Button icon="compass" text="About Us" minimal={true} />
+              {leftsideMenu}
             </Navbar.Group>
           </Navbar.Group>
           <Navbar.Group
@@ -78,7 +106,28 @@ export class Header extends Component {
           >
             {rightSideMenu}
           </Navbar.Group>
+          <Navbar.Group
+            className="Header__Navbar__mobilemenuIcon"
+            align={"right"}
+            data-testid="rightSideMenu"
+            onClick={() => this.handleMobieMenuState()}
+          >
+            <Icon icon="menu" />
+          </Navbar.Group>
         </Navbar>
+
+        {isMobileMenuOpen && (
+          <div
+            className="Header__mobileMenu"
+            onClick={() => this.handleMobieMenuState()}
+          >
+            <div className="Header__mobileMenu__links">
+              {leftsideMenu}
+              <hr />
+              {rightSideMenu}
+            </div>
+          </div>
+        )}
       </div>
     );
   }
@@ -104,5 +153,6 @@ Header.propTypes = {
 
 Header.defaultProps = {
   name: "",
-  loggedIn: false
+  loggedIn: false,
+  logoutAccount: () => {}
 };

@@ -1,0 +1,12 @@
+version: "3.4"
+
+services:
+  frontend:
+    build:
+      context: .
+      # Building all the way down to prod. stage.
+      target: prod
+    container_name: hb-frontend-container-prod
+    image: hb-frontend-image-prod
+    ports:
+      - "80:80"

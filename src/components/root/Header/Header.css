@@ -1,17 +1,88 @@
+/* For header I have used components of blueprintjs. 
+But they are seems to be not flexible to handle my use cases. 
+Since right now refactoring code is time consuming just force editing blueprintjs style to make it work */
+
 /* Removing default color & underline in links */
-.Header__Navbar a{
+.Header__Navbar a,
+.Header__Navbar a:hover {
   color: inherit !important;
   text-decoration: none !important;
 }
 
-/* Customzing bluprint MainIcon in Nav */
-.Header__Navbar__heading .bp3-icon{
-color:rgb(24, 192, 141) !important;
+/* Customzing bluprint logos MainIcon in Nav */
+.Header__Navbar__heading .bp3-icon {
+  color: rgb(235, 95, 240) !important;
 }
 
-/* Customzing blueprint buttons */
-.Header__Navbar__heading .bp3-button{
-color:rgb(24, 192, 141) !important;
-font-size: 20px;
-font-weight: bold !important;
+/* Customzing header logo's word */
+.Header__Navbar__heading .bp3-button {
+  /* color: rgb(24, 192, 141) !important; */
+  color: rgb(235, 95, 240) !important;
+  font-size: 20px;
+  font-weight: bold !important;
+}
+
+/* Initiallty mobileMenuIcon is hidden  */
+.Header__Navbar__mobilemenuIcon {
+  display: none !important;
+  cursor: pointer;
+}
+
+.Header__Navbar__leftmenu__username {
+  text-transform: capitalize;
+}
+
+.Header__mobileMenu {
+  z-index: 9999;
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  height: calc(100vh - 50px);
+  background: rgba(70, 70, 70, 0.982);
+  margin-top: 50px;
+  animation: swing-in-top-fwd 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+.Header__mobileMenu__links,
+.Header__mobileMenu > a,
+.Header__mobileMenu button {
+  width: 100%;
+}
+
+.Header__mobileMenu .bp3-button {
+  padding-left: 25px;
+  height: 40px;
+  justify-content: left;
+}
+
+.Header__mobileMenu hr {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.Header__mobileMenu .bp3-button-text,
+.Header__mobileMenu .bp3-icon {
+  color: white !important;
+  text-align: center;
+}
+
+.Header__mobileMenu .bp3-icon {
+  width: 20px;
+  text-align: center;
+}
+
+@media screen and (max-width: 860px) {
+  /* Hiding all parts of header except logo */
+  .Header__Navbar__leftmenu,
+  .Header__Navbar__rightmenu,
+  .Header__Navbar__devider {
+    display: none !important;
+  }
+
+  /* Showing mobileMenuIcon */
+  .Header__Navbar__mobilemenuIcon {
+    display: flex !important;
+  }
 }

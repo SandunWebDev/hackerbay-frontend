@@ -1,0 +1,40 @@
+.AddWebsite {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.AddWebsite--open {
+  padding: 15px;
+  border-radius: 5px;
+  background: rgba(233, 229, 229, 0.815);
+  position: relative;
+  margin: 0 auto;
+  transition: all 0.2s;
+}
+
+.AddWebsite__closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.AddWebsite__closeButton:hover {
+  color: rgb(18, 72, 172);
+}
+
+.AddWebsite--closed {
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.AddWebsite--closed div:hover {
+  color: rgb(18, 72, 172);
+}
+
+.AddWebsite--open,
+.AddWebsite--closed {
+  font-size: 0.9rem;
+}

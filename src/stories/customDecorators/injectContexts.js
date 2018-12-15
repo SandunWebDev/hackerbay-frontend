@@ -51,3 +51,9 @@ export function injectReduxAndRouter(
     );
   };
 }
+
+export function a() {
+  return story => {
+    return <div style={{ width: "500px" }}>{story()}</div>;
+  };
+}

@@ -39,7 +39,7 @@ describe("Header Component", () => {
   });
 
   describe("When loggedIn prop is false", () => {
-    it("Should render LOGIN and SIGNUP buttons which links to respective pages.", () => {
+    it("Should render LOGIN and SIGNUP buttons which links to respective pages & not render links to DASHBOARD and MYACCOUNT.", () => {
       const wrappedHeaderUnconnected = mount(
         withReactRouter(
           <HeaderUnconnected
@@ -56,11 +56,17 @@ describe("Header Component", () => {
 
       expect(rightSideMenu.find("Link[to='/signup']").exists()).toEqual(true);
       expect(rightSideMenu.find("Link[to='/login']").exists()).toEqual(true);
+      expect(rightSideMenu.find("Link[to='/myaccount']").exists()).toEqual(
+        false
+      );
+      expect(rightSideMenu.find("Link[to='/dashboard']").exists()).toEqual(
+        false
+      );
     });
   });
 
   describe("When loggedIn prop is true", () => {
-    it("Should render MYACCOUNT and LOGOUT buttons which links to respective pages.", () => {
+    it("Should render DASHBOARD, MYACCOUNT, LOGOUT buttons which links to respective pages.", () => {
       const wrappedHeaderUnconnected = mount(
         withReactRouter(
           <HeaderUnconnected
@@ -75,18 +81,23 @@ describe("Header Component", () => {
         "[data-testid='rightSideMenu']"
       );
 
+      expect(rightSideMenu.find("Link[to='/dashboard']").exists()).toEqual(
+        true
+      );
       expect(rightSideMenu.find("Link[to='/myaccount']").exists()).toEqual(
         true
       );
-      expect(rightSideMenu.find("Link[to='/']").exists()).toEqual(true);
+      expect(rightSideMenu.find("Link[to='/dashboard']").exists()).toEqual(
+        true
+      );
     });
 
-    it("Should render uppercase of provided name in button which link to '/myaccount'", () => {
+    it("Should render only first part of user's name in the button which link to '/myaccount'", () => {
       const wrappedHeaderUnconnected = mount(
         withReactRouter(
           <HeaderUnconnected
             loggedIn={true}
-            name="John Doe"
+            name="john Doe"
             logoutAccount={() => {}}
           />
         )
@@ -96,7 +107,7 @@ describe("Header Component", () => {
         "button[data-testid='myAccountButton']"
       );
 
-      expect(myAccountButton.contains("JOHN DOE")).toEqual(true);
+      expect(myAccountButton.contains("john")).toEqual(true);
     });
 
     it("Should excute logout() function when LogOut button is clicked.", () => {
@@ -121,7 +132,7 @@ describe("Header Component", () => {
       expect(mockLogoutFn).toHaveBeenCalled();
     });
 
-    it("Should excute LogOut button is clicked loggedIn props should be false.", () => {
+    it("When LogOut button is clicked loggedIn props should be changed to false.", () => {
       // Making sure user is initially logged in.
       const wrappedHeader = mount(
         withReduxAndRouter(
@@ -144,6 +155,49 @@ describe("Header Component", () => {
       logoutButton.simulate("click");
 
       expect(wrappedHeader.find("Header").props().loggedIn).toEqual(false);
+    });
+  });
+
+  describe("Mobile Menu", () => {
+    it("Should render mobile menu when clicked on burger icon.", () => {
+      const wrappedHeader = mount(withReduxAndRouter(<Header />));
+
+      const mobieBurgerIcon = wrappedHeader
+        .find(".Header__Navbar__mobilemenuIcon")
+        .at(0);
+
+      mobieBurgerIcon.simulate("click");
+
+      expect(wrappedHeader.find(".Header__mobileMenu").exists()).toEqual(true);
+    });
+
+    it("Should hide mobile menu when clicked on burger icon.", () => {
+      const wrappedHeader = mount(withReduxAndRouter(<Header />));
+
+      const mobieBurgerIcon = wrappedHeader
+        .find(".Header__Navbar__mobilemenuIcon")
+        .at(0);
+
+      mobieBurgerIcon.simulate("click"); //Openning
+      mobieBurgerIcon.simulate("click"); //Closing
+
+      expect(wrappedHeader.find(".Header__mobileMenu").exists()).toEqual(false);
+    });
+
+    it("Should hide mobile menu when clicked on opend mobile menu", () => {
+      const wrappedHeader = mount(withReduxAndRouter(<Header />));
+
+      const mobieBurgerIcon = wrappedHeader
+        .find(".Header__Navbar__mobilemenuIcon")
+        .at(0);
+
+      mobieBurgerIcon.simulate("click"); //Openning
+
+      const mobieMenu = wrappedHeader.find(".Header__mobileMenu").at(0);
+
+      mobieMenu.simulate("click"); //Closing
+
+      expect(wrappedHeader.find(".Header__mobileMenu").exists()).toEqual(false);
     });
   });
 });

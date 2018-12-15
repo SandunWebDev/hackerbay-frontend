@@ -14,9 +14,9 @@ describe("App Component", () => {
   });
 
   it("Should have <Header> component.", () => {
-    const wrappedLoginPage = mount(withReduxAndRouter(<App />));
+    const wrappedApp = mount(withReduxAndRouter(<App />));
 
-    expect(wrappedLoginPage.find("Header").exists()).toEqual(true);
+    expect(wrappedApp.find("Header").exists()).toEqual(true);
   });
 
   it("Should render <HomePage> component when url is '/'", () => {
@@ -25,9 +25,9 @@ describe("App Component", () => {
         <App />
       </MemoryRouter>
     );
-    const wrappedLoginPage = mount(withReduxProvider(pathSetted));
+    const wrappedApp = mount(withReduxProvider(pathSetted));
 
-    expect(wrappedLoginPage.find("HomePage").exists()).toEqual(true);
+    expect(wrappedApp.find("HomePage").exists()).toEqual(true);
   });
 
   it("Should render <LoginPage> component when url is '/login'", () => {
@@ -36,9 +36,9 @@ describe("App Component", () => {
         <App />
       </MemoryRouter>
     );
-    const wrappedLoginPage = mount(withReduxProvider(pathSetted));
+    const wrappedApp = mount(withReduxProvider(pathSetted));
 
-    expect(wrappedLoginPage.find("LoginPage").exists()).toEqual(true);
+    expect(wrappedApp.find("LoginPage").exists()).toEqual(true);
   });
 
   it("Should render <SignupPage> component when url is '/signup'", () => {
@@ -47,8 +47,38 @@ describe("App Component", () => {
         <App />
       </MemoryRouter>
     );
-    const wrappedLoginPage = mount(withReduxProvider(pathSetted));
+    const wrappedApp = mount(withReduxProvider(pathSetted));
 
-    expect(wrappedLoginPage.find("SignupPage").exists()).toEqual(true);
+    expect(wrappedApp.find("SignupPage").exists()).toEqual(true);
+  });
+
+  it("Should render <DashboardPage> component when url is '/dashboard' and User is LOGGED IN.", () => {
+    const pathSetted = (
+      <MemoryRouter initialEntries={["/dashboard"]}>
+        <App />
+      </MemoryRouter>
+    );
+
+    const wrappedApp = mount(
+      withReduxProvider(pathSetted, {
+        user: {
+          loggedIn: true // Mocking User loggedIn.
+        }
+      })
+    );
+
+    expect(wrappedApp.find("DashboardPage").exists()).toEqual(true);
+  });
+
+  it("Should redirect to HomePage(/) when user tried to access not available path like '/thisdoesnotexist'", () => {
+    const pathSetted = (
+      <MemoryRouter initialEntries={["/thisdoesnotexist"]}>
+        <App />
+      </MemoryRouter>
+    );
+
+    const wrappedApp = mount(withReduxProvider(pathSetted));
+
+    expect(wrappedApp.find("HomePage").exists()).toEqual(true);
   });
 });

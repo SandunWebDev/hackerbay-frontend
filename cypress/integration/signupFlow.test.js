@@ -28,12 +28,13 @@ describe("Signup Flow", () => {
     cy.get("input[name = email]").type("johndoe@gmail.com");
     cy.get("input[name = password]").type("supersecret");
     cy.get("input[name = passwordConfirm]").type("supersecret");
+    cy.get("input[name = phoneNum]").type("+947612345678");
 
     // Submitting signup details.
     cy.get("button[type=submit]").click();
 
-    cy.location("pathname").should("eq", "/");
-    cy.get("[data-testid=myAccountButton]").contains("JOHN DOE");
+    cy.location("pathname").should("eq", "/dashboard");
+    cy.get("[data-testid=myAccountButton]").contains("John");
 
     // LogOut
     cy.contains("LogOut").click();
@@ -41,7 +42,7 @@ describe("Signup Flow", () => {
     cy.contains("Signup");
   });
 
-  it.only("Should failed and show errors when login failed.", () => {
+  it("Should failed and show errors when signup failed.", () => {
     // Stubbing backend API.
     cy.server();
     cy.route({
@@ -57,6 +58,7 @@ describe("Signup Flow", () => {
     cy.get("input[name = email]").type("johndoe@gmail.com");
     cy.get("input[name = password]").type("supersecret");
     cy.get("input[name = passwordConfirm]").type("supersecret");
+    cy.get("input[name = phoneNum]").type("+947612345678");
 
     // Submitting login details.
     cy.get("button[type=submit]").click();

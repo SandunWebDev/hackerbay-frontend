@@ -3,14 +3,15 @@ import { configure, addDecorator, setAddon, storiesOf } from "@storybook/react";
 import { withInfo } from "@storybook/addon-info";
 import { setConsoleOptions } from "@storybook/addon-console";
 import backgrounds from "@storybook/addon-backgrounds";
-import JSXAddon from 'storybook-addon-jsx';
+import JSXAddon from "storybook-addon-jsx";
+import { host } from "storybook-host";
 
 // All global styles
 import "../src/index.css";
 
 //  *********** Configuring global addons *********** .
 // Display useful info about component. Currently in conflict with storyshots. So currently disabled.
-// addDecorator((story, context) => withInfo("Common Info")(story)(context)); 
+// addDecorator((story, context) => withInfo("Common Info")(story)(context));
 
 // Display console logs right in storybook. We could have use "addDecorator((storyFn, context) => withConsole({})(storyFn)(context));" but it mess us jest snapshots.
 setConsoleOptions({});
@@ -25,9 +26,16 @@ addDecorator(
   ])
 );
 
+// Nicely and Simply center and wrap host container.
+addDecorator(
+  host({
+    align: "center middle",
+    width: "80%"
+  })
+);
+
 // Display JSX of component when used with ".addWithJSX()"
 setAddon(JSXAddon);
-
 
 //  *********** Setting up all stories *********** .
 // Recrusivly getting all "xxxx.stories.js" files list inside "/src/components/" using WebPack context.
@@ -40,7 +48,7 @@ const storiesInComponentsFolder = require.context(
 function loadStories() {
   storiesInComponentsFolder // Loading "xxxx.stories.js" files.
     .keys()
-    .forEach(filename => storiesInComponentsFolder(filename)); 
+    .forEach(filename => storiesInComponentsFolder(filename));
   // Add here any other folder you want to load stories from. Ex: require("../src/stories");
 }
 

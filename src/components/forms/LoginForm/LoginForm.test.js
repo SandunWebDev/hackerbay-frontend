@@ -31,18 +31,12 @@ describe("LoginForm Component", () => {
         "formSubmitMsg",
         "formSubmitFailedMsg",
         "buttonTitle",
-        "sucessRedirect",
+        "successRedirect",
         "onSubmitAction",
         "className",
         "loggedIn",
         "userActions"
       ])
-    );
-
-    expect(wrappedLoginForm.find("AuthHelperForm").props()).toEqual(
-      expect.objectContaining({
-        sucessRedirect: "/"
-      })
     );
   });
 

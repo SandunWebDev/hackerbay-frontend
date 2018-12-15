@@ -23,7 +23,7 @@ export default class AuthHelperForm extends Component {
       formSubmitMsg,
       formSubmitFailedMsg,
       buttonTitle,
-      sucessRedirect,
+      successRedirect,
       className,
 
       // Redux actions & states
@@ -32,7 +32,7 @@ export default class AuthHelperForm extends Component {
     } = this.props;
 
     if (submitSucceeded || loggedIn) {
-      return <Redirect to={sucessRedirect} />;
+      return <Redirect to={successRedirect} />;
     }
 
     return (
@@ -101,7 +101,7 @@ AuthHelperForm.propTypes = {
   formSubmitMsg: PropTypes.string.isRequired,
   formSubmitFailedMsg: PropTypes.string.isRequired,
   buttonTitle: PropTypes.string.isRequired,
-  sucessRedirect: PropTypes.string.isRequired,
+  successRedirect: PropTypes.string.isRequired,
   className: PropTypes.string.isRequired,
 
   // // Redux actions & states

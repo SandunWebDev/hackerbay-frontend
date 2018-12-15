@@ -1,0 +1,39 @@
+.WebsiteList {
+  color: rgb(243, 235, 235);
+  width: 100%;
+}
+
+.WebsiteList--noItems,
+.WebsiteList--noSearchResults,
+.WebsiteList--error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(12, 11, 11);
+  font-weight: bold;
+  text-align: center;
+  min-height: 300px;
+}
+
+.WebsiteList--error__reloadButton {
+  margin: 10px;
+}
+
+.WebsiteList--error,
+.WebsiteList--noItems {
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 450px) {
+  .WebsiteList__item__logo {
+    min-width: 50px;
+  }
+
+  .WebsiteList__item__toolbar {
+    flex-direction: row;
+  }
+
+  .WebsiteList__item__status__updatedAt {
+    display: none;
+  }
+}

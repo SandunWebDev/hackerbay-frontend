@@ -43,6 +43,7 @@ export const withReduxAndRouter = (
     useProductionReduxStoreItems,
     customValues
   );
+
   return (
     <Provider store={mockStore}>
       <BrowserRouter>{component}</BrowserRouter>

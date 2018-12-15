@@ -1,17 +1,9 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { host } from "storybook-host";
 
 import CustomInputWithErrorOutput from "./CustomInputWithErrorOutput";
 
 storiesOf("Custom Inputs/CustomInputWithErrorOutput", module)
-  .addDecorator(
-    host({
-      align: "center",
-      height: 200,
-      width: 400
-    })
-  )
   .add("Initial View", () => {
     const myProps = {
       placeholder: "This is my input"

@@ -11,9 +11,7 @@ import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 */
 import * as productionReduxStore from "../../redux/reduxStore";
 
-import { userReducerDefaultState } from "../../redux/reducers/userReducer";
-
-const allProductionDefaultStates = { user: userReducerDefaultState };
+const allProductionDefaultStates = productionReduxStore.allRedcuersDefaultState;
 
 /* Main utility that use to create mock stores for test cases.
 

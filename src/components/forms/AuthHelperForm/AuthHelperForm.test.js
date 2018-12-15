@@ -1,9 +1,8 @@
 import React from "react";
-import { mount, shallow } from "enzyme";
+import { shallow } from "enzyme";
 
 import CustomInputWithErrorOutput from "../customInputs/CustomInputWithErrorOutput/CustomInputWithErrorOutput";
-import { Field, reduxForm } from "redux-form";
-import { withReduxProvider } from "../../../tests/helpers/enzymeHelpers";
+import { Field } from "redux-form";
 
 import AuthHelperForm from "./AuthHelperForm";
 
@@ -42,7 +41,7 @@ const defaultProps = {
   formSubmitMsg: "Submitting",
   formSubmitFailedMsg: "Network Error",
   buttonTitle: "Submit",
-  sucessRedirect: "/",
+  successRedirect: "/dashboard",
   className: "AuthForm",
 
   // // Redux actions & states
@@ -59,16 +58,16 @@ describe("AuthHelperForm Component", () => {
     let wrappedAuthHelperForm = shallow(
       <AuthHelperForm {...defaultProps} loggedIn={true} />
     );
-    expect(wrappedAuthHelperForm.find("Redirect[to='/']").exists()).toEqual(
-      true
-    );
+    expect(
+      wrappedAuthHelperForm.find("Redirect[to='/dashboard']").exists()
+    ).toEqual(true);
 
     wrappedAuthHelperForm = shallow(
       <AuthHelperForm {...defaultProps} submitSucceeded={true} />
     );
-    expect(wrappedAuthHelperForm.find("Redirect[to='/']").exists()).toEqual(
-      true
-    );
+    expect(
+      wrappedAuthHelperForm.find("Redirect[to='/dashboard']").exists()
+    ).toEqual(true);
   });
 
   it("Should render <Callout> with error message when error is available.", () => {

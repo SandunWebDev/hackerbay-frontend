@@ -31,25 +31,19 @@ describe("SignupForm Component", () => {
         "formSubmitMsg",
         "formSubmitFailedMsg",
         "buttonTitle",
-        "sucessRedirect",
+        "successRedirect",
         "onSubmitAction",
         "className",
         "loggedIn",
         "userActions"
       ])
     );
-
-    expect(wrappedSignupForm.find("AuthHelperForm").props()).toEqual(
-      expect.objectContaining({
-        sucessRedirect: "/"
-      })
-    );
   });
 
-  it("Should render <AuthHelper> with four input fields.", () => {
+  it("Should render <AuthHelper> with five input fields.", () => {
     const wrappedSignupForm = mount(withReduxAndRouter(<SignupForm />));
 
-    expect(wrappedSignupForm.find("Field").length).toEqual(4);
+    expect(wrappedSignupForm.find("Field").length).toEqual(5);
 
     expect(wrappedSignupForm.find("Field[name='name']").exists()).toEqual(true);
     expect(wrappedSignupForm.find("Field[name='email']").exists()).toEqual(
@@ -61,5 +55,8 @@ describe("SignupForm Component", () => {
     expect(
       wrappedSignupForm.find("Field[name='passwordConfirm']").exists()
     ).toEqual(true);
+    expect(wrappedSignupForm.find("Field[name='phoneNum']").exists()).toEqual(
+      true
+    );
   });
 });
