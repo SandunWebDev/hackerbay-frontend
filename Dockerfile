@@ -48,6 +48,10 @@ CMD npm start
 # ******************************************* SUB BUILD STAGE - For Produce React Artifacts ******************************************* 
 FROM dev as build
 
+# Initially almost every CI platforms set "CI" env. variable to "true". But "npm run build" fail if that's the case.
+# So setting it to "false" for successfull build.
+ENV CI false
+
 # Building React Prodcution Files.
 RUN npm run build
 
