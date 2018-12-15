@@ -8,14 +8,14 @@ This is the Frontend part of the Server Monitoring Project. Backend part of the 
 ## How To Run
 
 ### # IF YOU HAVE DOCKER
-- Just run `npm run docker:dev:run`. It will install and run all the dependencies and services need to run this project. Then you can interact with the program through http://localhost:4000
+- Just run `npm run docker:dev:run`. It will install and run all the dependencies and services need to run this project. Then you can interact with the program through http://localhost:3000.
 
-- Also already built "Docker Images" of this project can be found in [here](https://cloud.docker.com/repository/docker/sandunwebdev/hb-frontend-image-prod)
+- Also already built "Docker Images" of this project can be found in [here](https://cloud.docker.com/repository/docker/sandunwebdev/hb-frontend-image-prod).
 
 ### # IF YOU DONT'T HAVE DOCKER
 - Run `npm install` to install dependencies.
 - Then run `npm start`.
-- Normally you can interact with program through http://localhost:4000.
+- Normally you can interact with program through http://localhost:3000.
 
 NOTE : Make sure hackerbay backend server & postgres database servers are already running.
 
@@ -26,15 +26,15 @@ NOTE : Make sure hackerbay backend server & postgres database servers are alread
 - `npm run test:storyhshots` - Structural Testing.
 - `npm run test:imageshots:local` - Visual Testing.
 - `npm run test:cypress:local` - E2E Testing.
-- 
+  
 - `npm run storybook` - Component Testing.
 
 ## Used Technologies & Main Packages
 
 | FrontEnd     | BackEnd                                                               | Tools                      | Other              |
 | ------------ | --------------------------------------------------------------------- | -------------------------- | ------------------ |
-| React        | See [Hackerbay - Backend](https://github.com/SandunWebDev/hackerbay/) | ESLint + AirBnB + Prettier | TravisCI + CodeCov |
-| Redux        |                                                                       | Jest + Enzyme + Sinon      | Docker             |
-| React Router |                                                                       | StoryBook + Cypress        |                    |
+| React        | See [Hackerbay - Backend](https://github.com/SandunWebDev/hackerbay/) | Jest + Enzyme + Sinon      | TravisCI + CodeCov |
+| Redux        |                                                                       | StoryBook + Cypress        | Docker             |
+| React Router |                                                                       | ESLint + AirBnB + Prettier |                    |
 |              |                                                                       |                            |                    |
 |              |                                                                       |                            |                    |
