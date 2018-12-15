@@ -15,7 +15,7 @@ install:
 jobs:
   include:
     - stage: "Tests"
-      script: docker-compose -f docker-compose.yml -f dc-development.yml run --rm -e NODE_ENV=test -e CI=1 frontend npm run test:ci
+      script: docker-compose -f docker-compose.yml -f dc-development.yml run --rm -e NODE_ENV=test frontend bash -c "CI=1 npm run test:ci"
 
     # Docker deployment only happen for "master" and "release" branches. Pull requesting to those branches also trigger this build unless disabled in Travis CI Settings.
     - stage: "Docker-Deployment"

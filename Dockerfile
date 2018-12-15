@@ -7,16 +7,10 @@ FROM node:10 as base
 RUN mkdir /app
 WORKDIR /app
 
-# Copying dependencies(package.json & package-lock.json) first to make use of cache layer.
-COPY package*.json ./
-
-# Installing production and developer dependencies regardless of NODE_ENV.
-RUN npm install --only=production --quiet && npm install --only=development --quiet && npm cache clean --force
-
 # Installing Cypress Dependecies (We could have just use docker cypress image,
 # But since we are using cypress even outside of docker in this project need lots of changes to optimizing,So For now just installing dependencies manually here.)
-RUN apt-get update && \
-  apt-get install -y \
+RUN apt-get -qq update && \
+  apt-get -qq install -y \
   libgtk2.0-0 \
   libnotify-dev \
   libgconf-2-4 \
@@ -24,6 +18,15 @@ RUN apt-get update && \
   libxss1 \
   libasound2 \
   xvfb
+
+# To hide annoying cypress install logs.
+ENV CI 1
+
+# Copying dependencies(package.json & package-lock.json) first to make use of cache layer.
+COPY package*.json ./
+
+# Installing production and developer dependencies regardless of NODE_ENV.
+RUN npm install --only=production --quiet && npm install --only=development --quiet && npm cache clean --force
 
 # Adding node_modules binary to PATH.
 ENV PATH /app/node_modules/.bin:$PATH
