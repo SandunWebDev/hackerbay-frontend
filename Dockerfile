@@ -52,6 +52,9 @@ FROM dev as build
 # So setting it to "false" for successfull build.
 ENV CI false
 
+# Arg env. variable are only availble in build process.This variable used to specifiy BackendAPIURL for frontend reuqests. 
+ARG REACT_APP_API_BASEURL
+
 # Building React Prodcution Files.
 RUN npm run build
 
@@ -62,3 +65,8 @@ EXPOSE 80
 
 # Copying React build artifacts from previous stage.
 COPY --from=build /app/build /usr/share/nginx/html
+
+# Copying cutomized nginx config to work with react router.
+COPY --from=build /app/docker/default.conf /etc/nginx/conf.d/
+
+CMD ["nginx", "-g", "daemon off;"]

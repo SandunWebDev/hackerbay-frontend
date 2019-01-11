@@ -6,6 +6,9 @@ services:
       context: .
       # Building all the way down to prod. stage.
       target: prod
+      # Passing Arg env. varaible to Dockerfile which only available in build process.
+      args:
+        - REACT_APP_API_BASEURL=${REACT_APP_API_BASEURL}
     container_name: hb-frontend-container-prod
     image: hb-frontend-image-prod
     ports:
