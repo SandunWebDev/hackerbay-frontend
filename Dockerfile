@@ -67,6 +67,7 @@ EXPOSE 80
 COPY --from=build /app/build /usr/share/nginx/html
 
 # Copying cutomized nginx config to work with react router.
-COPY --from=build /app/docker/default.conf /etc/nginx/conf.d/
+# Also configed to proxy request coming to "/api/xxx" to Kubernetes "hb-backend-service/xxxx" service.
+COPY --from=build /app/docker/nginx/default.conf /etc/nginx/conf.d/
 
 CMD ["nginx", "-g", "daemon off;"]
