@@ -1,0 +1,17 @@
+version: "3.4"
+
+services:
+  frontend:
+    build:
+      context: .
+      # Using specifc sperate Dockerfile
+      dockerfile: Dockerfile.kubernetes
+      # Building all the way down to prod. stage.
+      target: prod
+      # Passing Arg env. varaible to Dockerfile which only available in build process.
+      args:
+        - REACT_APP_API_BASEURL=/api/
+    container_name: hb-frontend-container-prod
+    image: hb-frontend-image-prod
+    ports:
+      - "80:80"
