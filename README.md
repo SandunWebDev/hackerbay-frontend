@@ -42,7 +42,7 @@ See Live Demo at [HackerbayApp.ml](http://HackerbayApp.ml) that deployed in Goog
 ## **How To Run**
 
 ### # USING KUBERNETES
-- Get this projects Kubernetes Configs at [here](https://cloud.docker.com/repository/docker/sandunwebdev/hb-frontend-image-prod) and follow the instructions.
+- Get this projects Kubernetes Configs at [here](https://github.com/SandunWebDev/hackerbay-kubernetes) and follow the instructions.
 
 ### # USING DOCKER
 - Just run `npm run docker:dev:run`. It will install and run all the dependencies and services need to run this project. Then you can interact with the program through http://localhost:3000.
@@ -54,7 +54,9 @@ See Live Demo at [HackerbayApp.ml](http://HackerbayApp.ml) that deployed in Goog
 - Then run `npm start`.
 - Then you can interact with program through http://localhost:3000.
 
-NOTE : Make sure [Hackerbay Backend Server & Postgres Database Servers](https://github.com/SandunWebDev/hackerbay/) are already running for full comptability.
+**NOTE** : 
+  - Make sure `".env"` file is filled with necessary values.
+  - Make sure [Hackerbay Backend Server & Postgres Database Servers](https://github.com/SandunWebDev/hackerbay/) are already running for full comptability.
 
 ---
 ## **How To Test**
