@@ -1,3 +1,6 @@
+# Only difference between this file and "ORIGNAL Dockerfile" is that this "copy" different nginx config file that enable "Reverse proxing" that. 
+# So In kubernetes request to "/api/xxx" get proxied to backend service. 
+
 # ******************************************* BUILD STAGE 1 - Base Dependencies ******************************************* 
 # Loading official Node image as base image (Insetead of lean alpine version) because we need build tools for run modules like cypress.
 # Also its used as full fedged developer enviroment.
@@ -66,8 +69,9 @@ EXPOSE 80
 # Copying React build artifacts from previous stage.
 COPY --from=build /app/build /usr/share/nginx/html
 
+# Heres What different from "ORIGNAL Dockerfile"
 # Copying cutomized nginx config to work with react router.
 # Also configed to proxy request coming to "/api/xxx" to Kubernetes "hb-backend-service/xxxx" service.
-COPY --from=build /app/docker/nginx/default.conf /etc/nginx/conf.d/
+COPY --from=build /app/docker/nginx/default.kubernetes.conf /etc/nginx/conf.d/default.conf
 
 CMD ["nginx", "-g", "daemon off;"]
