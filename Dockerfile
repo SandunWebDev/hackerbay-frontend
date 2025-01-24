@@ -9,15 +9,16 @@ WORKDIR /app
 
 # Installing Cypress Dependecies (We could have just use docker cypress image,
 # But since we are using cypress even outside of docker in this project need lots of changes to optimizing,So For now just installing dependencies manually here.)
-RUN apt-get -qq update && \
-  apt-get -qq install -y \
-  libgtk2.0-0 \
-  libnotify-dev \
-  libgconf-2-4 \
-  libnss3 \
-  libxss1 \
-  libasound2 \
-  xvfb
+# NOTE : Temporally disabling cypress installation as these old versions are not available as of now.
+# RUN apt-get -qq update && \
+#   apt-get -qq install -y \
+#   libgtk2.0-0 \
+#   libnotify-dev \
+#   libgconf-2-4 \
+#   libnss3 \
+#   libxss1 \
+#   libasound2 \
+#   xvfb
 
 # To hide annoying cypress install logs.
 ENV CI 1

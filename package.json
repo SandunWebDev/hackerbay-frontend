@@ -37,7 +37,8 @@
     "build-storybook": "build-storybook -s public",
     "docker:dev:run": "docker-compose -f docker-compose.yml -f dc-development.yml up --build",
     "docker:dev:stop": "docker-compose -f docker-compose.yml -f dc-development.yml down -v",
-    "docker:dev:test": "docker-compose -f docker-compose.yml -f dc-development.yml run -e NODE_ENV=test frontend npm test"
+    "docker:dev:test": "docker-compose -f docker-compose.yml -f dc-development.yml run -e NODE_ENV=test frontend npm test",
+    "docker:prod:run": "docker-compose -f docker-compose.yml -f dc-production.yml up --build -d"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.11",
